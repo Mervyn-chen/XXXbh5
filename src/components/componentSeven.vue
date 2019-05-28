@@ -9,8 +9,8 @@
       <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">
         {{this.studentinfo.course}}课程成绩最好
         得分:{{this.studentinfo.score}}
-      <p :visible.sync="dialogVisible0" style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">  英语四级考试{{this.studentinfo.cet4}} 分 </p>
-      <p :visible.sync="dialogVisible1" style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">英语六级考试{{this.studentinfo.cet6}} 分
+      <p v-show="dialogVisible0" style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">  英语四级考试{{this.studentinfo.cet4}} 分 </p>
+      <p v-show="dialogVisible1" style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">英语六级考试{{this.studentinfo.cet6}} 分
       </p>
 
 
@@ -30,8 +30,8 @@
         return {
           index:0,
           xh:'',
-          dialogVisible0:false,
-          dialogVisible1:false,
+          dialogVisible0:true,
+          dialogVisible1:true,
           studentinfo:{
             computerlevel: '',
 
@@ -67,7 +67,7 @@
               else{
               this.studentinfo.cet4=response.data.cet4;
               }
-              if(response.data.cet4==null){
+              if(response.data.cet6==null){
                 this.dialogVisible1=false;
 
               }
