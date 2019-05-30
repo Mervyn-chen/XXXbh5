@@ -3,15 +3,19 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/绩点篇.png" width="400" height="600"></div>
     <div class="text" >
-      <p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">听说，大学里
-      有一个令人闻风丧胆的指标？
-      <p>
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">平均绩点 {{this.studentinfo.gradepoint}}<p>
-      <p style="margin-top: -2.5rem; margin-left: 0rem; padding: 1.5rem">
-       学霸指数：{{this.studentinfo.xbzs}}{{this.studentinfo.xbsm}}
-      <p style="margin-top: -2.5rem; margin-left: 0rem; padding: 1.5rem">专业年级排名：{{this.studentinfo.majorrank}}
-      </p>
+      <div class="common-div-css" style="margin-top: 3.05rem; left: 24%;">
+        <div style="letter-spacing: 0px;">听说，大学里</div>
+        有一个令人闻风丧胆的指标？
+        <br/><br/>
+        平均绩点:<span>{{this.studentinfo.gradepoint}}</span>
+        <div>
+          学霸指数:<span>{{this.studentinfo.xbzs}}{{this.studentinfo.xbsm}}</span>
+        </div>
+        专业年级排名：<span>{{this.studentinfo.majorrank}}</span>
+      </div>
+
     </div>
+    <div id="greatscore" style="width:100%;height: 300px" ></div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/绩点.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
@@ -20,10 +24,12 @@
 </template>
 
 <script>
+  import echarts from 'echarts'
     export default {
         name: "componentEight",
       data(){
         return {
+          count:{},
           index:0,
           xh:'',
           studentinfo:{
@@ -38,7 +44,11 @@
       },
       mounted(){
         this.selectstudentinfo();
+        this.initpan();
+
+
       },
+
       methods:{
         selectstudentinfo(){
           // let id=this.account;
@@ -57,6 +67,33 @@
             }).catch(function (err) {
             console.log(err);
           })
+        },
+        initpan(){
+          var myChart = echarts.init(document.getElementById('greatscore'));
+          myChart.setOption({
+            tooltip : {
+              formatter: "{a} <br/>{b} : {c}%"
+            },
+            toolbox: {
+              show : true,
+              feature : {
+                mark : {show: true},
+                restore : {show: true},
+                saveAsImage : {show: true}
+              }
+            },
+            series : [
+              {
+                name:'业务指标',
+                type:'gauge',
+                detail : {formatter:'{value}%'},
+                data:[{value: this.studentinfo.gradepoint, name: '平均绩点'}]
+              }
+            ]
+
+
+          })
+
         }
       },
     }

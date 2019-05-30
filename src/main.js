@@ -10,7 +10,9 @@ import 'vant/lib/index.css';
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
-
+import echarts from 'echarts'
+//和这一行：
+Vue.prototype.$echarts = echarts
 import viewPort from '../static/js/viewport'
 
 // viewPort()
@@ -24,7 +26,11 @@ Vue.prototype.$ajax = axios
 var VueTouch = require('vue-touch')
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(Vant);
-Vue.use(MintUI)
+Vue.use(MintUI);
+
+Vue.use(echarts);
+
+
 
 
 /* eslint-disable no-new */

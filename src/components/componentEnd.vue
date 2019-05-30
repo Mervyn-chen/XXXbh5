@@ -3,10 +3,10 @@
     <div class="">
 
 
-      <img src="/static/images/毕业生/firstpage/1.png" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
-      <img src="/static/images/毕业生/firstpage/23.png" style="top: -1.5rem;"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
-      <img   src="/static/images/毕业生/firstpage/10780.png"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
-      <img  style="position:absolute;top: 2.5rem;left: 2.5rem;right: 0;bottom: 0;" src="/static/images/毕业生/firstpage/10728.png"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
+      <!--<img src="/static/images/毕业生/firstpage/1.png" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->
+      <!--<img src="/static/images/毕业生/firstpage/23.png" style="top: -1.5rem;"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->
+      <!--<img   src="/static/images/毕业生/firstpage/10780.png"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->
+      <!--<img  style="position:absolute;top: 2.5rem;left: 2.5rem;right: 0;bottom: 0;" src="/static/images/毕业生/firstpage/10728.png"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->
       <!--<p class="delay-1s" :class="{animated:addAnimation, fadeIn:addAnimation, slower :addAnimation}">时光静好，与君语</p>-->
       <!--<p class="delay-2s" :class="{animated:addAnimation, fadeIn:addAnimation, slower :addAnimation}">细水流年，与君同</p>-->
       <!--<p class="delay-3s" :class="{animated:addAnimation, fadeIn:addAnimation, slower :addAnimation}">繁华落尽，与君老</p>-->
@@ -24,7 +24,7 @@
 
 <style lang="scss" scoped>
   .container{
-    background:url("/static/images/毕业生/firstpage/13.png")  no-repeat;
+    background:url("/static/images/毕业生/firstpage/14.png")  no-repeat;
 
     background-size:cover;
     text-align: center;
