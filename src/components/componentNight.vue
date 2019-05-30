@@ -26,7 +26,7 @@
 
 <script>
     export default {
-        name: "componentNight",
+      name: "componentNight",
       data(){
         return {
           index:0,

@@ -16,6 +16,8 @@ import viewPort from '../static/js/viewport'
 // viewPort()
 import '../static/css/reset.css'
 import '../static/css/animate.css'
+import scroll from 'vue-seamless-scroll'
+Vue.use(scroll)
 
 Vue.config.productionTip = false
 
