@@ -4,10 +4,24 @@
       <!--<img src="/static/images/毕业生/消费图片.png" width="400" height="600">-->
     <!--</div>-->
     <div class="text" >
-      <p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">{{this.xm}}</p>
-      <p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">你通过一卡通累计消费{{this.totalconsume}}</p>
+      <div class="common-div-css" style="margin-top: 3.5rem;">
+        <span>{{this.xm}}，</span>
+        <div>
+          你通过一卡通累计消费<span>{{this.totalconsume}}</span>
+          <br/>
+          各学年消费<span>分布:</span>
+        </div>
+
+      </div>
+
+      <!--<p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
+      {{this.xm}}</p>
+      <p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">
+      你通过一卡通累计消费{{this.totalconsume}}</p>
 
       <p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">各学年消费分布</p>
+-->
+
 
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/消费logo左.png" width="400" height="600"></div>
@@ -284,6 +298,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container{
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#FAACA8), to(#717EA2));
     background-size: cover;
@@ -294,7 +309,7 @@
       // width:100%;
     }
     .text{
-      line-height: .6rem;
+      line-height: .8rem;
       font-size: .35rem;
       font-family: Georgia, serif;
 

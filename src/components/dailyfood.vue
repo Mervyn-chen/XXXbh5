@@ -10,13 +10,35 @@
       <img src="/static/images/毕业生/锅底.png" >
     </div>
     <div class="text" style="padding: 1.5rem" >
-      <p style="margin-top: 1rem; ":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">早餐平均消费:{{this.Breakfastavg}} 总消费：{{this.breakfasttotal}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">午餐平均消费:{{this.Lunchavg}}总消费：{{this.Lunchtotal}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">晚餐平均消费:{{this.Dinneravg}}总消费：{{this.Dinnertotal}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">享受健康早餐{{this.breakfastnum}}次</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">饱食美味午餐{{this.Lunchnum}}次</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2.5s">在夜宵摊一掷千金{{this.Dinnernum}}次</p>
+      <div class="common-div-css" style="">
+        早餐平均消费:<span>{{this.Breakfastavg}}元</span>
+        <div>
+          <span>午</span>餐平均消费:<span>{{this.Lunchtotal}}元</span>
+        </div>
+        <span>晚餐</span>平均消费:<span>{{this.Dinnertotal}}元</span>
+        <div>
+          <span>享受健康</span>早餐{{this.breakfastnum}}次
+        </div>
+        <span>饱食美味</span>午餐{{this.Lunchnum}}次
+        <div>
+          在夜宵摊
+          <span>一掷千金</span>{{this.Dinnernum}}次
+        </div>
+      </div>
+      <!--<p style="margin-top: 1rem; ":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
+      早餐平均消费:{{this.Breakfastavg}} 总消费：{{this.breakfasttotal}}</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">
+      午餐平均消费:{{this.Lunchavg}}总消费：{{this.Lunchtotal}}</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">
+      晚餐平均消费:{{this.Dinneravg}}总消费：{{this.Dinnertotal}}</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">
 
+      享受健康早餐{{this.breakfastnum}}次</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">
+      饱食美味午餐{{this.Lunchnum}}次</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2.5s">
+      在夜宵摊一掷千金{{this.Dinnernum}}次</p>
+-->
 
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/三餐logo.png" width="400" height="600"></div>
@@ -73,6 +95,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container{
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#FAACA8), to(#717EA2));
     background-size: cover;
@@ -83,7 +106,7 @@
       // width:100%;
     }
     .text{
-      line-height: .6rem;
+      line-height: 0.8rem;
       font-size: .35rem;
       font-family: Georgia, serif;
 

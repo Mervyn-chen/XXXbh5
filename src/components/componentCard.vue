@@ -10,10 +10,25 @@
 
     </div>
     <div class="text" style="padding: 2rem" >
-      <p style="margin-top:1rem; ":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">一卡通补办 {{this.bknum}}次</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">粗心指数：0{{this.careless}}{{this.carelessms}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">最长陪伴{{this.longestday}}天</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">最短陪伴{{this.shortestday}}天</p>
+      <div class="common-div-css">
+        <span>一卡通补办</span>{{this.bknum}}<span>次</span>
+        <br/>
+        <br/>
+        粗心指数：<span>{{this.careless}}{{this.carelessms}}</span>
+        <div>
+          最长陪伴：<span>{{this.longestday}}天</span>
+        </div>
+        最短陪伴：<span>{{this.shortestday}}天</span>
+      </div>
+
+      <!--<p style="margin-top:1rem; ":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"
+         class="delay-0.5s">一卡通补办 {{this.bknum}}次</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"
+         class="delay-1s">粗心指数：0{{this.careless}}{{this.carelessms}}</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"
+         class="delay-1.5s">最长陪伴{{this.longestday}}天</p>
+      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"
+         class="delay-2s">最短陪伴{{this.shortestday}}天</p>-->
 
 
 
@@ -65,6 +80,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#FAACA8), to(#717EA2));
     background-size: cover;

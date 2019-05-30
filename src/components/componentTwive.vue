@@ -3,20 +3,18 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/阅读经历图片.png" width="400" height="600"></div>
     <div class="text" >
-      <p style="margin-top: 2rem; margin-left: 0rem; padding: 1.7rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
-        借阅的第一本书： {{this.studentinfo.firstbooktime}}
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.7rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s"> 书名:{{this.studentinfo.firstbook}}
-      </p>
-      <p style="margin-top: -3.5rem; margin-left: 0rem; padding: 1.5rem">最喜欢的书目类型：{{this.studentinfo.booktype}} </p>
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">
-        借阅 {{this.studentinfo.booktypenum}}本此类型图书
-        <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">
-      在校总计饱览群书 {{this.studentinfo.booknumber}}本
-        <p   style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">超过{{this.studentinfo.lendpm}} %的毕业生
-        <!--大数据统计-->
-        <!--同届本学霸最喜欢的书目类型:-->
-        <!--在校总计饱览群书 本-->
-      </p>
+      <div class="common-div-css" style="margin-top: 3rem;">
+        借阅的第一本书：<br/>
+        时间:<span>{{this.studentinfo.firstbooktime}}</span>，<br/>
+        书名：<span>{{this.studentinfo.firstbook}}</span>
+        <div>
+          借阅<span>{{this.studentinfo.booktypenum}}</span>本此类型图书
+        </div>
+        在校总计饱览群书<span>{{this.studentinfo.booknumber}}</span>本
+        <div>
+          超过<span>{{this.studentinfo.lendpm}}</span>%的毕业生
+        </div>
+      </div>
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/阅读经历logo.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -83,8 +81,8 @@
     }
 </script>
 
-
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
     background-size: cover;

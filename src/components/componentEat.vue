@@ -2,23 +2,28 @@
   <div class="container">
     <div style="position:absolute;top: 1rem;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/吃/组 10596.png" >
-
-
     </div>
-    <div style="position:absolute;top: 11rem;left: 0rem;right: 0;bottom: 0;">
+    <div style="position:absolute;top: 9.8rem;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/吃/组 10775.png" >
-
     </div>
     <div class="text" style="padding: 2rem" >
-      <p style="margin-top: 0rem; padding: 0.1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">消费金额最多的地点:</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">1.{{this.favoritecanteen1}} 消费{{this.favoritecanteen1je}}元</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">2.{{this.favoritecanteen2}}消费{{this.favoritecanteen2je}} 元</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">3.{{this.favoritecanteen3}}消费{{this.favoritecanteen3je}}元</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">最喜欢吃的摊位</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">1. {{this.favorite1}}消费{{this.favorite1je}}元</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">2.{{this.favorite2}}消费{{this.favorite2je}}元</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">3. {{this.favorite3}}消费{{this.favorite3je}}元</p>
-
+      <div class="common-div-css" style="margin-top: 0.5rem">
+        <span>消费</span>金额最多的地点:
+        <div>
+          1.{{this.favoritecanteen1}}消费<span>{{this.favoritecanteen1je}}</span> 元
+        </div>
+        2.{{this.favoritecanteen2}}消费<span>{{this.favoritecanteen2je}}</span> 元
+        <div>
+          3.{{this.favoritecanteen3}}消费<span>{{this.favoritecanteen3je}}</span> 元
+        </div>
+        <br/>
+        最喜欢<span>吃</span>的摊位：
+        <div>
+          1.{{this.favorite1}}消费{{this.favorite1je}}元
+        </div>
+        2.{{this.favorite2}}消费{{this.favorite2je}}元<br/>
+        3.{{this.favorite3}}消费{{this.favorite3je}}元
+      </div>
 
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/吃.png" width="400" height="600"></div>
@@ -78,6 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container{
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#FAACA8), to(#717EA2));
     background-size: cover;

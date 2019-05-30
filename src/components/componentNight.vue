@@ -5,11 +5,19 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/荣誉成果图片2.png" width="400" height="600"></div>
     <div class="text" >
-      <p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">不知不觉中，积累了蛮多的荣誉成果！
+      <div class="common-div-css" style="  margin-top: 3rem;">
+        不知不觉中，积累了<br/>
+        蛮多的荣誉成果！
+        <br/>
+        <br/>
+        获得<span>{{this.studentinfo.title}}</span>称号
+      </div>
+      <!--<p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
+        不知不觉中，积累了蛮多的荣誉成果！
       </p>
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">{{this.studentinfo.title}}</p>
+      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">{{this.studentinfo.title}}</p>-->
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/荣誉成果篇.png" width="400" height="600"></div>
+    <div style="position:absolute;top: 0rem;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/荣誉成果篇.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
   </div>
@@ -54,6 +62,7 @@
 
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#D8CDE2), to(#B4D6F7));
     background-size: cover;
@@ -62,12 +71,7 @@
       width: 7rem;
       margin: .6rem 0;
     }
-    .text{
-      line-height:0.8rem;
-      font-size: .35rem;
-      font-family: Georgia, serif;
 
-    }
   }
 
 </style>

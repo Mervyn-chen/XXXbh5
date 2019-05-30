@@ -3,10 +3,19 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/早晚时间.png" width="400" height="600"></div>
     <div class="text" >
-      <p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
+      <div class="common-div-css" style="margin-top: 2.6rem;">
+        <span>最早</span>到图书馆的时间:<br/>
+        <span>{{this.studentinfo.earliesttime}}</span>
+        <br/><br/>
+        <div>
+          <span>最晚</span>到图书馆的时间:<br/>
+          <span>{{this.studentinfo.earliesttime}}</span>
+        </div>
+      </div>
+     <!-- <p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
         最早到图书馆的时间:{{this.studentinfo.earliesttime}}
       </p>
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">最晚到图书馆的时间: {{this.studentinfo.latesttime}}</p>
+      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">最晚到图书馆的时间: {{this.studentinfo.latesttime}}</p>-->
 
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/早晚时间logo.png" width="400" height="600"></div>
@@ -62,6 +71,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
     background-size: cover;
