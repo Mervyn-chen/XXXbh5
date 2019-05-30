@@ -10,7 +10,11 @@
         蛮多的荣誉成果！
         <br/>
         <br/>
-        获得<span>{{this.studentinfo.title}}</span>称号
+        <span style="line-height:150%;font-size: 0.35rem">
+        <li v-for="i in title1">{{i.title}} {{i.cs}}次</li>
+          <li v-for="j in title2">{{j.title}} {{j.cs}}次</li>
+        </span>
+
       </div>
       <!--<p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
         不知不觉中，积累了蛮多的荣誉成果！
@@ -25,39 +29,86 @@
 </template>
 
 <script>
-    export default {
-      name: "componentNight",
-      data(){
-        return {
-          index:0,
+  export default {
+    name: "componentNight",
+    data(){
+      return {
+        index:0,
+        xh:'',
+        title1:[],
+        unit1:{
+          title:"",
+          cs:'',
+
+        },
+        title2:[],
+        unit2:{
+          title:"",
+          cs:'',
+        },
+        studentinfo:{
+
           xh:'',
-          studentinfo:{
 
-            xh:'',
-            title:'',
 
-          },
-        }
-      },
-      mounted(){
-        this.selectstudentinfo();
-      },
-      methods:{
-        selectstudentinfo(){
-          // let id=this.account;
-          this.xh=localStorage.getItem('xh');
-          let id=this.xh;
-          this.$ajax.get('http://10.199.180.242:8080/studentHonor/findByXh?Xh='+id)
-            .then(response=>{
-              // this.result = response.data;
-              console.log(response.data);
-              this.studentinfo.title = response.data.title;
-            }).catch(function (err) {
-            console.log(err);
-          })
-        }
-      },
-    }
+
+        },
+      }
+    },
+    mounted(){
+      this.selectstudentinfo();
+    },
+    methods:{
+      selectstudentinfo(){
+        // let id=this.account;
+        this.xh=localStorage.getItem('xh');
+        let id=this.xh;
+        this.$ajax.get('http://10.199.180.242:8080/studentHonor/findByXh?Xh='+id)
+          .then(response=>{
+            // this.result = response.data;
+            console.log(response.data);
+
+            //console.log(response.data.student_jw_honor_scholarships[0]);
+            //this.title2=response.data.student_jw_honor_scholarships[1];
+            //console.log(this.title2);
+            //this.unit2.title=response.data.student_jw_honor_scholarships[1].title;
+            //console.log(this.unit2.title)
+
+            //
+            for(var i=0;i<response.data.student_jw_honor_others.length;i++) {
+              this.unit1.title = response.data.student_jw_honor_others[i].title;
+              this.unit1.cs = response.data.student_jw_honor_others[i].cs;
+              this.title1.push(this.unit1);
+              this.unit1={title:"",
+                cs:'',};
+
+            }
+            console.log(this.title1)
+
+
+
+            for(var j=0;j<response.data.student_jw_honor_scholarships.length;j++)
+            {
+              this.unit2.title=response.data.student_jw_honor_scholarships[j].title;
+              this.unit2.cs=response.data.student_jw_honor_scholarships[j].cs;
+              this.title2.push(this.unit2);
+              this.unit2={
+                title:"",
+                cs:'',
+              };
+
+            }
+            console.log(this.title2)
+
+
+
+
+          }).catch(function (err) {
+          console.log(err);
+        })
+      }
+    },
+  }
 </script>
 
 

@@ -3,18 +3,14 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/图书馆篇1图片.png" width="400" height="700"></div>
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 2.5rem;">
+      <div class="common-div-css" style="margin-top: 4rem;">
         第一次进图书馆的时间:<span>{{this.studentinfo.firstaccess}}</span>
         <div>
           在图书馆埋头苦读<span>{{this.studentinfo.accessnumber}}</span>次
         </div>
-        勤奋好学超过 的毕业生
         <br/>
         <br/>
-        <div>
-          大数据统计，同届本专业学霸在图书馆<br/>
-          埋头苦读 {{this.studentinfo.accessnumber}}次
-        </div>
+
 
       </div>
 <!--      <p style="margin-top: 1rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">

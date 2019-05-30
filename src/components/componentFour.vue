@@ -17,7 +17,10 @@
           他（她）的<span>《{{this.studentinfo.course}}》</span>课程
           <br/>
           给你打了<span>{{this.studentinfo.score}}</span>分
+          <div v-show="visible1"><span>你是潜力股！继续加油！</span></div>
+
         </div>
+      <div v-show="visible1"><span>你是潜力股！继续加油！</span></div>
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业篇3左logo.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -29,6 +32,7 @@ export default {
     name:'componentFour',
     data(){
         return {
+          visible1:false,
             index:0,
           studentinfo:{
             xh: '',
@@ -60,6 +64,10 @@ export default {
           this.studentinfo.sumteacher=response.data.sumteacher;
           this.studentinfo.teacherlikeyou=response.data.teacherlikeyou;
           this.studentinfo.score=response.data.score;
+          if(this.studentinfo.score<70){
+            visible1=true;
+
+          }
         }).catch(function (err) {
         console.log(err);
       })

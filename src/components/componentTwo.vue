@@ -14,11 +14,11 @@
               </div>
               <div>
                 <span>
-                  {{this.studentinfo.rxrq}}
+                  {{this.studentinfo.rxrq}}年9月1日
                 </span>
               </div>
 
-              <span>第</span>一次踏进东华校园
+              <span>第</span>一次踏进东华校园，已在东华度过<span>1367</span>天
             </div>
 
         </div>
@@ -78,7 +78,7 @@
         selectstudentinfo(){
           // let id=this.account;
 
-          let id=150940333;
+          let id=150940317;
           console.log(id);
           this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{

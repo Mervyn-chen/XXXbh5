@@ -7,12 +7,21 @@
       <div class="common-div-css" style="line-height:0.7rem;width: 30px;word-wrap: break-word;left:20%;margin-top: 2rem;">
         <span >十年后，</span>
       </div>
-      <div class="common-div-css" style="margin-top: 5rem;left:20%;">
+      <div class="common-div-css" style="margin-top: 5rem;left:20%;"  v-show="visible1">
         请你回来坐坐
         <div>满满的回忆~</div>
         <br/>
         留下最多回忆的教室：<br/><span>{{this.studentinfo.classroom}}</span><br/>
         在这里上课<span>{{this.studentinfo.coursenumber}}</span>次
+
+      </div>
+      <div class="common-div-css" style="margin-top: 5rem;left:20%;"  v-show="visible2">
+        是否还记得：
+        <div>承载回忆最多的教室？</div>
+        <br/>在这里上过哪些课？
+        <br/>你喜欢坐在哪一排？
+        <br/>记得常回来坐坐
+
 
       </div>
     </div>
@@ -29,6 +38,8 @@
         name: "componentFive",
       data(){
         return {
+          visible1:true,
+          visible2:false,
           index:0,
           studentinfo:{
             classroom: '',
@@ -52,6 +63,11 @@
               console.log(response.data);
               this.studentinfo.classroom = response.data.classroom;
               this.studentinfo.coursenumber=response.data.coursenumber;
+              if(this.studentinfo.classroom==null){
+                visible1=false;
+                visible2=true;
+
+              }
 
             }).catch(function (err) {
             console.log(err);

@@ -4,18 +4,18 @@
       <!--<img src="/static/images/毕业生/消费图片.png" width="400" height="600">-->
     <!--</div>-->
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 3.5rem;">
+      <div class="common-div-css" style="margin-top: 2rem;">
         <span>{{this.xm}}，</span>
         <div>
           你通过一卡通累计消费<span>{{this.totalconsume}}</span>
           <br/>
-          各学年消费<span>分布:</span>
         </div>
 
 
       </div>
 
     </div>
+    <div id="main1" style="margin-top: 5rem;width:100%;height: 300px" ></div>
 
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/消费logo左.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -25,7 +25,9 @@
 </template>
 
 <script>
+  import echarts from 'echarts';
     export default {
+
         name: "consume",
       data(){
         return {
@@ -261,8 +263,10 @@
             //   {value:this.consume2018, name:'2018年消费'},
             //   {value:this.consume2019, name:'2019年消费'},
             // ];
+
             // console.log(servicedata);
             // console.log(111)
+
             var myChart = echarts.init(document.getElementById('main1'));
             // 绘制图表
             myChart.setOption({
@@ -270,11 +274,14 @@
                 text: '各学年累计消费',
                 subtext: '一卡通消费记录采集开始时间为2016年4月',
                 textStyle:{
-                  color:'#000000',
-                  fontSize:25
+                  color: '#663300',
+                  fontSize:20,
+
+
                 },
                 subtextStyle:{
                   color:'#000000',
+                  fontSize:10,
 
                 },
                 x:'center'
@@ -291,7 +298,7 @@
                   label: {
                     normal: {
                       show: true,
-                      position: 'inner',//数据在中间显示
+                      ////数据在中间显示
                       formatter: '{b}: {c}',
                       textStyle : {
                         //fontWeight : 300 ,

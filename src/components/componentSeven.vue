@@ -3,7 +3,7 @@
     <div style="position:absolute;top: 2.5rem;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/考试篇图案.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css">
+      <div class="common-div-css" style="margin-top: 2rem">
         那些曾经让你泪流满面的考试...
         <br/>
         <br/>
@@ -11,10 +11,12 @@
         <div><span>{{this.studentinfo.course}}</span>课程成绩最好</div>
         得分:<span>{{this.studentinfo.score}}</span>
         <br/>
-        <div>
+        <div v-show="dialogVisible0">
           英语四级考试<span>{{this.studentinfo.cet4}}</span>分
         </div>
+        <div v-show="dialogVisible1">
         英语六级考试{{this.studentinfo.cet6}}分
+      </div>
       </div>
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业-考试篇.png" width="400" height="600"></div>

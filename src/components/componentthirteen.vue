@@ -5,7 +5,7 @@
     <div class="text" style="line-height:0.8rem;" >
       <div class="common-div-css" style="margin-top: 1.5rem;">
         陪伴时间最短的一本书:<br/>
-        <span>{{this.studentinfo.shortesttime}}</span>
+        <span>《{{this.studentinfo.shortesttime}}》</span>
         <div>
           借阅时间：<span>{{this.studentinfo.sbook}}</span>天
         </div>
