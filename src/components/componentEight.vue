@@ -15,6 +15,7 @@
       </div>
 
     </div>
+    <div id="greatscore" style="width:100%;height: 300px" ></div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/绩点.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
@@ -23,10 +24,12 @@
 </template>
 
 <script>
+  import echarts from 'echarts'
     export default {
         name: "componentEight",
       data(){
         return {
+          count:{},
           index:0,
           xh:'',
           studentinfo:{
@@ -41,7 +44,11 @@
       },
       mounted(){
         this.selectstudentinfo();
+        this.initpan();
+
+
       },
+
       methods:{
         selectstudentinfo(){
           // let id=this.account;
@@ -60,6 +67,33 @@
             }).catch(function (err) {
             console.log(err);
           })
+        },
+        initpan(){
+          var myChart = echarts.init(document.getElementById('greatscore'));
+          myChart.setOption({
+            tooltip : {
+              formatter: "{a} <br/>{b} : {c}%"
+            },
+            toolbox: {
+              show : true,
+              feature : {
+                mark : {show: true},
+                restore : {show: true},
+                saveAsImage : {show: true}
+              }
+            },
+            series : [
+              {
+                name:'业务指标',
+                type:'gauge',
+                detail : {formatter:'{value}%'},
+                data:[{value: this.studentinfo.gradepoint, name: '平均绩点'}]
+              }
+            ]
+
+
+          })
+
         }
       },
     }

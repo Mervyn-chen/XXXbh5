@@ -50,7 +50,7 @@ export default {
       this.$ajax.get('http://10.199.180.242:8080/t_student_jw_studies/findByXh?Xh='+id)
         .then(response=>{
           // this.result = response.data;
-          console.log(response.data);
+          //console.log(response.data);
           this.studentinfo.firstcourse = response.data.firstcourse;
           this.studentinfo.lastcourse=response.data.lastcourse;
           this.studentinfo.sumscore=response.data.sumscore;

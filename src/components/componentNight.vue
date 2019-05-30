@@ -47,7 +47,7 @@
           // let id=this.account;
           this.xh=localStorage.getItem('xh');
           let id=this.xh;
-          this.$ajax.get('http://10.199.180.242:8080//T_student_jw_honor/findByXh?Xh='+id)
+          this.$ajax.get('http://10.199.180.242:8080/studentHonor/findByXh?Xh='+id)
             .then(response=>{
               // this.result = response.data;
               console.log(response.data);

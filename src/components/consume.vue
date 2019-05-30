@@ -12,18 +12,11 @@
           各学年消费<span>分布:</span>
         </div>
 
+
       </div>
 
-      <!--<p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
-      {{this.xm}}</p>
-      <p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">
-      你通过一卡通累计消费{{this.totalconsume}}</p>
-
-      <p style="margin-top: 0rem; padding: 1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">各学年消费分布</p>
--->
-
-
     </div>
+
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/消费logo左.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/生活篇.png" width="400" height="600"></div>
@@ -37,6 +30,9 @@
       data(){
         return {
           index:0,
+          servicedata:[],
+
+
           favoritecanteen1:'', //第一食堂
           favoritecanteen1je:'',//第一消费金额
           favoritecanteen2:'', //第二食堂
@@ -178,22 +174,31 @@
 
         }
       },
-      mounted(){
+      beforeCreate:function(){
+          listHypervisors(this)
+      },
+      created(){
 
+      },
+      mounted() {
 
         this.selectstudentinfo();
+
+
+
+
+
         //   this.consume2016 = localStorage.getItem('consume2016');
         //   this.consume2017 = localStorage.getItem('consume2017');
         //   this.consume2018 = localStorage.getItem('consume2018');
         //   this.consume2019 = localStorage.getItem('consume2019');
         // console.log(this.consume2016);this.consume2016=localStorage.getItem('consume2016');
-        this.consume2017=localStorage.getItem('consume2017');
-        this.consume2018=localStorage.getItem('consume2018');
-        this.consume2019=localStorage.getItem('consume2019');
 
 
         this.xm=localStorage.getItem('xm');
         console.log(xm);
+
+
 
 
       },
@@ -241,7 +246,78 @@
             localStorage.setItem('kbcspm',this.result.health_pm.kbcspm)
             localStorage.setItem('kbfypm',this.result.health_pm.kbfypm)
             localStorage.setItem('healthsm',this.result.health_pm.sm)
+            // var c2016=this.consume2016;
+            // console.log(c2016);
+            // console.log(this.consume2017)
+            // var c2017=this.consume2017;
+            // console.log(c2017);
+            // var c2018=this.consume2018;
+            // var c2019=this.consume2019;
+            //
+            //
+            // var servicedata=[
+            //   {value:c2016, name:'2016年消费'},
+            //   {value:c2017, name:'2017年消费'},
+            //   {value:this.consume2018, name:'2018年消费'},
+            //   {value:this.consume2019, name:'2019年消费'},
+            // ];
+            // console.log(servicedata);
+            // console.log(111)
+            var myChart = echarts.init(document.getElementById('main1'));
+            // 绘制图表
+            myChart.setOption({
+              title : {
+                text: '各学年累计消费',
+                subtext: '一卡通消费记录采集开始时间为2016年4月',
+                textStyle:{
+                  color:'#000000',
+                  fontSize:25
+                },
+                subtextStyle:{
+                  color:'#000000',
 
+                },
+                x:'center'
+              },
+              // tooltip : {
+              //   trigger: 'item',
+              //   formatter: "{a} <br/>{b} : {c} ({d}%)"
+              // },
+
+              series : [
+                {
+                  //name: '访问来源',
+                  type: 'pie',
+                  label: {
+                    normal: {
+                      show: true,
+                      position: 'inner',//数据在中间显示
+                      formatter: '{b}: {c}',
+                      textStyle : {
+                        //fontWeight : 300 ,
+                        fontSize : 8    //文字的字体大小
+                      },
+                    }
+                  },
+                  radius : '55%',
+                  center: ['50%', '60%'],
+                  data:[
+                    {value:this.consume2016, name:'2016年消费'},
+                    {value:this.consume2017, name:'2017年消费'},
+                    {value:this.consume2018, name:'2018年消费'},
+                    {value:this.consume2019, name:'2019年消费'},
+
+                  ],
+                  itemStyle: {
+                    emphasis: {
+                      shadowBlur: 10,
+                      shadowOffsetX: 0,
+                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                  }
+                }
+              ]
+            });
 
 
 
@@ -252,6 +328,8 @@
 
       },
       methods:{
+
+
         selectstudentinfo(){
           // let id=this.account;
 
@@ -265,9 +343,15 @@
               this.totalconsume=this.result.t_ykt_consume.totalconsume;
               console.log(this.totalconsume);
               this.consume2016=this.result.t_ykt_consume.consume1;
+
               this.consume2017=this.result.t_ykt_consume.consume2;
               this.consume2018=this.result.t_ykt_consume.consume3;
               this.consume2019=this.result.t_ykt_consume.consume4;
+              console.log(this.consume2016);
+              console.log(this.consume2017);
+              console.log(this.consume2018);
+              console.log(this.consume2019);
+
 
               // this.studentinfo.hispitalrank = response.data.hispitalrank;
               // this.studentinfo.xh=response.data.xh;
@@ -294,8 +378,11 @@
           })
         }
       },
+
     }
 </script>
+
+
 
 <style lang="scss" scoped>
   @import '../../static/css/commdiv.css';
@@ -313,6 +400,10 @@
       font-size: .35rem;
       font-family: Georgia, serif;
 
+    }
+    .highcharts-container {
+      width: 800px;
+      height: 400px;
     }
 
   }
