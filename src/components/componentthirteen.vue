@@ -1,17 +1,21 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: -1rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/借阅时长图片.png" width="400" height="600"></div>
-    <div class="text" >
-      <p style="margin-top: 0.5rem; margin-left: 0rem; padding: 1.5rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
-        陪伴时间最短的一本书：《{{this.studentinfo.shortesttime}}》
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">借阅时间：  {{this.studentinfo.sbook}}天
-      <p>
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">平均借阅时间{{this.studentinfo.averagetime}} 天 <p>
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">
-        陪伴时间最长的一本书:《{{this.studentinfo.longesttime}}》
-      <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">借阅时间 ：{{this.studentinfo.lbook}}天
-      </p>
+      <img src="/static/images/毕业生/借阅时长图片.png" width="380" height="650"></div>
+    <div class="text" style="line-height:0.8rem;" >
+      <div class="common-div-css" style="margin-top: 1.5rem;">
+        陪伴时间最短的一本书:<br/>
+        <span>{{this.studentinfo.shortesttime}}</span>
+        <div>
+          借阅时间：<span>{{this.studentinfo.sbook}}</span>天
+        </div>
+        平均借阅时间：<span>{{this.studentinfo.sbook}}</span>天
+        <br/>
+        <br/>
+        <span>陪伴</span>时间最长的一本书:<br/><span>《{{this.studentinfo.longesttime}}》</span>
+        <br/>
+        借阅时间 ：<span>{{this.studentinfo.lbook}}</span>天
+      </div>
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/借阅时长.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -77,6 +81,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
     background-size: cover;
@@ -85,12 +90,12 @@
       width: 7rem;
       margin: .6rem 0;
     }
-    .text{
+/*    .text{
       line-height:0.8rem;
       font-size: .35rem;
       font-family: Georgia, serif;
 
-    }
+    }*/
   }
 
 </style>

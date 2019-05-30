@@ -1,0 +1,21 @@
+.common-div-css{
+  font-size:14pt;
+  margin-top: 1rem;
+  text-align : left;
+  position: fixed;
+  left: 27%;
+  font-family:Microsoft JhengHei;
+  letter-spacing: 2px;
+  color: #707070;
+
+}
+.common-div-css span{
+  color: #663300;font-weight: 500;font-size:20pt;
+}
+
+.text{
+  line-height:0.5rem;
+  font-size: .35rem;
+  font-family: Georgia, serif;
+
+}

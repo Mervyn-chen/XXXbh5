@@ -101,6 +101,7 @@
 
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#D8CDE2), to(#B4D6F7));
     background-size: cover;

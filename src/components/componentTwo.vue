@@ -4,9 +4,22 @@
         <img src="/static/images/毕业生/欢迎来到东华.png" width="400" height="600"></div>
 
 
-        <div class="text" >
+        <div class="text" ><!--SimHei   Ink Free   cursive-->
 
-            <p style="margin-top: 3rem; padding: 1.5rem">{{this.studentinfo.xm}} , 你于{{this.studentinfo.rxrq}}第一次踏进东华校园</p>
+            <div class="common-div-css" style="margin-top: 3rem">
+              <div>   <!--663300-->
+                <span>{{this.studentinfo.xm}}
+                </span>,
+                你于
+              </div>
+              <div>
+                <span>
+                  {{this.studentinfo.rxrq}}
+                </span>
+              </div>
+
+              <span>第</span>一次踏进东华校园
+            </div>
 
         </div>
 
@@ -95,6 +108,7 @@
 }
 </script>
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
     .container{
         //background-color: #F3F3F3 ;
       background:-webkit-gradient(linear, 0 0, 0 100%, from(#D8CDE2), to(#B4D6F7));
@@ -106,7 +120,8 @@
             // width:100%;
         }
         .text{
-            line-height: .6rem;
+            color: #707070;
+            line-height: .8rem;
             font-size: .35rem;
           font-family: Georgia, serif;
 

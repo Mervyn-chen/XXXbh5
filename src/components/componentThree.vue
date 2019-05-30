@@ -1,3 +1,4 @@
+<!--import '../static/css/commdiv.css'-->
 <template>
     <div class="container">
       <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
@@ -88,6 +89,7 @@ export default {
         font-family: Georgia, serif;
 
       }
+
 
     }
 </style>

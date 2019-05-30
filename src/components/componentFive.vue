@@ -1,21 +1,25 @@
 <template>
   <div class="container">
+
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/学业篇图片4 .png" width="400" height="600"></div>
     <div class="text" >
-      <p style="margin-top: -2rem; margin-left: -3rem; padding: 5rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">十年后，
-        <p>
-        <p style="margin-top: -6rem; margin-left: 0rem; padding: 2rem">请你回来坐坐
-        满满的回忆~<p>
-      <p style="margin-top: -4rem; margin-left: 0rem; padding: 2rem">
-        留下最多回忆的教室：{{this.studentinfo.classroom}}
-        在这里上课 {{this.studentinfo.coursenumber}}次
-        </p>
+      <div class="common-div-css" style="line-height:0.7rem;width: 30px;word-wrap: break-word;left:20%;margin-top: 2rem;">
+        <span >十年后，</span>
+      </div>
+      <div class="common-div-css" style="margin-top: 5rem;left:20%;">
+        请你回来坐坐
+        <div>满满的回忆~</div>
+        <br/>
+        留下最多回忆的教室：<br/><span>{{this.studentinfo.classroom}}</span><br/>
+        在这里上课<span>{{this.studentinfo.coursenumber}}</span>次
 
+      </div>
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业篇4左.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
+      <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600">
+    </div>
   </div>
 
 </template>
@@ -63,10 +67,11 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
   .container{
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#D8CDE2), to(#B4D6F7));
     background-size:cover;
-    padding:.8rem 0;
+    //padding:.8rem 0;
 
 
     .text{

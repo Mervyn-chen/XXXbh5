@@ -3,17 +3,21 @@
     <div style="position:absolute;top: 1rem ;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/学业篇图片3 .png" width="400" height="600"></div>
     <div class="text" >
-      <p style="margin-top: -1rem;  padding: 1.3rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">那些年，遇到的老师们
-        {{this.studentinfo.sumteacher}}个老师为你上课
-        <br>授业最多的老师：{{this.studentinfo.favoriteteacher}}
-        <br>选过 {{this.studentinfo.coursenumber}}次他/（她）的课
-        {{this.studentinfo.teacherlikeyou}}老师很欣赏你,
-
-      他（她）的《{{this.studentinfo.course}}》课程
-        给你打了{{this.studentinfo.score}}分</p>
-
-
-
+        <div class="common-div-css" style="margin-top: 2.4rem;left:23%">
+          <div>那些年，遇到的老师们</div>
+          <div>
+            <span>{{this.studentinfo.sumteacher}}</span>
+            个老师为你上课
+          </div>
+          <div>
+            授业最多的老师：<span>{{this.studentinfo.favoriteteacher}}</span>
+          </div>
+          <span>{{this.studentinfo.teacherlikeyou}}</span>老师很欣赏你,
+          <br/>
+          他（她）的<span>《{{this.studentinfo.course}}》</span>课程
+          <br/>
+          给你打了<span>{{this.studentinfo.score}}</span>分
+        </div>
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业篇3左logo.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -109,10 +113,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  @import '../../static/css/commdiv.css';
     .container {
       background:-webkit-gradient(linear, 0 0, 0 100%, from(#D8CDE2), to(#B4D6F7));
       background-size: cover;
-      padding: .8rem 0;
+     // padding: .1rem 0;
 
       .text {
         line-height: 0.8rem;
@@ -120,7 +125,6 @@ export default {
         font-family: Georgia, serif;
 
       }
-
 
     }
 </style>
