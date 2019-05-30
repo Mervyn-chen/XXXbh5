@@ -8,20 +8,21 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     </div>
 
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 5rem;left: 10%;">
-        <vue-seamless-scroll :data="listData" class="seamless-warp">
+      <div class="common-div-css" style="margin-top: 5rem;left: 10%;font-size:12pt;">
+        <vue-seamless-scroll :data="listData"  class="seamless-warp" :class-option="classOption">
           <ul class="item">
             <li v-for="item in listData">
-              <span class="title" v-text="item.message"></span>
-              <span class="date" v-text="item.mtime"></span>
+              <div style="font-weight: 600">{{item[1]}}:</div>
+              {{item[0]}}
+            <!--  <span class="title" v-text="item[1]"></span>：<br>
+              <span class="date" v-text="item[0]"></span>-->
             </li>
           </ul>
         </vue-seamless-scroll>
 
         <div>
-          <textarea placeholder="100字以内" maxlength="100" style="height: 0.8rem;width: 5.2rem;margin-top: 0.8rem" @input="descInput" v-model="desc" />
-          <button type="button" v-on:click="save()" style="vertical-align:top;margin-top: 0.8rem;margin-left: 0rem">留言</button>
-          <!--  <span style="margin-bottom: 6rem"></span>-->
+          <textarea placeholder="100字以内" id="leaveMessageText" maxlength="100" style="height: 0.8rem;width: 5.2rem;margin-top: 0.8rem" @input="descInput" v-model="desc" />
+          <button type="button" v-on:click="save()" style="vertical-align:top;margin-top: 0.8rem;margin-left: -0.15rem">留言</button>
         </div>
 
       </div>
@@ -35,75 +36,6 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 </template>
 
 <script>
-
-  //import { Swipe, SwipeItem,cell} from 'vant';
-  /*   export default {
-         name: "leavemessage",
-       data:{
-         return{
-           txtVal: 0,
-           desc:"",
-           animate:true,
-           list:[
-             {"name":"于先生1","site":"北京门头沟区1","gsmc":"柠檬树装饰1"},
-             {"name":"于先生2","site":"北京门头沟区2","gsmc":"柠檬树装饰2"},
-             {"name":"于先生3","site":"北京门头沟区3","gsmc":"柠檬树装饰3"},
-             {"name":"于先生4","site":"北京门头沟区4","gsmc":"柠檬树装饰4"},
-             {"name":"于先生5","site":"北京门头沟区5","gsmc":"柠檬树装饰5"},
-             {"name":"于先生6","site":"北京门头沟区6","gsmc":"柠檬树装饰6"},
-             {"name":"于先生7","site":"北京门头沟区7","gsmc":"柠檬树装饰7"},
-             {"name":"于先生8","site":"北京门头沟区8","gsmc":"柠檬树装饰8"},
-             {"name":"于先生9","site":"北京门头沟区9","gsmc":"柠檬树装饰9"},
-             {"name":"于先生10","site":"北京门头沟区10","gsmc":"柠檬树装饰10"},
-             {"name":"于先生11","site":"北京门头沟区11","gsmc":"柠檬树装饰11"}
-           ]
-         }
-
-       },
-         /!*data(){
-           return {
-             index:0,
-             studentinfo:{
-
-               xh:'',
-               title:'',
-
-             },
-           }
-         },*!/
-         mounted(){
-           setInterval (this.selectLeaveMessageInfo, 2000)
-         },
-         methods:{
-           selectLeaveMessageInfo(){
-             let con1 = this.$refs.rollul;
-             con1[0].style.marginTop='30px';
-             this.animate=!this.animate;
-             var that = this; // 在异步函数中会出现this的偏移问题，此处一定要先保存好this的指向
-             setTimeout(function(){
-               that.list.push(that.list[0]);
-               that.list.shift();
-               con1[0].style.marginTop='0px';
-               that.animate=!that.animate;  // 这个地方如果不把animate 取反会出现消息回滚的现象，此时把ul 元素的过渡属性取消掉就可以完美实现无缝滚动的效果了
-             },0)
-
-
-
-
-            /!*
-     *!/
-
-
-
-           }
-         },
-
-
-     }*/
-
-
-
-
   export default {
     name: "leavemessage",
     data(){
@@ -111,39 +43,20 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         animate:true,
         txtVal: 0,
         desc:"",
-        //component:{vueSeamlessScroll},
-        listData: [/*{
-          'title': '无缝滚动第一行无缝滚动第一行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第二行无缝滚动第二行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第三行无缝滚动第三行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第四行无缝滚动第四行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第五行无缝滚动第五行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第六行无缝滚动第六行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第七行无缝滚动第七行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第八行无缝滚动第八行',
-          'date': '2017-12-16'
-        }, {
-          'title': '无缝滚动第九行无缝滚动第九行',
-          'date': '2017-12-16'
-        }*/]
+        listData: []
       }
     },
-    mounted(){
-      setInterval (this.selectLeaveMessageInfo, 2000)
+    created(){
+      this.selectLeaveMessageInfo()
+    }, computed: {
+      classOption () {
+        return {
+          step: 0.5,
+          limitMoveNum: 1,//这个是修改moveSwitch()之前的使用方法，这里的数值指的是数据条数
+          openTouch: false,
+          hoverStop: false,
+        }
+      }
     },
     methods:{
       selectLeaveMessageInfo(){
@@ -161,6 +74,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
       descInput(){
         this.txtVal = this.desc.length;
       },save(){
+        $("#leaveMessageText").val("");
         this.xh=localStorage.getItem('xh');
         let Xh=this.xh;
         let message=this.desc;
@@ -171,7 +85,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
             message:message
           },
           function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
+           // alert("Data: " + data + "\nStatus: " + status);
           });
       }
     },
