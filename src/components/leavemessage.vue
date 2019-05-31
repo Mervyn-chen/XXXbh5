@@ -62,6 +62,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 </template>
 
 <script>
+  import { Toast } from 'mint-ui'
   export default {
     name: "leavemessage",
     data(){
@@ -100,13 +101,14 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
       descInput(){
         this.txtVal = this.desc.length;
       },save(){
-        let Toast = this.$Toast;
+        //let Toast = this.$Toast;
         //$("#leaveMessageText").val("");
         this.xh=localStorage.getItem('xh');
         let Xh=this.xh;
         let message=this.desc;
+
         if (message.length>20){
-          Toast.fail("20字以内");
+          Toast("20字以内");
           return;
         }
         this.desc="";
@@ -117,7 +119,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
           },
           function(data,status){
             // alert("Data: " + data + "\nStatus: " + status);
-            Toast.success("留言成功");
+            Toast("留言成功");
           });
       }
     },
