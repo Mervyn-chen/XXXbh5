@@ -82,7 +82,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     methods:{
       selectLeaveMessageInfo(){
         this.xh=localStorage.getItem('xh');
-        this.$ajax.get('http://10.199.180.242:8080/massage/findByXh?Xh='+this.xh)
+        this.$ajax.get('http://10.199.180.242:8080/message/findAllMessage')
           .then(response=>{
             // this.result = response.data;
             console.log(response.data);
@@ -101,7 +101,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         let message=this.desc;
 
 
-        $.post("http://10.199.180.242:8080/massage/save",
+        $.post("http://10.199.180.242:8080/message/save",
           {
             Xh:Xh,
             message:message
