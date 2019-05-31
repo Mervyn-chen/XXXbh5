@@ -12,7 +12,8 @@
         <div>满满的回忆~</div>
         <br/>
         留下最多回忆的教室：<br/><span>{{this.studentinfo.classroom}}</span><br/>
-        在这里上课<span>{{this.studentinfo.coursenumber}}</span>次
+        在这里上课<span>{{this.studentinfo.coursenumber}}</span>次<br/>
+        你喜欢坐在哪一排？
 
       </div>
       <div class="common-div-css" style="margin-top: 5rem;left:20%;"  v-show="visible2">

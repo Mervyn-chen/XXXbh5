@@ -78,7 +78,7 @@
         selectstudentinfo(){
           // let id=this.account;
 
-          let id=150940317;
+          let id=150940333;
           console.log(id);
           this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{

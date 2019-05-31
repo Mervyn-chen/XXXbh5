@@ -11,7 +11,7 @@
     </div>
     <div class="text" style="padding: 2rem" >
       <div class="common-div-css">
-        <span>一卡通补办</span>{{this.bknum}}<span>次</span>
+        <span>一卡通</span>补办<span>{{this.bknum}}</span>次
         <br/>
         <br/>
         粗心指数：<span>{{this.careless}}{{this.carelessms}}</span>

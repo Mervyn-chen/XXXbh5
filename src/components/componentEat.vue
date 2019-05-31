@@ -12,10 +12,10 @@
         <div>
           1.{{this.favoritecanteen1}}消费<span>{{this.favoritecanteen1je}}</span> 元
         </div>
-        2.{{this.favoritecanteen2}}消费<span>{{this.favoritecanteen2je}}</span> 元
-        <div>
-          3.{{this.favoritecanteen3}}消费<span>{{this.favoritecanteen3je}}</span> 元
-        </div>
+        <!--2.{{this.favoritecanteen2}}消费<span>{{this.favoritecanteen2je}}</span> 元-->
+        <!--<div>-->
+          <!--3.{{this.favoritecanteen3}}消费<span>{{this.favoritecanteen3je}}</span> 元-->
+        <!--</div>-->
         <br/>
         最喜欢<span>吃</span>的摊位：
         <div>

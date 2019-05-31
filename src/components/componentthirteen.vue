@@ -29,6 +29,9 @@
         name: "componentthirteen",
       data(){
         return {
+          thirteenvisible1:true,
+          thirteenvisible2:false,
+          thirteenvisible3:false,
           index:0,
           xh:'',
           studentinfo:{

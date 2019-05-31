@@ -9,9 +9,11 @@
       <div class="common-div-css" style="margin-top: 0.5rem">
         校内久居地:<span>{{this.ssname}}</span>宿舍<br/>
         洗澡次数:<span>{{this.bathnum}}</span>
-        <br/><br/>
+        <br/>
         个人清洁排名<span>{{this.bathpm}}</span><br/>
         个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span>
+        军训、上课、自习、同吃同住的四年，<br/>
+        四年的青春，四年的感情，给了各自珍惜的理由。
       </div>
 
     <!--  <p style="margin-top: 0rem; padding: 0.1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"

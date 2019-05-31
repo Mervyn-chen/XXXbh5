@@ -4,7 +4,7 @@
       <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
         <img src="/static/images/毕业生/学院篇2图片.png" width="400" height="650"></div>
         <div class="text " style="padding: 1.5rem;line-height:1rem">
-          <div>
+          <div v-show="visible6">
               <div class="common-div-css" style="left: 25%;">还记得第一节课和最后一节课吗?
                 <div>
                   第一节课：<br/><span>{{this.studentinfo.firstcourse}}</span>
@@ -14,6 +14,9 @@
                 </div>
                 <div>
                   合计上课：<span>{{this.studentinfo.sumcourse}}</span>门课程
+                </div>
+                <div v-show="visible4">
+                  共计<span>{{this.studentinfo.sumscore}}</span>学分
                 </div>
               </div>
           </div>
@@ -29,6 +32,8 @@ export default {
     name:'componentThree',
   data(){
     return {
+      visible6:true,
+      visible4:true,
       studentinfo:{
         firstcourse: '',
         sumcourse: '',
@@ -55,6 +60,12 @@ export default {
           this.studentinfo.lastcourse=response.data.lastcourse;
           this.studentinfo.sumscore=response.data.sumscore;
           this.studentinfo.sumcourse=response.data.sumcourse;
+          if(response.data==null){
+            visible6=false;
+          };
+          if(this.studentinfo.sumscore==null){
+            visible4=false;
+          }
         }).catch(function (err) {
         console.log(err);
       })

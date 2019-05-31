@@ -3,7 +3,11 @@
     <div style="position:absolute;top: 2.5rem;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/考试篇图案.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 2rem">
+      <div class="common-div-css" style="margin-top: 2rem" v-show="sevenvisible1">
+        系统未采集到您的信息……
+      </div>
+
+      <div class="common-div-css" style="margin-top: 2rem" v-show="sevenvisible2">
         那些曾经让你泪流满面的考试...
         <br/>
         <br/>
@@ -33,6 +37,8 @@
         return {
           index:0,
           xh:'',
+          sevenvisible1:false,
+          sevenvisible2:true,
           dialogVisible0:true,
           dialogVisible1:true,
           studentinfo:{
@@ -55,10 +61,11 @@
           // let id=this.account;
           this.xh=localStorage.getItem('xh');
           let id=this.xh;
-          this.$ajax.get('http://10.199.180.242:8080//T_student_jw_exam/findByXh?Xh='+id)
+          this.$ajax.get('http://10.199.180.242:8080/t_student_jw_exam/findByXh?Xh='+id)
             .then(response=>{
               // this.result = response.data;
               console.log(response.data);
+
               this.studentinfo.computerlevel = response.data.computerlevel;
               if(response.data.cet4==null){
                 this.dialogVisible0=false;
@@ -77,6 +84,14 @@
               this.studentinfo.course=response.data.course;
               this.studentinfo.coursenumber=response.data.coursenumber;
               this.studentinfo.score=response.data.score;
+              if(response.data.coursenumber==null)
+              {
+                this.sevenvisible1=true;
+                  this.sevenvisible2=false;
+              }else{
+                this.sevenvisible1=false;
+                this.sevenvisible2=true;
+              }
 
             }).catch(function (err) {
             console.log(err);

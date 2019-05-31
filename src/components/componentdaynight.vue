@@ -9,8 +9,10 @@
         <br/><br/>
         <div>
           <span>最晚</span>到图书馆的时间:<br/>
-          <span>{{this.studentinfo.earliesttime}}</span>
+          <span>{{this.studentinfo.latesttime}}</span>
         </div>
+        <div style="margin-top: 3rem">读书的意义，不在于我们看了什么，
+          <br/>而在于它使我们变成更好的自己。</div>
       </div>
      <!-- <p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
         最早到图书馆的时间:{{this.studentinfo.earliesttime}}

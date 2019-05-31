@@ -4,10 +4,10 @@
       <img src="/static/images/毕业生/学业篇图片3 .png" width="400" height="600"></div>
     <div class="text" >
         <div class="common-div-css" style="margin-top: 2.4rem;left:23%">
-          <div>那些年，遇到的老师们</div>
+          <div></div>
           <div>
-            <span>{{this.studentinfo.sumteacher}}</span>
-            个老师为你上课
+            四年里有<span>{{this.studentinfo.sumteacher}}</span>
+            位老师为你上课
           </div>
           <div>
             授业最多的老师：<span>{{this.studentinfo.favoriteteacher}}</span>

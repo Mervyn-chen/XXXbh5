@@ -4,9 +4,9 @@
       <img src="/static/images/毕业生/绩点篇.png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 3.05rem; left: 24%;">
-        <div style="letter-spacing: 0px;">听说，大学里</div>
-        有一个令人闻风丧胆的指标？
-        <br/><br/>
+        <div style="letter-spacing: 0px;">四年时光，画出了GPA方向</div>
+        无论指向何方，都记录了青春和成长...
+        <br/>
         <!--平均绩点:<span>{{this.studentinfo.gradepoint}}</span>-->
         <div>
           学霸指数:<span>{{this.studentinfo.xbzs}}{{this.studentinfo.xbsm}}</span>
@@ -80,7 +80,7 @@
 
               {
                 min:0,
-                max:4.8,
+                max:5,
                 splitNumber:10,
 
                 type:'gauge',

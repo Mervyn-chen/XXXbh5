@@ -6,8 +6,8 @@
       <img src="/static/images/毕业生/荣誉成果图片2.png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="  margin-top: 3rem;">
-        不知不觉中，积累了<br/>
-        蛮多的荣誉成果！
+        收获季节，<br/>
+       再回首曾经的荣誉成果：
         <br/>
         <br/>
         <span style="line-height:150%;font-size: 0.35rem">

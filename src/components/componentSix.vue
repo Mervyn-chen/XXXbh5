@@ -3,6 +3,9 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/著作篇图片.png" width="400" height="600"></div>
     <div class="text" >
+      系统未采集到您的信息……
+    </div>
+    <div class="text" >
       <p style="margin-top: -2rem; margin-left: -3rem; padding: 5rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">研究生
       <p>
       <p style="margin-top: -6rem; margin-left: 0rem; padding: 2rem">一路走过汗水都变为成果 <p>
@@ -26,6 +29,8 @@
         name: "componentSix",
       data(){
         return {
+          sixvisible1:false,
+          sixvisible2:true,
           index:0,
           xh:'',
           studentinfo:{

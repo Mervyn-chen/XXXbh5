@@ -20,14 +20,35 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
           </ul>
         </vue-seamless-scroll>
 
-        <div>
-          <textarea placeholder="100字以内" id="leaveMessageText" maxlength="100" style="height: 0.8rem;width: 5.2rem;margin-top: 0.8rem" @input="descInput" v-model="desc" />
-          <button type="button" v-on:click="save()" style="vertical-align:top;margin-top: 0.8rem;margin-left: -0.15rem">留言</button>
-        </div>
+
+
+        <!--<div>-->
+
+
+
+          <!--<textarea placeholder="100字以内" id="leaveMessageText" maxlength="100" style="height: 0.8rem;width: 5.2rem;margin-top: 0.8rem" @input="descInput" v-model="desc" />-->
+          <!--<mt-button size="small"  type="primary" v-on:click="save()">发送</mt-button>-->
+        <!--</div>-->
 
       </div>
 
+
+
     </div>
+    <van-cell-group style="margin-top: 11rem">
+      <van-field
+        v-model="desc"
+        label="留言"
+        type="textarea"
+        placeholder="请输入留言(20字以内)"
+        rows="1"
+        autosize
+      >
+      <van-button slot="button" size="small" type="primary" v-on:click="save()">发送</van-button>
+      </van-field>
+    </van-cell-group>
+
+
 
   </div>
 
@@ -78,6 +99,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         this.xh=localStorage.getItem('xh');
         let Xh=this.xh;
         let message=this.desc;
+
 
         $.post("http://10.199.180.242:8080/massage/save",
           {

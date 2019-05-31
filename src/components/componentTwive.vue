@@ -3,7 +3,10 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/阅读经历图片.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 3rem;">
+      <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisibe1">
+        “读一本好书，就像和许多高尚的人谈话”——歌德，与君共勉！
+      </div>>
+      <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisible2">
         借阅的第一本书：<br/>
         时间:<span>{{this.studentinfo.firstbooktime}}</span>，<br/>
         书名：<span>{{this.studentinfo.firstbook}}</span>
@@ -27,6 +30,8 @@
         name: "componentTwive",
       data(){
         return {
+          twelvevisibe1:false,
+          twelvevisible2:true,
           index:0,
           xh:'',
           studentinfo:{
@@ -59,6 +64,11 @@
           .then(response=>{
             // this.result = response.data;
             console.log(response.data);
+            if(response.data==null)
+            {
+              twelvevisibe1=true;
+                twelvevisible2=false;
+            }
             this.studentinfo.firstbooktime = response.data.firstbooktime;
             this.studentinfo.xh=response.data.xh;
             this.studentinfo.booknumber=response.data.booknumber;

@@ -11,11 +11,11 @@
     </div>
     <div class="text" style="padding: 1.5rem" >
       <div class="common-div-css" style="">
-        早餐平均消费:<span>{{this.Breakfastavg}}元</span>
+        早餐平均消费:<span>{{this.Breakfastavg}}元</span>总消费<span>{{this.breakfasttotal}}</span>元
         <div>
-          <span>午</span>餐平均消费:<span>{{this.Lunchtotal}}元</span>
+          <span>午</span>餐平均消费:<span>{{this.Lunchavg}}元</span>总消费<span>{{this.Lunchtotal}}</span>元
         </div>
-        <span>晚餐</span>平均消费:<span>{{this.Dinnertotal}}元</span>
+        <span>晚餐</span>平均消费:<span>{{this.Dinneravg}}元</span>总消费<span>{{this.Dinnertotal}}</span>元
         <div>
           <span>享受健康</span>早餐{{this.breakfastnum}}次
         </div>
