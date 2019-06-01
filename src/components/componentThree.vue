@@ -1,8 +1,8 @@
 <!--import '../static/css/commdiv.css'-->
 <template>
     <div class="container">
-      <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-        <img src="/static/images/毕业生/学院篇2图片.png" width="400" height="650"></div>
+      <div style="position:absolute;top: -2rem;left: 0rem;right: 0;bottom: 0;">
+        <img src="/static/images/毕业生/吃/4.png" ></div>
         <div class="text " style="padding: 1.5rem;line-height:1rem">
           <div v-show="visible6">
               <div class="common-div-css" style="left: 25%;">还记得第一节课和最后一节课吗?
@@ -21,6 +21,8 @@
               </div>
           </div>
         </div>
+      <div style="position:absolute;top: 11rem;left: 0rem;right: 0;bottom: 0;">
+        <img src="/static/images/毕业生/吃/3.png" ></div>
       <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业篇2左边logo.png" width="400" height="600"></div>
       <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
         <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
@@ -61,10 +63,10 @@ export default {
           this.studentinfo.sumscore=response.data.sumscore;
           this.studentinfo.sumcourse=response.data.sumcourse;
           if(response.data==null){
-            visible6=false;
+            this.visible6=false;
           };
           if(this.studentinfo.sumscore==null){
-            visible4=false;
+            this.visible4=false;
           }
         }).catch(function (err) {
         console.log(err);

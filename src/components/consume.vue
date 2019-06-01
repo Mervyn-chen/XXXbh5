@@ -15,7 +15,7 @@
       </div>
 
     </div>
-    <div id="main1" style="margin-top: 5rem;width:100%;height: 300px" ></div>
+    <div id="main1" style="margin-top: 6rem;margin-left:1.5rem;width: 300px;height: 250px" ></div>
 
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/消费logo左.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -266,65 +266,171 @@
 
             // console.log(servicedata);
             // console.log(111)
-
+            //直方图的绘制
             var myChart = echarts.init(document.getElementById('main1'));
-            // 绘制图表
-            myChart.setOption({
-              title : {
-                text: '各学年累计消费',
-                subtext: '一卡通消费记录采集开始时间为2016年4月',
-                textStyle:{
-                  color: '#663300',
-                  fontSize:20,
+            myChart.setOption(
+              {
+                title:{
+                  text:'各学年累计消费',
+                  textStyle:{
+                    color: '#663300',
+                    fontSize:20,
+                    position:'center'
+                  },
+                  subtext: '一卡通消费记录采集开始时间为2016年4月',
+                  subtextStyle:{
+                          color:'#000000',
+                          fontSize:10,
 
-
+                  },
                 },
-                subtextStyle:{
-                  color:'#000000',
-                  fontSize:10,
 
+                // tooltip: {
+                //   // 触发类型（数据项，坐标轴，不触发） ['item', 'axis', 'none']
+                //   trigger: 'none',
+                //   // 坐标轴指示器
+                //   axisPointer: {
+                //     // 指示器类型(直线，阴影，十字) ['line', 'shadow', 'cross']
+                //     type: 'shadow',
+                //     // 坐标轴指示器的文本标签。
+                //     label: {
+                //       // 坐标轴指示器背景色
+                //       backgroundColor: '#283b56'
+                //     }
+                //   }
+                // },
+
+
+                xAxis:{
+                  data:["大一","大二","大三","大四"]
                 },
-                x:'center'
-              },
-              // tooltip : {
-              //   trigger: 'item',
-              //   formatter: "{a} <br/>{b} : {c} ({d}%)"
-              // },
-
-              series : [
-                {
-                  //name: '访问来源',
-                  type: 'pie',
-                  label: {
-                    normal: {
-                      show: true,
-                      ////数据在中间显示
-                      formatter: '{b}: {c}',
-                      textStyle : {
-                        //fontWeight : 300 ,
-                        fontSize : 8    //文字的字体大小
-                      },
+                yAxis: {
+                  type: 'value',
+                  // min: 0,
+                  // max: 4000,
+                  //interval: 1000,
+                  //grid 组件离容器左侧的距离。默认值是10%。
+                  grid: {
+                    left: 35
+                  },
+                  //y轴颜色
+                  axisLine: {
+                    lineStyle: {
+                      //color: '#fff'
                     }
                   },
-                  radius : '55%',
-                  center: ['50%', '60%'],
-                  data:[
-                    {value:this.consume2016, name:'2016年消费'},
-                    {value:this.consume2017, name:'2017年消费'},
-                    {value:this.consume2018, name:'2018年消费'},
-                    {value:this.consume2019, name:'2019年消费'},
-
-                  ],
-                  itemStyle: {
-                    emphasis: {
-                      shadowBlur: 10,
-                      shadowOffsetX: 0,
-                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                  axisLabel:{
+                    margin: 0,
+                  },
+                  //坐标轴内线的样式
+                  splitLine: {
+                    lineStyle: {
+                      color: '#666',
+                      type:'dashed'//虚线
                     }
                   }
-                }
-              ]
-            });
+                },
+
+                series:[{
+                  name:'',
+                  // 直方图
+                  type:'bar',
+                  barWidth:30,
+                  itemStyle: {
+                    normal: {
+                      //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                      color: function(params) {
+                        // build a color map as your need.
+                        var colorList = [
+                          '#C1232B','#B5C334','#FCCE10','#E87C25'
+                        ];
+                        return colorList[params.dataIndex]
+                      },
+                      //以下为是否显示，显示位置和显示格式的设置了
+                      label: {
+                        show: true,
+                        position: 'top',
+                        textStyle: { //数值样式
+                          color: 'black',
+                          fontSize: 10
+                        },
+//                             formatter: '{c}'
+                        //formatter: '{b}\n{c}'
+                      }
+                    }
+                  },
+                  // barGap: '-100%', // Make series be overlap
+                  // barCategoryGap: 15,
+                  data:[this.consume2016,this.consume2017,this.consume2018,this.consume2019]
+
+                },
+                ],
+
+
+
+              }
+            );
+
+
+            //饼图的绘制
+            // var myChart = echarts.init(document.getElementById('main1'));
+            // // 绘制图表
+            // myChart.setOption({
+            //   title : {
+            //     text: '各学年累计消费',
+            //     subtext: '一卡通消费记录采集开始时间为2016年4月',
+            //     textStyle:{
+            //       color: '#663300',
+            //       fontSize:20,
+            //
+            //
+            //     },
+            //     subtextStyle:{
+            //       color:'#000000',
+            //       fontSize:10,
+            //
+            //     },
+            //     x:'center'
+            //   },
+            //   // tooltip : {
+            //   //   trigger: 'item',
+            //   //   formatter: "{a} <br/>{b} : {c} ({d}%)"
+            //   // },
+            //
+            //   series : [
+            //     {
+            //       //name: '访问来源',
+            //       type: 'pie',
+            //       label: {
+            //         normal: {
+            //           show: true,
+            //           ////数据在中间显示
+            //           formatter: '{b}: {c}',
+            //           textStyle : {
+            //             //fontWeight : 300 ,
+            //             fontSize : 8    //文字的字体大小
+            //           },
+            //         }
+            //       },
+            //       radius : '55%',
+            //       center: ['50%', '60%'],
+            //       data:[
+            //         {value:this.consume2016, name:'2016年消费'},
+            //         {value:this.consume2017, name:'2017年消费'},
+            //         {value:this.consume2018, name:'2018年消费'},
+            //         {value:this.consume2019, name:'2019年消费'},
+            //
+            //       ],
+            //       itemStyle: {
+            //         emphasis: {
+            //           shadowBlur: 10,
+            //           shadowOffsetX: 0,
+            //           shadowColor: 'rgba(0, 0, 0, 0.5)'
+            //         }
+            //       }
+            //     }
+            //   ]
+            // });
 
 
 

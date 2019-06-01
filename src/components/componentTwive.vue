@@ -3,7 +3,7 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/阅读经历图片.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisibe1">
+      <div class="common-div-css" style="margin-top: 5rem;" v-show="twelvevisibe1">
         “读一本好书，就像和许多高尚的人谈话”——歌德，与君共勉！
       </div>>
       <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisible2">
@@ -64,10 +64,10 @@
           .then(response=>{
             // this.result = response.data;
             console.log(response.data);
-            if(response.data==null)
+            if(response.data.shortesttime==null&&response.data.longesttime==null&&response.data.averagetime==null)
             {
-              twelvevisibe1=true;
-                twelvevisible2=false;
+              this.twelvevisibe1=true;
+                this.twelvevisible2=false;
             }
             this.studentinfo.firstbooktime = response.data.firstbooktime;
             this.studentinfo.xh=response.data.xh;

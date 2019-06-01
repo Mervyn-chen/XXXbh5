@@ -10,7 +10,6 @@
       <div class="common-div-css" style="margin-top: 2rem" v-show="sevenvisible2">
         那些曾经让你泪流满面的考试...
         <br/>
-        <br/>
         参加<span>{{this.studentinfo.coursenumber}}</span>科考试
         <div><span>{{this.studentinfo.course}}</span>课程成绩最好</div>
         得分:<span>{{this.studentinfo.score}}</span>
@@ -19,7 +18,7 @@
           英语四级考试<span>{{this.studentinfo.cet4}}</span>分
         </div>
         <div v-show="dialogVisible1">
-        英语六级考试{{this.studentinfo.cet6}}分
+          英语六级考试<span>{{this.studentinfo.cet6}}</span>分
       </div>
       </div>
     </div>

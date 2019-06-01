@@ -6,12 +6,12 @@
 
     </div>
     <div class="text" style="padding: 2rem" >
-      <div class="common-div-css" style="margin-top: 0.5rem">
-        校内久居地:<span>{{this.ssname}}</span>宿舍<br/>
+      <div class="common-div-css" style="margin-top: 0rem">
+        <div v-show="homevisible">校内久居地:<span><br/>{{this.ssname}}</span>宿舍<br/></div>
         洗澡次数:<span>{{this.bathnum}}</span>
         <br/>
         个人清洁排名<span>{{this.bathpm}}</span><br/>
-        个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span>
+        个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span><br/>
         军训、上课、自习、同吃同住的四年，<br/>
         四年的青春，四年的感情，给了各自珍惜的理由。
       </div>
@@ -40,7 +40,7 @@
         return {
           index:0,
           ssname:'',
-
+          homevisible:true,
           bathnum:'', //洗浴次数
           bathpm:'',//洗浴排名
           qjzs:'',// 清洁指数
@@ -59,6 +59,10 @@
         this.qjzs=localStorage.getItem('qjzs');
         this.sm=localStorage.getItem('sm');
         this.ssname=localStorage.getItem('ssname')
+        if(this.ssname==null)
+        {
+          this.homevisible=false;
+        }
 
 
 

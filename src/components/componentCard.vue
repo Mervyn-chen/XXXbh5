@@ -18,7 +18,7 @@
         <div>
           最长陪伴：<span>{{this.longestday}}天</span>
         </div>
-        最短陪伴：<span>{{this.shortestday}}天</span>
+        <div v-show="cardvisible1">最短陪伴：<span>{{this.shortestday}}天</span></div>
       </div>
 
       <!--<p style="margin-top:1rem; ":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"
@@ -47,6 +47,8 @@
       data(){
         return {
           index:0,
+          cardvisible1:true,
+          vardvisible2:false,
 
           bknum:'', //补卡次数
           bkpm:'',//补卡排名
@@ -71,6 +73,10 @@
         this.bknum=localStorage.getItem('bknum');
         this.careless=localStorage.getItem('careless');
         this.carelessms=localStorage.getItem('carelessms')
+        if(this.bknum==0)
+        {
+          this.cardvisible1=false;
+        }
 
 
 

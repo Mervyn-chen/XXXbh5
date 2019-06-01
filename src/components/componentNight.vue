@@ -9,6 +9,11 @@
         收获季节，<br/>
        再回首曾经的荣誉成果：
         <br/>
+        <div v-show="nightvisible1">
+        翻过此页，将是一个新的篇章，<br/>
+        更多的荣誉在等着你~
+        </div>
+
         <br/>
         <span style="line-height:150%;font-size: 0.35rem">
         <li v-for="i in title1">{{i.title}} {{i.cs}}次</li>
@@ -33,6 +38,8 @@
     name: "componentNight",
     data(){
       return {
+        nightvisible1:false,
+
         index:0,
         xh:'',
         title1:[],
@@ -67,6 +74,11 @@
           .then(response=>{
             // this.result = response.data;
             console.log(response.data);
+            if(response.data==null)
+            {
+              this.nightvisible1=true;
+
+            }
 
             //console.log(response.data.student_jw_honor_scholarships[0]);
             //this.title2=response.data.student_jw_honor_scholarships[1];

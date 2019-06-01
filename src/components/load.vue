@@ -17,6 +17,7 @@ export default {
     },
     mounted(){
         this.preload();
+
       //this.getxh()
     },
     methods:{
@@ -44,6 +45,7 @@ export default {
                      this.percent = `${percent}%`
                 }
             }
+          localStorage.clear();
 
         },
 

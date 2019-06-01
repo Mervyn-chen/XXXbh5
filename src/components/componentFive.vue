@@ -65,8 +65,8 @@
               this.studentinfo.classroom = response.data.classroom;
               this.studentinfo.coursenumber=response.data.coursenumber;
               if(this.studentinfo.classroom==null){
-                visible1=false;
-                visible2=true;
+                this.visible1=false;
+                this.visible2=true;
 
               }
 

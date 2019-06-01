@@ -10,7 +10,7 @@
       <div class="common-div-css" style="margin-top: 0.5rem">
         <span>消费</span>金额最多的地点:
         <div>
-          1.{{this.favoritecanteen1}}消费<span>{{this.favoritecanteen1je}}</span> 元
+          {{this.favoritecanteen1}}消费<span>{{this.favoritecanteen1je}}</span> 元
         </div>
         <!--2.{{this.favoritecanteen2}}消费<span>{{this.favoritecanteen2je}}</span> 元-->
         <!--<div>-->

@@ -57,17 +57,13 @@
         },
       mounted(){
           this.selectstudentinfo();
-          this.xm=localStorage.getItem('xm');
-          console.log(this.xm)
-        this.xh=localStorage.getItem('xh');
-        console.log(this.xh );
+        
 
       },
       watch:{
         result:function () {
           console.log(this.result);
           localStorage.setItem('xm', this.result.studentname);
-          localStorage.setItem('xh',this.result.studentid);
           localStorage.setItem('ssname',this.result.ssname);
 
 
@@ -78,7 +74,7 @@
         selectstudentinfo(){
           // let id=this.account;
 
-          let id=150940333;
+          let id=151410204;
           console.log(id);
           this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{
