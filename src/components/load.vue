@@ -56,7 +56,9 @@ export default {
             // console.log(val);
             if (val=== 8) {
                 var finished = true;
-                this.$router.push({path:'page',query:{finished:true}})
+                var studentid=151410204;
+                localStorage.setItem('xh',this.studentid);
+                this.$router.push({path:'page?xh='+studentid,query:{finished:true}})
             }
         },
     }

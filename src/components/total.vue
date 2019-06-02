@@ -51,10 +51,15 @@ var componentList = {
 var windowHeight = window.innerHeight;
 export default {
     name:'total',
+  mounted(){
+      this.xh=this.$router.query.studentid;
+
+  },
     data(){
         return {
             componentList:['componentOne','componentTwo','componentThree','componentFour','componentFive','componentSeven','componentEight','componentNight','componentTen','componentEliven','componentTwive','componentthirteen','componentdaynight','componentlifeone','consume','dailyfood','componentCard','componentEat','componentHome','componentHospital','componentEnd','leavemessage'],
             index:0,
+            xh:'',
             distance:0,//手指在页面滑动的距离
             nowZIndex:{
                 before:10,

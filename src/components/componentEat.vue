@@ -24,6 +24,7 @@
         2.{{this.favorite2}}消费{{this.favorite2je}}元<br/>
         3.{{this.favorite3}}消费{{this.favorite3je}}元
       </div>
+      <div>别了东华食堂，记得一日<span>三餐！</span></div>
 
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/吃.png" width="400" height="600"></div>

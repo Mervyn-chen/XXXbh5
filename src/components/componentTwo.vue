@@ -57,7 +57,7 @@
         },
       mounted(){
           this.selectstudentinfo();
-        
+
 
       },
       watch:{
@@ -74,7 +74,8 @@
         selectstudentinfo(){
           // let id=this.account;
 
-          let id=151410204;
+          this.xh=localStorage.getItem('xh');
+          let id=this.xh;
           console.log(id);
           this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{

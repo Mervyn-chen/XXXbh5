@@ -31,7 +31,7 @@ var VueTouch = require('vue-touch')
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(Vant);
 Vue.use(MintUI);
-
+Vue.use(router);
 Vue.use(echarts);
 
 
