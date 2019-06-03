@@ -12,11 +12,11 @@
         <div>
           {{this.favoritecanteen1}}消费<span>{{this.favoritecanteen1je}}</span> 元
         </div>
+        <div>别了东华食堂，记得一日<span>三餐！</span></div>
         <!--2.{{this.favoritecanteen2}}消费<span>{{this.favoritecanteen2je}}</span> 元-->
         <!--<div>-->
           <!--3.{{this.favoritecanteen3}}消费<span>{{this.favoritecanteen3je}}</span> 元-->
         <!--</div>-->
-        <br/>
         最喜欢<span>吃</span>的摊位：
         <div>
           1.{{this.favorite1}}消费{{this.favorite1je}}元
@@ -24,7 +24,7 @@
         2.{{this.favorite2}}消费{{this.favorite2je}}元<br/>
         3.{{this.favorite3}}消费{{this.favorite3je}}元
       </div>
-      <div>别了东华食堂，记得一日<span>三餐！</span></div>
+
 
     </div>
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/吃.png" width="400" height="600"></div>
@@ -40,6 +40,78 @@
       data(){
         return {
           index:0,
+          result:{
+            t_ykt_bath_pm:{
+              bathnum:'', //洗浴次数
+              bathpm:'',//洗浴排名
+              qjzs:'',// 清洁指数
+              sm:'',//说明
+            },
+            health_pm:{
+              kbcs:'',// 看病次数
+              kbcspm:'',//看病次数排名
+              csjk:'',// 看病次数健康指数
+              kbfy:'',// 看病费用
+              kbfypm:'',//看病费用排名
+              fyjk:'', //看病费用健康指数
+              sm:'',//说明
+
+            },
+            t_ykt_bk_pm:{
+              bknum:'', //补卡次数
+              bkpm:'',//补卡排名
+              careless:'',//粗心指数
+              carelessms:'',//粗心描述
+            },
+            t_ykt_bk_time:{
+              longestday:'', //陪伴最长时间
+              shortestday:'',//陪伴最短时间
+
+            },
+            t_ykt_consume:{
+              totalconsume:'', //总体消费金额
+              consume1:'',//大一年消费金额
+              consume2:'',//大二年消费金额
+              consume3:'',//大三年年消费金额
+              consume4:'', //大四年消费金额   四年消费做个统计图
+            },
+            t_ykt_consume_pm:{
+              pm:'',//消费排名
+              total:'',//消费额
+              totalconsumepm:'',// 总体消费排名指数
+
+            },
+            t_ykt_favorite_booth_pm:{
+              favorite1:'', //第一食堂
+              favorite1je:'',//第一消费金额
+              favorite2:'', //第二食堂
+              favorite2je:'',//第二消费金额
+              favorite3:'', //第三食堂
+              favorite3je:'',//第三消费金额
+            },
+            t_ykt_favorite_canteen_pm:{
+              favorite1:'', //第一食堂
+              favorite1je:'',//第一消费金额
+              favorite2:'', //第二食堂
+              favorite2je:'',//第二消费金额
+              favorite3:'', //第三食堂
+              favorite3je:'',//第三消费金额
+            },
+            t_ykt_meal_consume:{
+              breakfastnum:'',//早餐次数
+              breakfasttotal:'',//早餐总额
+              breakfastavg:'',//早餐平均,
+              lunchnum :'',//午餐次数
+              lunchtotal:'', //午餐总额
+              lunchavg :'',//午餐平均
+              dinnernum :'',//晚餐次数
+              dinnertotal :'',//晚餐总额
+              dinneravg:''// 晚餐平均
+
+            },
+
+
+          },
           favorite1:'', //第一食堂
           favorite1je:'',//第一消费金额
           favorite2:'', //第二食堂
@@ -61,24 +133,57 @@
         }
       },
       mounted() {
-        this.favorite1=localStorage.getItem('favorite1');
+          this.selectstudentinfo();
+        // this.favorite1=localStorage.getItem('favorite1');
+        //
+        //
+        // this.favorite1je=localStorage.getItem('favorite1je');
+        // this.favorite2=localStorage.getItem('favorite2');
+        // this.favorite2je=localStorage.getItem('favorite2je');
+        // this.favorite3=localStorage.getItem('favorite3');
+        // this.favorite3je=localStorage.getItem('favorite3je');
+        // this.favoritecanteen1=localStorage.getItem('favoritecanteen1');
+        // this.favoritecanteen2=localStorage.getItem('favoritecanteen2');
+        // this.favoritecanteen3=localStorage.getItem('favoritecanteen3');
+        // this.favoritecanteen1je=localStorage.getItem('favoritecanteen1je');
+        // this.favoritecanteen2je=localStorage.getItem('favoritecanteen2je');
+        // this.favoritecanteen3je=localStorage.getItem('favoritecanteen3je');
 
 
-        this.favorite1je=localStorage.getItem('favorite1je');
-        this.favorite2=localStorage.getItem('favorite2');
-        this.favorite2je=localStorage.getItem('favorite2je');
-        this.favorite3=localStorage.getItem('favorite3');
-        this.favorite3je=localStorage.getItem('favorite3je');
-        this.favoritecanteen1=localStorage.getItem('favoritecanteen1');
-        this.favoritecanteen2=localStorage.getItem('favoritecanteen2');
-        this.favoritecanteen3=localStorage.getItem('favoritecanteen3');
-        this.favoritecanteen1je=localStorage.getItem('favoritecanteen1je');
-        this.favoritecanteen2je=localStorage.getItem('favoritecanteen2je');
-        this.favoritecanteen3je=localStorage.getItem('favoritecanteen3je');
+
+      },
+      methods:{
+
+
+        selectstudentinfo(){
+          // let id=this.account;
+
+          this.xh=this.$route.query.xh;
+          let id=this.xh;
+          console.log(id);
+          this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
+            .then(response=>{
+              this.result = response.data;
+              this.favorite1=this.result.t_ykt_favorite_booth_pm.favorite1;
+              this.favorite1je=this.result.t_ykt_favorite_booth_pm.favorite1je;
+              this.favorite2-this.result.t_ykt_favorite_booth_pm.favorite2;
+              this.favorite2je=this.result.t_ykt_favorite_booth_pm.favorite2je;
+              this.favorite3=this.result.t_ykt_favorite_booth_pm.favorite3;
+              this.favorite3je=this.result.t_ykt_favorite_booth_pm.favorite3je;
+              this.favoritecanteen1=this.result.t_ykt_favorite_canteen_pm.favorite1;
+              this.favoritecanteen1je=this.result.t_ykt_favorite_canteen_pm.favorite1je;
+              this.favoritecanteen2=this.result.t_ykt_favorite_canteen_pm.favorite2;
+              this.favoritecanteen2je=this.result.t_ykt_favorite_canteen_pm.favorite2je;
+              this.favoritecanteen3=this.result.t_ykt_favorite_canteen_pm.favorite3;
+              this.favoritecanteen3je=this.result.t_ykt_favorite_canteen_pm.favorite3je;
 
 
 
-      }
+            }).catch(function (err) {
+            console.log(err);
+          })
+        }
+      },
 
     }
 </script>

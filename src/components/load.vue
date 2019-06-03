@@ -21,6 +21,7 @@ export default {
       //this.getxh()
     },
     methods:{
+
         preload(){
             var imgList = [
               '/static/images/picture3.jpg',
@@ -56,9 +57,10 @@ export default {
             // console.log(val);
             if (val=== 8) {
                 var finished = true;
-                var studentid=151410204;
-                localStorage.setItem('xh',this.studentid);
-                this.$router.push({path:'page?xh='+studentid,query:{finished:true}})
+                //this.xh=this.$route.query.xh;
+                var xh=151410215;
+                //localStorage.setItem('xh',this.studentid);
+                this.$router.push({path:'page?xh='+xh,query:{finished:true}})
             }
         },
     }

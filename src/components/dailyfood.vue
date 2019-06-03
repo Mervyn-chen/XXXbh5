@@ -56,6 +56,78 @@
         return {
           index:0,
           xm:'',
+          result:{
+            t_ykt_bath_pm:{
+              bathnum:'', //洗浴次数
+              bathpm:'',//洗浴排名
+              qjzs:'',// 清洁指数
+              sm:'',//说明
+            },
+            health_pm:{
+              kbcs:'',// 看病次数
+              kbcspm:'',//看病次数排名
+              csjk:'',// 看病次数健康指数
+              kbfy:'',// 看病费用
+              kbfypm:'',//看病费用排名
+              fyjk:'', //看病费用健康指数
+              sm:'',//说明
+
+            },
+            t_ykt_bk_pm:{
+              bknum:'', //补卡次数
+              bkpm:'',//补卡排名
+              careless:'',//粗心指数
+              carelessms:'',//粗心描述
+            },
+            t_ykt_bk_time:{
+              longestday:'', //陪伴最长时间
+              shortestday:'',//陪伴最短时间
+
+            },
+            t_ykt_consume:{
+              totalconsume:'', //总体消费金额
+              consume1:'',//大一年消费金额
+              consume2:'',//大二年消费金额
+              consume3:'',//大三年年消费金额
+              consume4:'', //大四年消费金额   四年消费做个统计图
+            },
+            t_ykt_consume_pm:{
+              pm:'',//消费排名
+              total:'',//消费额
+              totalconsumepm:'',// 总体消费排名指数
+
+            },
+            t_ykt_favorite_booth_pm:{
+              favorite1:'', //第一食堂
+              favorite1je:'',//第一消费金额
+              favorite2:'', //第二食堂
+              favorite2je:'',//第二消费金额
+              favorite3:'', //第三食堂
+              favorite3je:'',//第三消费金额
+            },
+            t_ykt_favorite_canteen_pm:{
+              favorite1:'', //第一食堂
+              favorite1je:'',//第一消费金额
+              favorite2:'', //第二食堂
+              favorite2je:'',//第二消费金额
+              favorite3:'', //第三食堂
+              favorite3je:'',//第三消费金额
+            },
+            t_ykt_meal_consume:{
+              breakfastnum:'',//早餐次数
+              breakfasttotal:'',//早餐总额
+              breakfastavg:'',//早餐平均,
+              lunchnum :'',//午餐次数
+              lunchtotal:'', //午餐总额
+              lunchavg :'',//午餐平均
+              dinnernum :'',//晚餐次数
+              dinnertotal :'',//晚餐总额
+              dinneravg:''// 晚餐平均
+
+            },
+
+
+          },
 
           breakfastnum:'',//早餐次数
           breakfasttotal:'',//早餐总额
@@ -72,25 +144,55 @@
         }
       },
       mounted() {
-        this.breakfastnum=localStorage.getItem('breakfastnum')
-        console.log(this.breakfastnum)
-        this.breakfasttotal=localStorage.getItem('breakfasttotal')
-        console.log(this.breakfasttotal)
-        this.Breakfastavg=localStorage.getItem('Breakfastavg')
-        console.log(this.Breakfastavg)
-
-        this.Lunchnum=localStorage.getItem('Lunchnum')
-        console.log(this.Lunchnum)
-        this.Lunchavg=localStorage.getItem('Lunchavg')
-        this.Lunchtotal=localStorage.getItem('Lunchtotal')
-        this.Dinnernum=localStorage.getItem('Dinnernum')
-        this.Dinneravg=localStorage.getItem('Dinneravg')
-        this.Dinnertotal=localStorage.getItem('Dinnertotal')
-        console.log(this.Dinnertotal)
+        this.selectstudentinfo();
+        //location.reload()//刷新
+        // this.breakfastnum=localStorage.getItem('breakfastnum')
+        // console.log(this.breakfastnum)
+        // this.breakfasttotal=localStorage.getItem('breakfasttotal')
+        // console.log(this.breakfasttotal)
+        // this.Breakfastavg=localStorage.getItem('Breakfastavg')
+        // console.log(this.Breakfastavg)
+        //
+        // this.Lunchnum=localStorage.getItem('Lunchnum')
+        // console.log(this.Lunchnum)
+        // this.Lunchavg=localStorage.getItem('Lunchavg')
+        // this.Lunchtotal=localStorage.getItem('Lunchtotal')
+        // this.Dinnernum=localStorage.getItem('Dinnernum')
+        // this.Dinneravg=localStorage.getItem('Dinneravg')
+        // this.Dinnertotal=localStorage.getItem('Dinnertotal')
+        // console.log(this.Dinnertotal)
         this.xm=localStorage.getItem('xm')
 
 
-      }
+      },
+      methods:{
+
+
+        selectstudentinfo(){
+          // let id=this.account;
+
+          this.xh=this.$route.query.xh;
+          let id=this.xh;
+          console.log(id);
+          this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
+            .then(response=>{
+              console.log(response.data);
+              this.result = response.data;
+              this.breakfastnum= this.result.t_ykt_meal_consume.breakfastnum;
+              this.breakfasttotal= this.result.t_ykt_meal_consume.breakfasttotal;
+              this.Breakfastavg=this.result.t_ykt_meal_consume.breakfastavg;
+              this.Lunchnum=this.result.t_ykt_meal_consume.lunchnum ;
+              this.Lunchtotal=this.result.t_ykt_meal_consume.lunchtotal;
+              this.Lunchavg=this.result.t_ykt_meal_consume.lunchavg;
+              this.Dinnernum=this.result.t_ykt_meal_consume.dinnernum;
+              this.Dinnertotal=this.result.t_ykt_meal_consume.dinnertotal;
+              this.Dinneravg=this.result.t_ykt_meal_consume.dinneravg;
+
+            }).catch(function (err) {
+            console.log(err);
+          })
+        }
+      },
     }
 </script>
 

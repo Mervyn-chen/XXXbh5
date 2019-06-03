@@ -51,7 +51,78 @@
       data(){
         return {
           index:0,
+          result:{
+            t_ykt_bath_pm:{
+              bathnum:'', //洗浴次数
+              bathpm:'',//洗浴排名
+              qjzs:'',// 清洁指数
+              sm:'',//说明
+            },
+            health_pm:{
+              kbcs:'',// 看病次数
+              kbcspm:'',//看病次数排名
+              csjk:'',// 看病次数健康指数
+              kbfy:'',// 看病费用
+              kbfypm:'',//看病费用排名
+              fyjk:'', //看病费用健康指数
+              sm:'',//说明
 
+            },
+            t_ykt_bk_pm:{
+              bknum:'', //补卡次数
+              bkpm:'',//补卡排名
+              careless:'',//粗心指数
+              carelessms:'',//粗心描述
+            },
+            t_ykt_bk_time:{
+              longestday:'', //陪伴最长时间
+              shortestday:'',//陪伴最短时间
+
+            },
+            t_ykt_consume:{
+              totalconsume:'', //总体消费金额
+              consume1:'',//大一年消费金额
+              consume2:'',//大二年消费金额
+              consume3:'',//大三年年消费金额
+              consume4:'', //大四年消费金额   四年消费做个统计图
+            },
+            t_ykt_consume_pm:{
+              pm:'',//消费排名
+              total:'',//消费额
+              totalconsumepm:'',// 总体消费排名指数
+
+            },
+            t_ykt_favorite_booth_pm:{
+              favorite1:'', //第一食堂
+              favorite1je:'',//第一消费金额
+              favorite2:'', //第二食堂
+              favorite2je:'',//第二消费金额
+              favorite3:'', //第三食堂
+              favorite3je:'',//第三消费金额
+            },
+            t_ykt_favorite_canteen_pm:{
+              favorite1:'', //第一食堂
+              favorite1je:'',//第一消费金额
+              favorite2:'', //第二食堂
+              favorite2je:'',//第二消费金额
+              favorite3:'', //第三食堂
+              favorite3je:'',//第三消费金额
+            },
+            t_ykt_meal_consume:{
+              breakfastnum:'',//早餐次数
+              breakfasttotal:'',//早餐总额
+              breakfastavg:'',//早餐平均,
+              lunchnum :'',//午餐次数
+              lunchtotal:'', //午餐总额
+              lunchavg :'',//午餐平均
+              dinnernum :'',//晚餐次数
+              dinnertotal :'',//晚餐总额
+              dinneravg:''// 晚餐平均
+
+            },
+
+
+          },
           kbcs:'',// 看病次数
           kbcspm:'',//看病次数排名
           csjk:'',// 看病次数健康指数
@@ -68,18 +139,48 @@
         }
       },
       mounted() {
-        this.kbcs=localStorage.getItem('kbcs');
-        this.kbcspm=localStorage.getItem('kbcspm');
-        this.csjk=localStorage.getItem('csjk');
-        this.xm=localStorage.getItem('xm')
-        this.kbfy=localStorage.getItem('kbfy');
-        this.kbfypm=localStorage.getItem('kbfypm');
-        this.fyjk=localStorage.getItem('fyjk');
-        this.healthsm=localStorage.getItem('healthsm');
+          this.selectstudentinfo();
+        // this.kbcs=localStorage.getItem('kbcs');
+        // this.kbcspm=localStorage.getItem('kbcspm');
+        // this.csjk=localStorage.getItem('csjk');
+         this.xm=localStorage.getItem('xm')
+        // this.kbfy=localStorage.getItem('kbfy');
+        // this.kbfypm=localStorage.getItem('kbfypm');
+        // this.fyjk=localStorage.getItem('fyjk');
+        // this.healthsm=localStorage.getItem('healthsm');
 
 
 
-      }
+      },
+      methods:{
+
+
+        selectstudentinfo(){
+          // let id=this.account;
+
+          this.xh=this.$route.query.xh;
+          let id=this.xh;
+          console.log(id);
+          this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
+            .then(response=>{
+              this.result = response.data;
+
+              this.csjk=this.result.health_pm.csjk;
+              this.fyjk=this.result.health_pm.fyjk;
+              this.kbfy=this.result.health_pm.kbfy;
+              this.kbcs=this.result.health_pm.kbcs;
+              this.kbcspm=this.result.health_pm.kbcspm;
+              this.kbfypm=this.result.health_pm.kbfypm;
+              this.healthsm=this.result.health_pm.sm
+
+
+
+
+            }).catch(function (err) {
+            console.log(err);
+          })
+        }
+      },
     }
 </script>
 

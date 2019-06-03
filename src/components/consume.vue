@@ -209,45 +209,45 @@
             console.log(this.result)
 
 
-            localStorage.setItem('breakfastnum', this.result.t_ykt_meal_consume.breakfastnum);
-            localStorage.setItem('breakfasttotal', this.result.t_ykt_meal_consume.breakfasttotal);
-            localStorage.setItem('Breakfastavg', this.result.t_ykt_meal_consume.breakfastavg);
-            localStorage.setItem('Lunchnum', this.result.t_ykt_meal_consume.lunchnum );
-            localStorage.setItem('Lunchtotal', this.result.t_ykt_meal_consume.lunchtotal);
-            localStorage.setItem('Lunchavg', this.result.t_ykt_meal_consume.lunchavg);
-            localStorage.setItem('Dinnernum', this.result.t_ykt_meal_consume.dinnernum);
-            localStorage.setItem('Dinnertotal', this.result.t_ykt_meal_consume.dinnertotal);
-            localStorage.setItem('Dinneravg', this.result.t_ykt_meal_consume.dinneravg);
-            localStorage.setItem('bknum', this.result.t_ykt_bk_pm.bknum);
-            localStorage.setItem('bkpm', this.result.t_ykt_bk_pm.bkpm);
-            localStorage.setItem('careless', this.result.t_ykt_bk_pm.careless);
-            localStorage.setItem('carelessms', this.result.t_ykt_bk_pm.carelessms);
-            localStorage.setItem('longestday',this.result.t_ykt_bk_time.longestday);
-            localStorage.setItem('shortestday',this.result.t_ykt_bk_time.shortestday);
-            localStorage.setItem('favorite1',this.result.t_ykt_favorite_booth_pm.favorite1);
-            localStorage.setItem('favorite1je',this.result.t_ykt_favorite_booth_pm.favorite1je);
-            localStorage.setItem('favorite2',this.result.t_ykt_favorite_booth_pm.favorite2);
-            localStorage.setItem('favorite2je',this.result.t_ykt_favorite_booth_pm.favorite2je);
-            localStorage.setItem('favorite3',this.result.t_ykt_favorite_booth_pm.favorite3);
-            localStorage.setItem('favorite3je',this.result.t_ykt_favorite_booth_pm.favorite3je);
-            localStorage.setItem('favoritecanteen1',this.result.t_ykt_favorite_canteen_pm.favorite1);
-            localStorage.setItem('favoritecanteen1je',this.result.t_ykt_favorite_canteen_pm.favorite1je);
-            localStorage.setItem('favoritecanteen2',this.result.t_ykt_favorite_canteen_pm.favorite2);
-            localStorage.setItem('favoritecanteen2je',this.result.t_ykt_favorite_canteen_pm.favorite2je);
-            localStorage.setItem('favoritecanteen3',this.result.t_ykt_favorite_canteen_pm.favorite3);
-            localStorage.setItem('favoritecanteen3je',this.result.t_ykt_favorite_canteen_pm.favorite3je);
-            localStorage.setItem('bathnum',this.result.t_ykt_bath_pm.bathnum);
-            localStorage.setItem('bathpm',this.result.t_ykt_bath_pm.bathpm);
-            localStorage.setItem('sm',this.result.t_ykt_bath_pm.sm);
-            localStorage.setItem('qjzs',this.result.t_ykt_bath_pm.qjzs)
-
-            localStorage.setItem('csjk',this.result.health_pm.csjk)
-            localStorage.setItem('fyjk',this.result.health_pm.fyjk)
-            localStorage.setItem('kbfy',this.result.health_pm.kbfy)
-            localStorage.setItem('kbcs',this.result.health_pm.kbcs)
-            localStorage.setItem('kbcspm',this.result.health_pm.kbcspm)
-            localStorage.setItem('kbfypm',this.result.health_pm.kbfypm)
-            localStorage.setItem('healthsm',this.result.health_pm.sm)
+            // localStorage.setItem('breakfastnum', this.result.t_ykt_meal_consume.breakfastnum);
+            // localStorage.setItem('breakfasttotal', this.result.t_ykt_meal_consume.breakfasttotal);
+            // localStorage.setItem('Breakfastavg', this.result.t_ykt_meal_consume.breakfastavg);
+            // localStorage.setItem('Lunchnum', this.result.t_ykt_meal_consume.lunchnum );
+            // localStorage.setItem('Lunchtotal', this.result.t_ykt_meal_consume.lunchtotal);
+            // localStorage.setItem('Lunchavg', this.result.t_ykt_meal_consume.lunchavg);
+            // localStorage.setItem('Dinnernum', this.result.t_ykt_meal_consume.dinnernum);
+            // localStorage.setItem('Dinnertotal', this.result.t_ykt_meal_consume.dinnertotal);
+            // localStorage.setItem('Dinneravg', this.result.t_ykt_meal_consume.dinneravg);
+            // localStorage.setItem('bknum', this.result.t_ykt_bk_pm.bknum);
+            // localStorage.setItem('bkpm', this.result.t_ykt_bk_pm.bkpm);
+            // localStorage.setItem('careless', this.result.t_ykt_bk_pm.careless);
+            // localStorage.setItem('carelessms', this.result.t_ykt_bk_pm.carelessms);
+            // localStorage.setItem('longestday',this.result.t_ykt_bk_time.longestday);
+            // localStorage.setItem('shortestday',this.result.t_ykt_bk_time.shortestday);
+            // localStorage.setItem('favorite1',this.result.t_ykt_favorite_booth_pm.favorite1);
+            // localStorage.setItem('favorite1je',this.result.t_ykt_favorite_booth_pm.favorite1je);
+            // localStorage.setItem('favorite2',this.result.t_ykt_favorite_booth_pm.favorite2);
+            // localStorage.setItem('favorite2je',this.result.t_ykt_favorite_booth_pm.favorite2je);
+            // localStorage.setItem('favorite3',this.result.t_ykt_favorite_booth_pm.favorite3);
+            // localStorage.setItem('favorite3je',this.result.t_ykt_favorite_booth_pm.favorite3je);
+            // localStorage.setItem('favoritecanteen1',this.result.t_ykt_favorite_canteen_pm.favorite1);
+            // localStorage.setItem('favoritecanteen1je',this.result.t_ykt_favorite_canteen_pm.favorite1je);
+            // localStorage.setItem('favoritecanteen2',this.result.t_ykt_favorite_canteen_pm.favorite2);
+            // localStorage.setItem('favoritecanteen2je',this.result.t_ykt_favorite_canteen_pm.favorite2je);
+            // localStorage.setItem('favoritecanteen3',this.result.t_ykt_favorite_canteen_pm.favorite3);
+            // localStorage.setItem('favoritecanteen3je',this.result.t_ykt_favorite_canteen_pm.favorite3je);
+            // localStorage.setItem('bathnum',this.result.t_ykt_bath_pm.bathnum);
+            // localStorage.setItem('bathpm',this.result.t_ykt_bath_pm.bathpm);
+            // localStorage.setItem('sm',this.result.t_ykt_bath_pm.sm);
+            // localStorage.setItem('qjzs',this.result.t_ykt_bath_pm.qjzs)
+            //
+            // localStorage.setItem('csjk',this.result.health_pm.csjk)
+            // localStorage.setItem('fyjk',this.result.health_pm.fyjk)
+            // localStorage.setItem('kbfy',this.result.health_pm.kbfy)
+            // localStorage.setItem('kbcs',this.result.health_pm.kbcs)
+            // localStorage.setItem('kbcspm',this.result.health_pm.kbcspm)
+            // localStorage.setItem('kbfypm',this.result.health_pm.kbfypm)
+            // localStorage.setItem('healthsm',this.result.health_pm.sm)
             // var c2016=this.consume2016;
             // console.log(c2016);
             // console.log(this.consume2017)
@@ -446,7 +446,7 @@
         selectstudentinfo(){
           // let id=this.account;
 
-          this.xh=localStorage.getItem('xh');
+          this.xh=this.$route.query.xh;
           let id=this.xh;
           console.log(id);
           this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
@@ -464,6 +464,7 @@
               console.log(this.consume2017);
               console.log(this.consume2018);
               console.log(this.consume2019);
+
 
 
               // this.studentinfo.hispitalrank = response.data.hispitalrank;

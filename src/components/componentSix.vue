@@ -47,7 +47,7 @@
       methods:{
         selectstudentinfo(){
           // let id=this.account;
-          this.xh=localStorage.getItem('xh');
+          this.xh=this.$route.query.xh;
           let id=this.xh;
           this.$ajax.get('http://10.199.180.242:8080/T_student_Research/findByXh?Xh='+id)
             .then(response=>{

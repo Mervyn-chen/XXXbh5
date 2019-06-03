@@ -50,9 +50,11 @@ var componentList = {
 }
 var windowHeight = window.innerHeight;
 export default {
+
     name:'total',
   mounted(){
-      this.xh=this.$router.query.studentid;
+      this.xh=this.$route.query.xh;
+      console.log(xh);
 
   },
     data(){
