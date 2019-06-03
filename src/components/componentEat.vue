@@ -8,22 +8,26 @@
     </div>
     <div class="text" style="padding: 2rem" >
       <div class="common-div-css" style="margin-top: 0.5rem">
-        <span>消费</span>金额最多的地点:
+        <span>光顾</span>最多的餐厅:
         <div>
-          {{this.favoritecanteen1}}消费<span>{{this.favoritecanteen1je}}</span> 元
+          {{this.favoritecanteen1}}
         </div>
-        <div>别了东华食堂，记得一日<span>三餐！</span></div>
+
         <!--2.{{this.favoritecanteen2}}消费<span>{{this.favoritecanteen2je}}</span> 元-->
         <!--<div>-->
           <!--3.{{this.favoritecanteen3}}消费<span>{{this.favoritecanteen3je}}</span> 元-->
         <!--</div>-->
+        <br/>
         最喜欢<span>吃</span>的摊位：
         <div>
-          1.{{this.favorite1}}消费{{this.favorite1je}}元
+          1.{{this.favorite1}}
         </div>
-        2.{{this.favorite2}}消费{{this.favorite2je}}元<br/>
-        3.{{this.favorite3}}消费{{this.favorite3je}}元
+        2.{{this.favorite2}}<br/>
+        3.{{this.favorite3}}
+        <br/>
+        <div><br/>别了东华食堂，记得一日<span>三餐！</span></div>
       </div>
+
 
 
     </div>
@@ -166,7 +170,7 @@
               this.result = response.data;
               this.favorite1=this.result.t_ykt_favorite_booth_pm.favorite1;
               this.favorite1je=this.result.t_ykt_favorite_booth_pm.favorite1je;
-              this.favorite2-this.result.t_ykt_favorite_booth_pm.favorite2;
+              this.favorite2=this.result.t_ykt_favorite_booth_pm.favorite2;
               this.favorite2je=this.result.t_ykt_favorite_booth_pm.favorite2je;
               this.favorite3=this.result.t_ykt_favorite_booth_pm.favorite3;
               this.favorite3je=this.result.t_ykt_favorite_booth_pm.favorite3je;

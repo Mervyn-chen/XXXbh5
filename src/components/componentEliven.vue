@@ -4,7 +4,7 @@
       <img src="/static/images/毕业生/图书馆篇1图片.png" width="400" height="700"></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 3rem;">
-        第一次进图书馆的时间:<span>{{this.studentinfo.firstaccess}}</span>
+        <span>{{this.studentinfo.firstaccess}}</span><br/>第一次走进东华图书馆
         <div>
           在图书馆埋头苦读<span>{{this.studentinfo.accessnumber}}</span>次
         </div>

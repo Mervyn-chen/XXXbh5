@@ -8,10 +8,10 @@
         <span >十年后，</span>
       </div>
       <div class="common-div-css" style="margin-top: 5rem;left:20%;"  v-show="visible1">
-        请你回来坐坐
-        <div>满满的回忆~</div>
         <br/>
-        留下最多回忆的教室：<br/><span>{{this.studentinfo.classroom}}</span><br/>
+        是否还记得?
+       <br/>
+       上课最多的教室：<span>{{this.studentinfo.classroom}}</span><br/>
         在这里上课<span>{{this.studentinfo.coursenumber}}</span>次<br/>
         你喜欢坐在哪一排？
 

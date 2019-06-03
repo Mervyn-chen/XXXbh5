@@ -8,11 +8,10 @@
       </div>
 
       <div class="common-div-css" style="margin-top: 2rem" v-show="sevenvisible2">
-        那些曾经让你泪流满面的考试...
+        那些痛并快乐的日子 ...
         <br/>
-        参加<span>{{this.studentinfo.coursenumber}}</span>科考试
-        <div><span>{{this.studentinfo.course}}</span>课程成绩最好</div>
-        得分:<span>{{this.studentinfo.score}}</span>
+        参加考试<span>{{this.studentinfo.coursenumber}}</span>门
+        <div>最好成绩<span>{{this.studentinfo.score}}</span>分 <span>{{this.studentinfo.course}}</span></div>
         <br/>
         <div v-show="dialogVisible0">
           英语四级考试<span>{{this.studentinfo.cet4}}</span>分

@@ -5,7 +5,7 @@
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/荣誉成果图片2.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css" style="  margin-top: 3rem;">
+      <div class="common-div-css" style="  margin-top: 2rem;">
         收获季节，<br/>
        再回首曾经的荣誉成果：
         <br/>

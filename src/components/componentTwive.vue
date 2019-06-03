@@ -6,11 +6,12 @@
       <div class="common-div-css" style="margin-top: 5rem;" v-show="twelvevisibe1">
         “读一本好书，就像和许多高尚的人谈话”——歌德，与君共勉！
       </div>>
-      <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisible2">
-        借阅的第一本书：<br/>
-        时间:<span>{{this.studentinfo.firstbooktime}}</span>，<br/>
-        书名：<span>{{this.studentinfo.firstbook}}</span>
+      <div class="common-div-css" style="margin-top: 2rem;" v-show="twelvevisible2">
+        <span>{{this.studentinfo.firstbooktime}}</span> 借阅第一本书：<br/>
+        <!--时间:<span>{{this.studentinfo.firstbooktime}}</span>，<br/>-->
+        书名《<span>{{this.studentinfo.firstbook}}》</span>
         <div>
+          最喜欢的书目类型：<span>{{this.studentinfo.booktype}}</span><br/>
           借阅<span>{{this.studentinfo.booktypenum}}</span>本此类型图书
         </div>
         在校总计饱览群书<span>{{this.studentinfo.booknumber}}</span>本

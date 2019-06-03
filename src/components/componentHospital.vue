@@ -8,13 +8,15 @@
     </div>
     <div class="text" style="padding: 2rem" >
       <div class="common-div-css">
-        <span>{{this.xm}}，</span>
+        <span>{{this.xm}}</span>
         <div>
           你去过{{this.kbcs}}次<span>校医院</span>
         </div>
         <span>消费金额</span>{{this.kbfy}}元<br/>
         <br/>
-        健康是一种自由&#45;&#45;亚美路
+        保重革命本钱，愿你历尽千帆，归来仍是少年！
+
+        <!--健康是一种自由&#45;&#45;亚美路-->
       </div>
 
      <!-- <p style="margin-top: -1.5rem; padding: 0.1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"

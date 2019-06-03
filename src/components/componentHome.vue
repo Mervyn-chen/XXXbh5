@@ -6,14 +6,19 @@
 
     </div>
     <div class="text" style="padding: 2rem" >
-      <div class="common-div-css" style="margin-top: 0rem">
-        <div v-show="homevisible">校内久居地:<span><br/>{{this.ssname}}</span>宿舍<br/></div>
-        洗澡次数:<span>{{this.bathnum}}</span>
+      <div class="common-div-css" style="margin-top: -1rem">
+        <div v-show="homevisible">校内久居地:<span><br/>{{this.ssname}}</span><br/></div>
+        <!--洗澡次数:<span>{{this.bathnum}}</span>-->
+        <!--<br/>-->
+        <!--个人清洁排名<span>{{this.bathpm}}</span><br/>-->
+        <!--个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span><br/>-->
+        同吃同住的室友们<br/>
+        <div>四年的青春，四年的感情，给了各自珍惜的理由</div>
         <br/>
-        个人清洁排名<span>{{this.bathpm}}</span><br/>
-        个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span><br/>
-        军训、上课、自习、同吃同住的四年，<br/>
-        四年的青春，四年的感情，给了各自珍惜的理由。
+
+
+        快在<span>留言板</span>写下你们的共同回忆吧
+
       </div>
 
     <!--  <p style="margin-top: 0rem; padding: 0.1rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}"

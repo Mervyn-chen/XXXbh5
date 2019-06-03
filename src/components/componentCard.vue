@@ -14,7 +14,7 @@
         <span>一卡通</span>补办<span>{{this.bknum}}</span>次
         <br/>
         <br/>
-        粗心指数：<span>{{this.careless}}{{this.carelessms}}</span>
+        粗心指数：<span>{{this.careless}}<br/>{{this.carelessms}}</span>
         <div>
           最长陪伴：<span>{{this.longestday}}天</span>
         </div>

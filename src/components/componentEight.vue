@@ -2,20 +2,23 @@
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/绩点篇.png" width="400" height="600"></div>
+    <div id="greatscore" style="width:100%;height: 300px;margin-top: 2.5rem" ></div>
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 3.05rem; left: 24%;">
-        <div style="letter-spacing: 0px;">四年时光，画出了GPA方向</div>
-        无论指向何方，都记录了青春和成长...
+      <div class="common-div-css" style="margin-top:-2rem; left: 24%;">
+        <!--<div style="letter-spacing: 0px;">四年时光，画出了GPA方向</div>-->
+        <!--无论指向何方，都记录了青春和成长...-->
+        <br/>
         <br/>
         <!--平均绩点:<span>{{this.studentinfo.gradepoint}}</span>-->
+         专业年级排名：<span>{{this.studentinfo.majorrank}}</span>
         <div>
           学霸指数:<span>{{this.studentinfo.xbzs}}{{this.studentinfo.xbsm}}</span>
         </div>
-        专业年级排名：<span>{{this.studentinfo.majorrank}}</span>
+
       </div>
 
     </div>
-    <div id="greatscore" style="width:100%;height: 300px;margin-top: 7rem" ></div>
+
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/绩点.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
       <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
@@ -29,6 +32,7 @@
         name: "componentEight",
       data(){
         return {
+
           count:{},
           result:{},
           index:0,
@@ -85,10 +89,10 @@
 
                 type:'gauge',
                 detail : {formatter:'{value}'},
-                data:[{value: this.studentinfo.gradepoint, name: '平均绩点'}],
+                data:[{value: this.studentinfo.gradepoint, name: 'GPA'}],
                 title: {				// 仪表盘标题。
                   show: true,				// 是否显示标题,默认 true。
-                  offsetCenter: [0,0],//相对于仪表盘中心的偏移位置，数组第一项是水平方向的偏移，第二项是垂直方向的偏移。可以是绝对的数值，也可以是相对于仪表盘半径的百分比。
+                  offsetCenter: [0,-40],//相对于仪表盘中心的偏移位置，数组第一项是水平方向的偏移，第二项是垂直方向的偏移。可以是绝对的数值，也可以是相对于仪表盘半径的百分比。
                   color: "#707070",			// 文字的颜色,默认 #333。
                   fontSize: 20,			// 文字的字体大小,默认 15。
                 },

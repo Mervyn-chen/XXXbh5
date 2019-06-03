@@ -5,9 +5,9 @@
     <!--</div>-->
     <div class="text" >
       <div class="common-div-css" style="margin-top: 2rem;">
-        <span>{{this.xm}}，</span>
+        <span>{{this.xm}}</span>
         <div>
-          你通过一卡通累计消费<span>{{this.totalconsume}}</span>
+          一卡通累计消费<br/><span>{{this.totalconsume}}</span>
           <br/>
         </div>
 
@@ -15,7 +15,7 @@
       </div>
 
     </div>
-    <div id="main1" style="margin-top: 6rem;margin-left:1.5rem;width: 300px;height: 250px" ></div>
+    <div id="main1" style="margin-top: 5.5rem;margin-left:1.5rem;width: 300px;height: 250px" ></div>
 
     <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/消费logo左.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
@@ -277,7 +277,7 @@
                     fontSize:20,
                     position:'center'
                   },
-                  subtext: '一卡通消费记录采集开始时间为2016年4月',
+                  subtext: '数据采集开始时间为2016年4月',
                   subtextStyle:{
                           color:'#000000',
                           fontSize:10,
@@ -342,7 +342,7 @@
                       color: function(params) {
                         // build a color map as your need.
                         var colorList = [
-                          '#C1232B','#B5C334','#FCCE10','#E87C25'
+                          '#C1232B','#00AA00','#5599FF','#E87C25'
                         ];
                         return colorList[params.dataIndex]
                       },

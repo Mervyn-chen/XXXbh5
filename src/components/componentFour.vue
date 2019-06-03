@@ -12,11 +12,10 @@
           <div>
             授业最多的老师：<span>{{this.studentinfo.favoriteteacher}}</span>
           </div>
-          <span>{{this.studentinfo.teacherlikeyou}}</span>老师很欣赏你,
+          <span>{{this.studentinfo.teacherlikeyou}}</span>老师很欣赏你
           <br/>
           他（她）的<span>《{{this.studentinfo.course}}》</span>课程
-          <br/>
-          给你打了<span>{{this.studentinfo.score}}</span>分
+          得分<span>{{this.studentinfo.score}}</span>
           <div v-show="visible1"><span>你是潜力股！继续加油！</span></div>
 
         </div>
@@ -65,7 +64,7 @@ export default {
           this.studentinfo.teacherlikeyou=response.data.teacherlikeyou;
           this.studentinfo.score=response.data.score;
           if(this.studentinfo.score<70){
-            visible1=true;
+           this.visible1=true;
 
           }
         }).catch(function (err) {

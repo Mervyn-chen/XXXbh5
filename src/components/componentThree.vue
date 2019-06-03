@@ -13,7 +13,7 @@
                   最后一节课：<br/><span>{{this.studentinfo.lastcourse}}</span>
                 </div>
                 <div>
-                  合计上课：<span>{{this.studentinfo.sumcourse}}</span>门课程
+                  合计上课：<span>{{this.studentinfo.sumcourse}}</span>门
                 </div>
                 <div v-show="visible4">
                   共计<span>{{this.studentinfo.sumscore}}</span>学分

@@ -7,7 +7,7 @@
         您借阅过一本书:<br/>
         <span>《{{this.studentinfo.shortesttime}}》</span>
         <div>
-          借阅时间：<span>{{this.studentinfo.sbook}}</span>天
+          借阅时长：<span>{{this.studentinfo.sbook}}</span>天
         </div>
 
       </div>
@@ -20,14 +20,14 @@
         陪伴时间最短的一本书:<br/>
         <span>《{{this.studentinfo.shortesttime}}》</span>
         <div>
-          借阅时间：<span>{{this.studentinfo.sbook}}</span>天
+          借阅时长：<span>{{this.studentinfo.sbook}}</span>天
         </div>
 
 
-        <span>陪伴</span>时间最长的一本书:<br/><span>《{{this.studentinfo.longesttime}}》</span>
+        陪伴时间最长的一本书:<br/><span>《{{this.studentinfo.longesttime}}》</span>
         <br/>
-        借阅时间 ：<span>{{this.studentinfo.lbook}}</span>天<br/>
-        平均借阅时间：<span>{{this.studentinfo.averagetime}}</span>天
+        借阅时长 ：<span>{{this.studentinfo.lbook}}</span>天<br/>
+        平均借阅时长：<span>{{this.studentinfo.averagetime}}</span>天
         <br/>
       </div>
     </div>
