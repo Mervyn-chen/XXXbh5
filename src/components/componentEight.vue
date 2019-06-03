@@ -1,10 +1,16 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/绩点篇.png" width="400" height="600"></div>
-    <div id="greatscore" style="width:100%;height: 300px;margin-top: 2.5rem" ></div>
+      <img src="../../static/images/毕业生/绩点篇.png" width="400" height="600"></div>
+    <div v-show="eightvisible1" id="greatscore" style="width:100%;height: 300px;margin-top: 2.5rem" ></div>
+
     <div class="text" >
-      <div class="common-div-css" style="margin-top:-2rem; left: 24%;">
+      <div class="common-div-css" style="margin-top:6rem; left: 24%;" v-show="eightvisible2">
+        系统未采集到你的信息。
+      </div>
+    </div>
+    <div class="text" >
+      <div class="common-div-css" style="margin-top:-2rem; left: 24%;" v-show="eightvisible1">
         <!--<div style="letter-spacing: 0px;">四年时光，画出了GPA方向</div>-->
         <!--无论指向何方，都记录了青春和成长...-->
         <br/>
@@ -19,9 +25,10 @@
 
     </div>
 
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/绩点.png" width="400" height="600"></div>
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/6.png" ></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
   </div>
 
 </template>
@@ -32,7 +39,8 @@
         name: "componentEight",
       data(){
         return {
-
+          eightvisible1:true,
+          eightvisible2:false,
           count:{},
           result:{},
           index:0,
@@ -132,6 +140,10 @@
               this.studentinfo.gradepoint=response.data.gradepoint;
               this.studentinfo.majorrank=response.data.majorrank;
               this.studentinfo.xbzs=response.data.xbzs;
+              if(response.data.majorrank==null){
+                this.eightvisible1=false;
+                this.eightvisible2=true;
+              }
 
 
             }).catch(function (err) {

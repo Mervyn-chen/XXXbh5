@@ -1,59 +1,62 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 1rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/西红柿.png" >
-      <img src="/static/images/毕业生/蘑菇.png" >
+      <img src="../../static/images/毕业生/西红柿.png" >
+      <img src="../../static/images/毕业生/蘑菇.png" >
 
     </div>
     <div style="position:absolute;top: 9rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/荷包蛋.png" >
-      <img src="/static/images/毕业生/锅底.png" >
+      <!--<img src="/static/images/毕业生/荷包蛋.png" >-->
+      <!--<img src="/static/images/毕业生/锅底.png" >-->
     </div>
-    <div class="text" style="padding: 1.5rem" >
-      <div class="common-div-css" style="">
-        早餐平均消费:<span>{{this.Breakfastavg}}元</span>总消费<span>{{this.breakfasttotal}}</span>元
-        <div>
-          <span>午</span>餐平均消费:<span>{{this.Lunchavg}}元</span>总消费<span>{{this.Lunchtotal}}</span>元
-        </div>
-        <span>晚餐</span>平均消费:<span>{{this.Dinneravg}}元</span>总消费<span>{{this.Dinnertotal}}</span>元
-        <div>
-          <span>享受健康</span>早餐{{this.breakfastnum}}次
-        </div>
-        <span>饱食美味</span>午餐{{this.Lunchnum}}次
-        <div>
-          在夜宵摊
-          <span>一掷千金</span>{{this.Dinnernum}}次
-        </div>
-      </div>
-      <!--<p style="margin-top: 1rem; ":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
-      早餐平均消费:{{this.Breakfastavg}} 总消费：{{this.breakfasttotal}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">
-      午餐平均消费:{{this.Lunchavg}}总消费：{{this.Lunchtotal}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">
-      晚餐平均消费:{{this.Dinneravg}}总消费：{{this.Dinnertotal}}</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">
+    <div id="main2" style="margin-top: 2rem;margin-left:1rem;width: 300px;height: 250px" ></div>
+    <!--<div class="text" style="padding: 1.5rem" >-->
+      <!--<div class="common-div-css" style="margin-top: -2rem;">-->
 
-      享受健康早餐{{this.breakfastnum}}次</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">
-      饱食美味午餐{{this.Lunchnum}}次</p>
-      <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2.5s">
-      在夜宵摊一掷千金{{this.Dinnernum}}次</p>
--->
+        <!--<div v-show="dailyfoodvisible1">-->
+          <!--<span>享受健康</span>早餐{{this.breakfastnum}}次<br/>-->
+          <!--早餐平均消费:<span>{{this.Breakfastavg}}元</span>-->
+        <!--</div>-->
+        <!--<div v-show="dailyfoodisible2">-->
+        <!--<span>饱食美味</span>午餐{{this.Lunchnum}}次<br/>-->
+        <!--<span>午</span>餐平均消费:<span>{{this.Lunchavg}}元</span>-->
+        <!--</div>-->
+        <!--<div v-show="dailyfoodvisible3">-->
+          <!--在夜宵摊-->
+          <!--<span>一掷千金</span>{{this.Dinnernum}}次<br/>-->
+          <!--<span>晚餐</span>平均消费:<span>{{this.Dinneravg}}元</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div id="main3" style="margin-top: 0rem;margin-left:1rem;width: 300px;height: 250px" ></div>
+
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/8.png" >
 
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/三餐logo.png" width="400" height="600"></div>
+    <div style="position:absolute;top:3rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1313.png" >
+    </div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/生活篇.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/生活篇.png" width="400" height="600"></div>
   </div>
 
 
 </template>
 
 <script>
+  import echarts from 'echarts';
     export default {
         name: "dailyfood",
       data(){
         return {
+          dailyfoodvisible1:true,
+          dailyfoodisible2:true,
+          dailyfoodvisible3:true,
+          dailyfoodvisible4:true,
+          dailyfoodvisible5:true,
+          dailyfoodvisible6:true,
+
           index:0,
           xm:'',
           result:{
@@ -173,12 +176,11 @@
 
           this.xh=this.$route.query.xh;
           let id=this.xh;
-          console.log(id);
           this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
             .then(response=>{
               console.log(response.data);
               this.result = response.data;
-              this.breakfastnum= this.result.t_ykt_meal_consume.breakfastnum;
+              this.breakfastnum = this.result.t_ykt_meal_consume.breakfastnum;
               this.breakfasttotal= this.result.t_ykt_meal_consume.breakfasttotal;
               this.Breakfastavg=this.result.t_ykt_meal_consume.breakfastavg;
               this.Lunchnum=this.result.t_ykt_meal_consume.lunchnum ;
@@ -187,11 +189,190 @@
               this.Dinnernum=this.result.t_ykt_meal_consume.dinnernum;
               this.Dinnertotal=this.result.t_ykt_meal_consume.dinnertotal;
               this.Dinneravg=this.result.t_ykt_meal_consume.dinneravg;
+              if(this.Breakfastavg==null||this.breakfastnum==null){
+                 this.dailyfoodvisible1=false;
+
+
+              }
+              if(this.Lunchavg==null||this.Lunchnum==null)
+              {
+                this.dailyfoodisible2=false;
+              }
+              if(
+                this.Dinneravg==null||this.Dinnernum==null
+              ){
+                this.dailyfoodvisible3=false
+              }
 
             }).catch(function (err) {
             console.log(err);
           })
         }
+      },
+      watch:{
+        result:function () {
+          console.log(this.result);
+
+          //饼图的绘制
+          var myChart = echarts.init(document.getElementById('main2'));
+          // 绘制图表
+          myChart.setOption({
+            title : {
+              text: '三餐消费',
+              subtext: '',
+              textStyle:{
+                color: '#663300',
+                fontSize:20,
+
+
+              },
+              subtextStyle:{
+                color:'#000000',
+                fontSize:10,
+
+              },
+              x:'center'
+            },
+            // tooltip : {
+            //   trigger: 'item',
+            //   formatter: "{a} <br/>{b} : {c} ({d}%)"
+            // },
+            color:[
+              '#006400','#EE7700','#4169E1'
+            ],
+
+            series : [
+              {
+                //name: '访问来源',
+                type: 'pie',
+                label: {
+                  normal: {
+                    show: true,
+                    ////数据在中间显示
+                    formatter: '{b}: {c}',
+                    textStyle : {
+                      //fontWeight : 300 ,
+                      fontSize : 10    //文字的字体大小
+                    },
+                  }
+                },
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                  {value:this.breakfasttotal, name:'早餐'},
+                  {value:this.Lunchtotal, name:'午餐'},
+                  {value:this.Dinnertotal, name:'晚餐'},
+
+
+                ],
+                itemStyle: {
+                  emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0,0,0,0.5)'
+                  }
+                }
+              }
+            ]
+          });
+
+          //直方图绘制
+          var myChart = echarts.init(document.getElementById('main3'));
+          myChart.setOption(
+            {
+              title:{
+                text:'就餐次数',
+                //textAlign:'left',
+                //textVerticalAlign:'auto',
+                left:100,
+                textStyle:{
+                  color: '#663300',
+                  fontSize:20,
+                  //align:'center' ,  //水平对齐
+                  //left: 35, //设置偏移量
+
+                },
+                subtext: '',
+                subtextStyle:{
+                  color:'#000000',
+                  fontSize:10,
+
+                },
+              },
+
+              xAxis:{
+                data:["早餐","午餐","晚餐"]
+              },
+              yAxis: {
+                type: 'value',
+                // min: 0,
+                // max: 4000,
+                //interval: 1000,
+                //grid 组件离容器左侧的距离。默认值是10%。
+                grid: {
+                  left: 35
+                },
+                //y轴颜色
+                axisLine: {
+                  lineStyle: {
+                    //color: '#fff'
+                  }
+                },
+                axisLabel:{
+                  margin: 0,
+                },
+                //坐标轴内线的样式
+                splitLine: {
+                  lineStyle: {
+                    color: '#666',
+                    type:'dashed'//虚线
+                  }
+                }
+              },
+
+              series:[{
+                name:'',
+                // 直方图
+                type:'bar',
+                barWidth:30,
+                itemStyle: {
+                  normal: {
+                    //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                    color: function(params) {
+                      // build a color map as your need.
+                      var colorList = [
+                        '#C1232B','#00AA00','#5599FF'
+                      ];
+                      return colorList[params.dataIndex]
+                    },
+                    //以下为是否显示，显示位置和显示格式的设置了
+                    label: {
+                      show: true,
+                      position: 'top',
+                      textStyle: { //数值样式
+                        color: 'black',
+                        fontSize: 10
+                      },
+//                             formatter: '{c}'
+                      //formatter: '{b}\n{c}'
+                    }
+                  }
+                },
+                // barGap: '-100%', // Make series be overlap
+                // barCategoryGap: 15,
+                data:[this.breakfastnum,this.Lunchnum,this.Dinnernum]
+
+              },
+              ],
+
+
+
+            }
+          );
+
+
+        }
+
       },
     }
 </script>

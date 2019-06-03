@@ -3,8 +3,8 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <!--<img src="/static/images/毕业生/早晚时间.png" width="400" height="600">-->
-      <img src="/static/images/毕业生/矩形 958.png" width="400" height="250">
-      <img src="/static/images/毕业生/飞机1.png" >
+      <img src="../../static/images/毕业生/矩形 958.png" width="400" height="250">
+      <img src="../../static/images/毕业生/飞机1.png" >
     </div>
 
     <div class="text" >
@@ -88,7 +88,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     methods:{
       selectLeaveMessageInfo(){
         this.xh=localStorage.getItem('xh');
-        this.$ajax.get('http://10.199.180.242:8080/message/findAllMessage')
+        this.$ajax.get('http://10.199.180.242:8080/message/findAll')
           .then(response=>{
             // this.result = response.data;
             console.log(response.data);
@@ -109,6 +109,10 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 
         if (message.length>20){
           Toast("20字以内");
+          return;
+        }
+        if(message.length=0){
+          Toast("请输入留言");
           return;
         }
         this.desc="";

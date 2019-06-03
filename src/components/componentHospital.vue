@@ -2,8 +2,8 @@
   <div class="container">
 
     <div style="position:absolute;top: 8rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/校医院/组 10776.png" >
-      <img src="/static/images/毕业生/校医院/组 10741.png" >
+      <img src="../../static/images/毕业生/校医院/组 10776.png" >
+      <img src="../../static/images/毕业生/校医院/组 10741.png" >
 
     </div>
     <div class="text" style="padding: 2rem" >
@@ -38,9 +38,15 @@
       <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1.5s">健康是一种自由&#45;&#45;亚美路</p>
 -->
     </div>
-    <div style="position:absolute;top:2.5rem ;left: -6rem; right: 0;bottom: 0;"><img src="/static/images/毕业生/校医院/组 10775.png" ></div>
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/12.png" >
+
+    </div>
+    <div style="position:absolute;top:3rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1313.png" >
+    </div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/生活篇.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/生活篇.png" width="400" height="600"></div>
   </div>
 
 </template>

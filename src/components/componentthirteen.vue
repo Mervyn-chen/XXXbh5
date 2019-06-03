@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: -1rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/借阅时长图片.png" width="380" height="650"></div>
+      <img src="../../static/images/毕业生/借阅时长图片.png" width="380" height="650"></div>
     <div class="text" style="line-height:0.8rem;" >
       <div class="common-div-css" style="margin-top: 1.5rem;"v-show="thirteenvisible2">
         您借阅过一本书:<br/>
@@ -11,7 +11,7 @@
         </div>
 
       </div>
-      <div class="common-div-css" style="margin-top: 3rem;"v-show="thirteenvisible3">
+      <div class="common-div-css" style="margin-top: 5rem;"v-show="thirteenvisible3">
         系统未采集到你的借阅信息。
 
       </div>
@@ -31,9 +31,9 @@
         <br/>
       </div>
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/借阅时长.png" width="400" height="600"></div>
+    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="../../static/images/毕业生/借阅时长.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
   </div>
 
 </template>

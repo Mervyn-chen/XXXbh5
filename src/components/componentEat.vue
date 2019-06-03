@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 1rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/吃/组 10596.png" >
+      <img src="../../static/images/毕业生/吃/组 10596.png" >
     </div>
     <div style="position:absolute;top: 9.8rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/吃/组 10775.png" >
+      <img src="../../static/images/毕业生/吃/组 10775.png" >
     </div>
     <div class="text" style="padding: 2rem" >
       <div class="common-div-css" style="margin-top: 0.5rem">
         <span>光顾</span>最多的餐厅:
-        <div>
+        <div v-show="eatvisible1">
           {{this.favoritecanteen1}}
         </div>
 
@@ -19,21 +19,30 @@
         <!--</div>-->
         <br/>
         最喜欢<span>吃</span>的摊位：
-        <div>
+        <div v-show="eatvisible2">
           1.{{this.favorite1}}
         </div>
-        2.{{this.favorite2}}<br/>
+        <div v-show="eatvisible3">
+        2.{{this.favorite2}}</div>
+        <div v-show="eatvisible4">
         3.{{this.favorite3}}
         <br/>
+          </div>
         <div><br/>别了东华食堂，记得一日<span>三餐！</span></div>
       </div>
 
 
 
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/吃.png" width="400" height="600"></div>
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/10.png" >
+
+    </div>
+    <div style="position:absolute;top:3rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1313.png" >
+    </div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/生活篇.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/生活篇.png" width="400" height="600"></div>
   </div>
 
 </template>
@@ -44,6 +53,11 @@
       data(){
         return {
           index:0,
+          eatvisible1:true,
+          eatvisible2:true,
+          eatvisible3:true,
+          eatvisible4:true,
+
           result:{
             t_ykt_bath_pm:{
               bathnum:'', //洗浴次数
@@ -138,20 +152,6 @@
       },
       mounted() {
           this.selectstudentinfo();
-        // this.favorite1=localStorage.getItem('favorite1');
-        //
-        //
-        // this.favorite1je=localStorage.getItem('favorite1je');
-        // this.favorite2=localStorage.getItem('favorite2');
-        // this.favorite2je=localStorage.getItem('favorite2je');
-        // this.favorite3=localStorage.getItem('favorite3');
-        // this.favorite3je=localStorage.getItem('favorite3je');
-        // this.favoritecanteen1=localStorage.getItem('favoritecanteen1');
-        // this.favoritecanteen2=localStorage.getItem('favoritecanteen2');
-        // this.favoritecanteen3=localStorage.getItem('favoritecanteen3');
-        // this.favoritecanteen1je=localStorage.getItem('favoritecanteen1je');
-        // this.favoritecanteen2je=localStorage.getItem('favoritecanteen2je');
-        // this.favoritecanteen3je=localStorage.getItem('favoritecanteen3je');
 
 
 
@@ -180,6 +180,24 @@
               this.favoritecanteen2je=this.result.t_ykt_favorite_canteen_pm.favorite2je;
               this.favoritecanteen3=this.result.t_ykt_favorite_canteen_pm.favorite3;
               this.favoritecanteen3je=this.result.t_ykt_favorite_canteen_pm.favorite3je;
+              if(this.favoritecanteen1==null){
+                this.eatvisible1=false;
+
+
+
+              }
+              if(this.favorite1==null)
+              {
+                this.eatvisible2=false;
+              }
+              if(this.favorite2==null)
+              {
+                this.eatvisible3=false;
+              }
+              if(this.favorite3==null)
+              {
+                this.eatvisible4=false;
+              }
 
 
 

@@ -7,7 +7,7 @@
       <div class="common-div-css" style="margin-top: 2rem;">
         <span>{{this.xm}}</span>
         <div>
-          一卡通累计消费<br/><span>{{this.totalconsume}}</span>
+          一卡通累计消费<br/><span>{{this.totalconsume}}</span>元
           <br/>
         </div>
 
@@ -17,9 +17,16 @@
     </div>
     <div id="main1" style="margin-top: 5.5rem;margin-left:1.5rem;width: 300px;height: 250px" ></div>
 
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/消费logo左.png" width="400" height="600"></div>
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/9.png" >
+
+    </div>
+    <div style="position:absolute;top:3rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1313.png" >
+    </div>
+
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/生活篇.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/生活篇.png" width="400" height="600"></div>
   </div>
 
 </template>
@@ -206,66 +213,7 @@
       },
       watch:{
           result:function () {
-            console.log(this.result)
-
-
-            // localStorage.setItem('breakfastnum', this.result.t_ykt_meal_consume.breakfastnum);
-            // localStorage.setItem('breakfasttotal', this.result.t_ykt_meal_consume.breakfasttotal);
-            // localStorage.setItem('Breakfastavg', this.result.t_ykt_meal_consume.breakfastavg);
-            // localStorage.setItem('Lunchnum', this.result.t_ykt_meal_consume.lunchnum );
-            // localStorage.setItem('Lunchtotal', this.result.t_ykt_meal_consume.lunchtotal);
-            // localStorage.setItem('Lunchavg', this.result.t_ykt_meal_consume.lunchavg);
-            // localStorage.setItem('Dinnernum', this.result.t_ykt_meal_consume.dinnernum);
-            // localStorage.setItem('Dinnertotal', this.result.t_ykt_meal_consume.dinnertotal);
-            // localStorage.setItem('Dinneravg', this.result.t_ykt_meal_consume.dinneravg);
-            // localStorage.setItem('bknum', this.result.t_ykt_bk_pm.bknum);
-            // localStorage.setItem('bkpm', this.result.t_ykt_bk_pm.bkpm);
-            // localStorage.setItem('careless', this.result.t_ykt_bk_pm.careless);
-            // localStorage.setItem('carelessms', this.result.t_ykt_bk_pm.carelessms);
-            // localStorage.setItem('longestday',this.result.t_ykt_bk_time.longestday);
-            // localStorage.setItem('shortestday',this.result.t_ykt_bk_time.shortestday);
-            // localStorage.setItem('favorite1',this.result.t_ykt_favorite_booth_pm.favorite1);
-            // localStorage.setItem('favorite1je',this.result.t_ykt_favorite_booth_pm.favorite1je);
-            // localStorage.setItem('favorite2',this.result.t_ykt_favorite_booth_pm.favorite2);
-            // localStorage.setItem('favorite2je',this.result.t_ykt_favorite_booth_pm.favorite2je);
-            // localStorage.setItem('favorite3',this.result.t_ykt_favorite_booth_pm.favorite3);
-            // localStorage.setItem('favorite3je',this.result.t_ykt_favorite_booth_pm.favorite3je);
-            // localStorage.setItem('favoritecanteen1',this.result.t_ykt_favorite_canteen_pm.favorite1);
-            // localStorage.setItem('favoritecanteen1je',this.result.t_ykt_favorite_canteen_pm.favorite1je);
-            // localStorage.setItem('favoritecanteen2',this.result.t_ykt_favorite_canteen_pm.favorite2);
-            // localStorage.setItem('favoritecanteen2je',this.result.t_ykt_favorite_canteen_pm.favorite2je);
-            // localStorage.setItem('favoritecanteen3',this.result.t_ykt_favorite_canteen_pm.favorite3);
-            // localStorage.setItem('favoritecanteen3je',this.result.t_ykt_favorite_canteen_pm.favorite3je);
-            // localStorage.setItem('bathnum',this.result.t_ykt_bath_pm.bathnum);
-            // localStorage.setItem('bathpm',this.result.t_ykt_bath_pm.bathpm);
-            // localStorage.setItem('sm',this.result.t_ykt_bath_pm.sm);
-            // localStorage.setItem('qjzs',this.result.t_ykt_bath_pm.qjzs)
-            //
-            // localStorage.setItem('csjk',this.result.health_pm.csjk)
-            // localStorage.setItem('fyjk',this.result.health_pm.fyjk)
-            // localStorage.setItem('kbfy',this.result.health_pm.kbfy)
-            // localStorage.setItem('kbcs',this.result.health_pm.kbcs)
-            // localStorage.setItem('kbcspm',this.result.health_pm.kbcspm)
-            // localStorage.setItem('kbfypm',this.result.health_pm.kbfypm)
-            // localStorage.setItem('healthsm',this.result.health_pm.sm)
-            // var c2016=this.consume2016;
-            // console.log(c2016);
-            // console.log(this.consume2017)
-            // var c2017=this.consume2017;
-            // console.log(c2017);
-            // var c2018=this.consume2018;
-            // var c2019=this.consume2019;
-            //
-            //
-            // var servicedata=[
-            //   {value:c2016, name:'2016年消费'},
-            //   {value:c2017, name:'2017年消费'},
-            //   {value:this.consume2018, name:'2018年消费'},
-            //   {value:this.consume2019, name:'2019年消费'},
-            // ];
-
-            // console.log(servicedata);
-            // console.log(111)
+            console.log(this.result);
             //直方图的绘制
             var myChart = echarts.init(document.getElementById('main1'));
             myChart.setOption(
@@ -284,22 +232,6 @@
 
                   },
                 },
-
-                // tooltip: {
-                //   // 触发类型（数据项，坐标轴，不触发） ['item', 'axis', 'none']
-                //   trigger: 'none',
-                //   // 坐标轴指示器
-                //   axisPointer: {
-                //     // 指示器类型(直线，阴影，十字) ['line', 'shadow', 'cross']
-                //     type: 'shadow',
-                //     // 坐标轴指示器的文本标签。
-                //     label: {
-                //       // 坐标轴指示器背景色
-                //       backgroundColor: '#283b56'
-                //     }
-                //   }
-                // },
-
 
                 xAxis:{
                   data:["大一","大二","大三","大四"]

@@ -2,7 +2,7 @@
   <div class="container">
 
     <div style="position:absolute;top: 7.5rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/宿舍/组%2010774.png" >
+      <img src="../../static/images/毕业生/宿舍/774.png" >
 
     </div>
     <div class="text" style="padding: 2rem" >
@@ -13,7 +13,7 @@
         <!--个人清洁排名<span>{{this.bathpm}}</span><br/>-->
         <!--个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span><br/>-->
         同吃同住的室友们<br/>
-        <div>四年的青春，四年的感情，给了各自珍惜的理由</div>
+        <div>见证了彼此的青春与成长</div>
         <br/>
 
 
@@ -31,9 +31,15 @@
       class="delay-1.5s">个人清洁指数0{{this.qjzs}}||{{this.sm}}</p>
 -->
     </div>
-    <div style="position:absolute;top:3rem ;left: -6rem; right: 0;bottom: 0;"><img src="/static/images/毕业生/宿舍/组 10775.png" ></div>
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/13.png" >
+
+    </div>
+    <div style="position:absolute;top:3rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1313.png" >
+    </div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/生活篇.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/生活篇.png" width="400" height="600"></div>
   </div>
 
 </template>
@@ -43,6 +49,8 @@
         name: "componentHome",
       data(){
         return {
+          homevisible1:true,
+          homevisible2:false,
           index:0,
           result:{
             t_ykt_bath_pm:{
@@ -137,10 +145,10 @@
         // this.qjzs=localStorage.getItem('qjzs');
         // this.sm=localStorage.getItem('sm');
          this.ssname=localStorage.getItem('ssname')
-        // if(this.ssname==null)
-        // {
-        //   this.homevisible=false;
-        // }
+        if(this.ssname==null)
+        {
+          this.homevisible=false;
+        }
 
 
 
@@ -163,10 +171,7 @@
               this.bathpm=this.result.t_ykt_bath_pm.bathpm;
               this.sm=this.result.t_ykt_bath_pm.sm;
               this.qjzs=this.result.t_ykt_bath_pm.qjzs
-              if(this.ssname==null)
-              {
-                this.homevisible=false;
-              }
+
 
 
 

@@ -9,8 +9,28 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    <audio loop>
-      <source src="audios/background2.mp3" type="/static/audio/mpeg">
-    </audio>
+    <!--<audio loop id="myaudio" class="myaudio" ref="audio" src="static/audio/background2.mp3">-->
+      <!--<source src="../audios/background2.mp3" type="/static/audio/mpeg">-->
+    <!--</audio>-->
   </body>
 </html>
+<script>
+
+  function audioAutoPlay(id){
+    var audio = document.getElementById(id),
+      play = function(){
+        audio.play();
+        document.removeEventListener("touchstart",play, false);
+      };
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {
+      play();
+    }, false);
+    document.addEventListener("touchstart",play, false);
+  }
+  audioAutoPlay('myaudio');
+
+  </script>

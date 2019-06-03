@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div style="position:absolute;top: 1rem ;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇图片3 .png" width="400" height="600"></div>
+    <div style="position:absolute;top: 0rem ;left: 6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1112.png" ></div>
     <div class="text" >
         <div class="common-div-css" style="margin-top: 2.4rem;left:23%">
           <div></div>
           <div>
-            四年里有<span>{{this.studentinfo.sumteacher}}</span>
+            有<span>{{this.studentinfo.sumteacher}}</span>
             位老师为你上课
           </div>
           <div>
@@ -19,11 +19,14 @@
           <div v-show="visible1"><span>你是潜力股！继续加油！</span></div>
 
         </div>
-      <div v-show="visible1"><span>你是潜力股！继续加油！</span></div>
+      <!--<div v-show="visible1"><span>你是潜力股！继续加油！</span></div>-->
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业篇3左logo.png" width="400" height="600"></div>
+    <div style="position:absolute;top: 9rem ;left: 1.5rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/1213.png" ></div>
+    <div style="position:absolute;top:2.5rem ;left: 0.35rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/3.png" ></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
   </div>
 </template>
 <script>

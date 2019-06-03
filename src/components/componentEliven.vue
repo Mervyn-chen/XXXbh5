@@ -1,13 +1,14 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/图书馆篇1图片.png" width="400" height="700"></div>
+      <img src="../../static/images/毕业生/图书馆篇1图片.png" width="400" height="700"></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 3rem;">
         <span>{{this.studentinfo.firstaccess}}</span><br/>第一次走进东华图书馆
         <div>
           在图书馆埋头苦读<span>{{this.studentinfo.accessnumber}}</span>次
         </div>
+        <br/>
 
         <span>读</span>万卷书，行万里路。
         <br/>
@@ -24,9 +25,9 @@
         &lt;!&ndash;大数据统计，同届本专业学霸在图书馆埋头苦读 {{this.studentinfo.accessnumber}}次&ndash;&gt;
       </p>-->
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/图书馆篇1logo.png" width="400" height="600"></div>
+    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="../../static/images/毕业生/图书馆篇1logo.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
   </div>
 
 </template>
@@ -67,7 +68,6 @@
               this.studentinfo.firstaccess=response.data.firstaccess;
               this.studentinfo.xbzs=response.data.xbzs;
               this.studentinfo.earliesttime=response.data.earliesttime;
-
             }).catch(function (err) {
             console.log(err);
           })

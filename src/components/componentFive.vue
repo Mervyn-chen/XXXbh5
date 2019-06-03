@@ -2,10 +2,10 @@
   <div class="container">
 
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇图片4 .png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/学业篇图片4 .png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="line-height:0.7rem;width: 30px;word-wrap: break-word;left:20%;margin-top: 2rem;">
-        <span >十年后，</span>
+        <span >十年后</span>
       </div>
       <div class="common-div-css" style="margin-top: 5rem;left:20%;"  v-show="visible1">
         <br/>
@@ -14,6 +14,7 @@
        上课最多的教室：<span>{{this.studentinfo.classroom}}</span><br/>
         在这里上课<span>{{this.studentinfo.coursenumber}}</span>次<br/>
         你喜欢坐在哪一排？
+        <br/>记得常回来坐坐
 
       </div>
       <div class="common-div-css" style="margin-top: 5rem;left:20%;"  v-show="visible2">
@@ -26,9 +27,10 @@
 
       </div>
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/学业篇4左.png" width="400" height="600"></div>
+    <div style="position:absolute;top:2.5rem ;left: 0.35rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/4.png" ></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600">
+      <img src="../../static/images/毕业生/学业篇左上角logo.png" width="400" height="600">
     </div>
   </div>
 

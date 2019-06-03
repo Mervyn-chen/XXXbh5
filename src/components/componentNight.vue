@@ -1,34 +1,35 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/荣誉成果图片1.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/荣誉成果图片1.png" width="400" height="600"></div>
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/荣誉成果图片2.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/荣誉成果图片2.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css" style="  margin-top: 2rem;">
-        收获季节，<br/>
-       再回首曾经的荣誉成果：
+      <div class="common-div-css" style="  margin-top: 2rem; margin-left: -1.5rem;padding: 1rem">
+        <div>收获季节，<br/>
+       再回首曾经的荣誉成果：</div>
         <br/>
-        <div v-show="nightvisible1">
-        翻过此页，将是一个新的篇章，<br/>
+        <div v-show="nightvisible1" style="  margin-top: 2rem;" >
+          翻过此页，将是一个<span>新</span>的篇章，<br/>
         更多的荣誉在等着你~
         </div>
+        <div  class="info">
 
-        <br/>
-        <span style="line-height:150%;font-size: 0.35rem">
-        <li v-for="i in title1">{{i.title}} {{i.cs}}次</li>
+        <span style="line-height:150%;font-size: 0.35rem" >
+        <li v-for="i in title1">{{i.fl}} {{i.mc}}</li>
           <li v-for="j in title2">{{j.title}} {{j.cs}}次</li>
         </span>
-
+      </div>
       </div>
       <!--<p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
         不知不觉中，积累了蛮多的荣誉成果！
       </p>
       <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">{{this.studentinfo.title}}</p>-->
     </div>
-    <div style="position:absolute;top: 0rem;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/荣誉成果篇.png" width="400" height="600"></div>
+    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+      <img src="../../static/images/sidepage/7.png" ></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
   </div>
 
 </template>
@@ -44,8 +45,8 @@
         xh:'',
         title1:[],
         unit1:{
-          title:"",
-          cs:'',
+          fl:"",
+          mc:"",
 
         },
         title2:[],
@@ -74,11 +75,19 @@
           .then(response=>{
             // this.result = response.data;
             console.log(response.data);
-            if(response.data==null)
+            if(response.data.student_jw_honor_others.length==0&&response.data.student_jw_honor_scholarships.length==0)
             {
               this.nightvisible1=true;
 
             }
+            // if(response.data.student_jw_honor_others.length+response.data.student_jw_honor_scholarships.length>6)
+            // {
+            //
+            //
+            //
+            //
+            //
+            // }
 
             //console.log(response.data.student_jw_honor_scholarships[0]);
             //this.title2=response.data.student_jw_honor_scholarships[1];
@@ -88,14 +97,15 @@
 
             //
             for(var i=0;i<response.data.student_jw_honor_others.length;i++) {
-              this.unit1.title = response.data.student_jw_honor_others[i].title;
-              this.unit1.cs = response.data.student_jw_honor_others[i].cs;
+              this.unit1.fl = response.data.student_jw_honor_others[i].fl;
+              this.unit1.mc = response.data.student_jw_honor_others[i].mc;
               this.title1.push(this.unit1);
-              this.unit1={title:"",
-                cs:'',};
+              this.unit1={fl:"",
+                mc:"",};
 
             }
-            console.log(this.title1)
+            console.log(this.title1);
+
 
 
 
@@ -133,6 +143,13 @@
     .img {
       width: 7rem;
       margin: .6rem 0;
+    }
+    .info{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical
     }
 
   }

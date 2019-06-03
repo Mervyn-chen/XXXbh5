@@ -39,6 +39,14 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
+        test: /\.(mp3)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          name: utils.assetsPath('assets/[name].[hash:7].[ext]')
+        }
+      },
+
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
