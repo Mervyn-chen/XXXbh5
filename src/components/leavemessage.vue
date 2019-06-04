@@ -12,48 +12,19 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         <vue-seamless-scroll :data="listData"  class="seamless-warp" :class-option="classOption">
           <ul class="item">
             <li v-for="item in listData">
-              <div style="font-weight: 600">{{item[1]}}:</div>
-              {{item[0]}}
-              <!--  <span class="title" v-text="item[1]"></span>：<br>
-                <span class="date" v-text="item[0]"></span>-->
+              <div style="font-weight: 600">{{item.name}}:</div>
+              {{item.message}}
             </li>
           </ul>
         </vue-seamless-scroll>
-
-
-
-        <!--<div>-->
-
-
-
-        <!--<textarea placeholder="100字以内" id="leaveMessageText" maxlength="100" style="height: 0.8rem;width: 5.2rem;margin-top: 0.8rem" @input="descInput" v-model="desc" />-->
-        <!--<mt-button size="small"  type="primary" v-on:click="save()">发送</mt-button>-->
-        <!--</div>-->
-
       </div>
-
-
-
     </div>
-    <!--<van-cell-group style="margin-top: 11rem">
-      <van-field
-        v-model="desc"
-        label="留言"
-        type="textarea"
-        placeholder="请输入留言(20字以内)"
-        rows="1"
-        autosize
-      >
-        <van-button slot="button" size="small" type="primary" v-on:click="save()">发送</van-button>
-      </van-field>
-    </van-cell-group>-->
-    <van-submit-bar
+    <van-submit-bar style="bottom: 0.1rem"
       button-text="留言"
       @submit="save"
     >
       <van-field v-model="desc" placeholder="请输入20字以内" />
     </van-submit-bar>
-
 
   </div>
 
