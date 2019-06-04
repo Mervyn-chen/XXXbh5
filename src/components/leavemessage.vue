@@ -12,8 +12,8 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         <vue-seamless-scroll :data="listData"  class="seamless-warp" :class-option="classOption">
           <ul class="item">
             <li v-for="item in listData">
-              <div style="font-weight: 600">{{item.name}}:</div>
-              {{item.message}}
+              <div style="font-weight: 600">{{item[1]}}:</div>
+              {{item[0]}}
             </li>
           </ul>
         </vue-seamless-scroll>

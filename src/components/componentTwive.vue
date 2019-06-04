@@ -5,8 +5,8 @@
     <div class="text" >
       <div class="common-div-css" style="margin-top: 5rem;" v-show="twelvevisibe1">
         “读一本好书，就像和许多高尚的人谈话”——歌德，与君共勉！
-      </div>>
-      <div class="common-div-css" style="margin-top: 2rem;" v-show="twelvevisible2">
+      </div>
+      <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisible2">
         <span>{{this.studentinfo.firstbooktime}}</span> 借阅第一本书：<br/>
         <!--时间:<span>{{this.studentinfo.firstbooktime}}</span>，<br/>-->
         书名《<span>{{this.studentinfo.firstbook}}》</span>

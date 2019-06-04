@@ -8,8 +8,8 @@
           <!--隐藏audio标签-->
           <audio autoplay="autoplay" id="music1">
     <!--        <source src="https://test.app.bhfae.com:8443/files/file/2177691016.mp3">-->
-    <!--<source src="../static/audio/background2.mp3">   -->
-    <source src="../static/audio/background3.mp3">   
+    <!--<source src="/static/audio/background2.mp3">   -->
+    <source src="/static/audio/background3.mp3">   
       </audio>
         </div>
 
@@ -32,6 +32,18 @@ export default {
       } else {
         audio.pause();// 暂停
       }
+      play = function(){
+        audio.play();
+        document.removeEventListener("touchstart",play, false);
+      };
+      audio.play();
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        play();
+      }, false);
+      document.addEventListener('YixinJSBridgeReady', function() {
+        play();
+      }, false);
+      document.addEventListener("touchstart",play, false);
     },
     audioAutoPlay(id) {
       let audio = document.getElementById(id),
