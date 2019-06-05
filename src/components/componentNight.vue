@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/荣誉成果图片1.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/111191.png" width="400" height="600"></div>
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/荣誉成果图片2.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/111192.png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="  margin-top: 2rem; margin-left: -1.5rem;padding: 1rem">
         <div>收获季节，<br/>

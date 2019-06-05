@@ -59,7 +59,7 @@ export default {
   },
     data(){
         return {
-            componentList:['componentOne','componentTwo','componentThree','componentFour','componentFive','componentSeven','componentEight','componentNight','componentTen','componentEliven','componentTwive','componentthirteen','componentdaynight','componentlifeone','consume','dailyfood','componentEat','componentCard','componentHospital','componentHome','componentEnd','leavemessage'],
+            componentList:['componentOne','componentTwo','componentThree','componentFour','componentFive','componentSeven','componentEight','componentNight','componentTen','componentEliven','componentTwive','componentthirteen','componentdaynight','componentlifeone','consume','dailyfood','componentEat','componentCard','componentHospital','componentHome','leavemessage','componentEnd'],
             index:0,
             xh:'',
             distance:0,//手指在页面滑动的距离

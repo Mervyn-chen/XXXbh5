@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/图书馆篇1图片.png" width="400" height="700"></div>
+      <img src="../../static/images/毕业生/11121.png" width="400" height="700"></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 3rem;">
         <span>{{this.studentinfo.firstaccess}}</span><br/>第一次走进东华图书馆

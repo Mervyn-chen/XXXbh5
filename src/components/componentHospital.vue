@@ -2,8 +2,8 @@
   <div class="container">
 
     <div style="position:absolute;top: 8rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/校医院/组 10776.png" >
-      <img src="../../static/images/毕业生/校医院/组 10741.png" >
+      <img src="../../static/images/毕业生/校医院/7762.png" >
+      <img src="../../static/images/毕业生/校医院/hosp1.png" >
 
     </div>
     <div class="text" style="padding: 2rem" >

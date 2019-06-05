@@ -6,7 +6,7 @@
 
     </div>
     <div style="position:absolute;top: 8rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/老虎.png" >
+      <img src="../../static/images/毕业生/131414.png" >
 
     </div>
     <div class="text" style="padding: 2rem" >

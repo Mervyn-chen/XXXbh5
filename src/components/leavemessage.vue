@@ -3,8 +3,8 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <!--<img src="/static/images/毕业生/早晚时间.png" width="400" height="600">-->
-      <img src="../../static/images/毕业生/矩形 958.png" width="400" height="250">
-      <img src="../../static/images/毕业生/飞机1.png" >
+      <img src="../../static/images/毕业生/958.png" width="400" height="250">
+      <img src="../../static/images/毕业生/plane.png" >
     </div>
 
     <div class="text" >

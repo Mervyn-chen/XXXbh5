@@ -6,7 +6,7 @@
     <div class="swiper-button-next" @click="close"><i class="icon "></i></div>
         <div class="audio">
           <!--隐藏audio标签-->
-          <audio autoplay="autoplay" id="music1">
+          <audio autoplay="autoplay" id="music1" loop="loop">
     <!--        <source src="https://test.app.bhfae.com:8443/files/file/2177691016.mp3">-->
     <!--<source src="/static/audio/background2.mp3">   -->
     <source src="/static/audio/background3.mp3">   
