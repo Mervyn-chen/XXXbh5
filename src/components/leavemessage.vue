@@ -1,10 +1,14 @@
 import vueSeamlessScroll from 'vue-seamless-scroll'
+
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <!--<img src="/static/images/毕业生/早晚时间.png" width="400" height="600">-->
-      <img src="../../static/images/毕业生/958.png" width="400" height="250">
-      <img src="../../static/images/毕业生/plane.png" >
+      <van-swipe :autoplay="3000">
+        <van-swipe-item v-for="(image, index) in imagesArr" :key="index">
+          <img :src="image" width="100%">
+        </van-swipe-item>
+      </van-swipe>
+      <img style="margin-top: -1.5rem" src="../../static/images/毕业生/plane.png" >
     </div>
 
     <div class="text" >
@@ -19,9 +23,9 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         </vue-seamless-scroll>
       </div>
     </div>
-    <van-submit-bar style="bottom: 0.1rem"
-      button-text="留言"
-      @submit="save"
+    <van-submit-bar style="bottom: 0.1rem;width: 99%"
+                    button-text="留言"
+                    @submit="save"
     >
       <van-field v-model="desc" placeholder="请输入20字以内" />
     </van-submit-bar>
@@ -41,7 +45,15 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         animate:true,
         txtVal: 0,
         desc:"",
-        listData: []
+        listData: [],
+        imagesArr: [
+        //  '../../static/images/毕业生/dynamic/dynamic1.png',
+          '../../static/images/毕业生/dynamic/dynamic2.png',
+          '../../static/images/毕业生/dynamic/dynamic3.png',
+          '../../static/images/毕业生/dynamic/dynamic4.png',
+          '../../static/images/毕业生/dynamic/dynamic6.jpg',
+          '../../static/images/毕业生/dynamic/dynamic7.jpg',
+        ],
       }
     },
     created(){
