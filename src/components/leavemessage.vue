@@ -47,7 +47,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         desc:"",
         listData: [],
         imagesArr: [
-          '../../static/images/毕业生/dynamic/dynamic1.png',
+        //  '../../static/images/毕业生/dynamic/dynamic1.png',
           '../../static/images/毕业生/dynamic/dynamic2.png',
           '../../static/images/毕业生/dynamic/dynamic3.png',
           '../../static/images/毕业生/dynamic/dynamic4.png',
