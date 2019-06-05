@@ -5,7 +5,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(image, index) in imagesArr" :key="index">
-          <img v-lazy="image" width="100%"/>
+          <img :src="image" width="100%">
         </van-swipe-item>
       </van-swipe>
       <img style="margin-top: -1.5rem" src="../../static/images/毕业生/plane.png" >
