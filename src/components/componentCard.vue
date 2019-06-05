@@ -14,7 +14,7 @@
         <span>一卡通</span>补办<span>{{this.bknum}}</span>次
         <br/>
         <br/>
-        粗心指数：<span>{{this.careless}}<br/>{{this.carelessms}}</span>
+        粗心指数：<span>{{this.careless}}<br/></span><div v-show="cardvisible2"><span>{{this.carelessms}}</span></div>
         <div>
           最长陪伴：<span>{{this.longestday}}天</span>
         </div>
@@ -126,7 +126,9 @@
 
           },
           cardvisible1:true,
-          vardvisible2:false,
+
+          cardvisible2:true,
+          cardvisible3:true,
 
           bknum:'', //补卡次数
           bkpm:'',//补卡排名
@@ -178,12 +180,17 @@
               this.careless=this.result.t_ykt_bk_pm.careless;
               this.carelessms=this.result.t_ykt_bk_pm.carelessms;
               this.longestday=this.result.t_ykt_bk_time.longestday;
-              this.shortesttime=this.result.t_ykt_bk_time.shortestday;
-              if(this.bknum==0)
+              this.shortestday=this.result.t_ykt_bk_time.shortestday;
+              if(this.bknum==0||this.shortestday==null)
               {
                 this.cardvisible1=false;
               }
+              if(this.carelessms=="一般！")
+              {
+                this.cardvisible2=false;
 
+
+              }
 
 
             }).catch(function (err) {

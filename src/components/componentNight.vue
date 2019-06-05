@@ -6,7 +6,7 @@
       <img src="../../static/images/毕业生/111192.png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="  margin-top: 2rem; margin-left: -1.5rem;padding: 1rem">
-        <div>收获季节，<br/>
+        <div v-show="nightvisible2" >收获季节，<br/>
        再回首曾经的荣誉成果：</div>
         <br/>
         <div v-show="nightvisible1" style="  margin-top: 2rem;" >
@@ -40,6 +40,7 @@
     data(){
       return {
         nightvisible1:false,
+        nightvisible2:true,
 
         index:0,
         xh:'',
@@ -78,6 +79,7 @@
             if(response.data.student_jw_honor_others.length==0&&response.data.student_jw_honor_scholarships.length==0)
             {
               this.nightvisible1=true;
+              this.nightvisible2=false;
 
             }
             // if(response.data.student_jw_honor_others.length+response.data.student_jw_honor_scholarships.length>6)

@@ -82,7 +82,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
           Toast("20字以内");
           return;
         }
-        if(message.length=0){
+        if(message.length==0){
           Toast("请输入留言");
           return;
         }
