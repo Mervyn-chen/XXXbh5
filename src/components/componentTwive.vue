@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/阅读经历图片.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/121212.png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 5rem;" v-show="twelvevisibe1">
         “读一本好书，就像和许多高尚的人谈话”——歌德，与君共勉！
-      </div>>
-      <div class="common-div-css" style="margin-top: 2rem;" v-show="twelvevisible2">
+      </div>
+      <div class="common-div-css" style="margin-top: 3rem;" v-show="twelvevisible2">
         <span>{{this.studentinfo.firstbooktime}}</span> 借阅第一本书：<br/>
         <!--时间:<span>{{this.studentinfo.firstbooktime}}</span>，<br/>-->
-        书名《<span>{{this.studentinfo.firstbook}}》</span>
+        书名《<span>{{this.studentinfo.firstbook}}</span>》
         <div>
           最喜欢的书目类型：<span>{{this.studentinfo.booktype}}</span><br/>
           借阅<span>{{this.studentinfo.booktypenum}}</span>本此类型图书
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="../../static/images/毕业生/阅读经历logo.png" width="400" height="600"></div>
+    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="../../static/images/毕业生/131441.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
       <img src="../../static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
   </div>

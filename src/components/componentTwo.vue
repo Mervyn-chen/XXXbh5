@@ -1,7 +1,7 @@
 <template>
     <div class="container" @focus="selectstudentinfo">
       <div style="position:absolute;top: -0.5rem;left: -0.5rem;right: 0;bottom: 0;">
-        <img src="../../static/images/毕业生/欢迎来到东华.png" width="400" height="600"></div>
+        <img src="../../static/images/毕业生/11111.png" width="400" height="600"></div>
 
 
         <div class="text" ><!--SimHei   Ink Free   cursive-->
@@ -28,7 +28,7 @@
         <img src="../../static/images/sidepage/1.png" ></div>
       <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
         <img src="../../static/images/毕业生/学业篇左上角logo.png" width="400" height="600"></div>
-      <div style="position:absolute;top: 3rem;left: -0.5rem;right: 0;bottom: 0;"><img src="../../static/images/毕业生/学业篇图片1.png" width="400" height="600"></div>
+      <div style="position:absolute;top: 3rem;left: -0.5rem;right: 0;bottom: 0;"><img src="../../static/images/毕业生/11112.png" width="400" height="600"></div>
 
     </div>
 </template>

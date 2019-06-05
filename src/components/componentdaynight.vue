@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/吃/1.png" ></div>
+      <img src="../../static/images/毕业生/吃/1.png" ></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 2rem;">
         <span>最早</span>到图书馆的时间:<br/>
@@ -14,16 +14,16 @@
         <div style="margin-top: 0rem">读书的意义，<span>不在于</span>我们看了什么，
           <br/>而在于它使我们变成<span>更好</span>的自己。</div>
       </div>
-      <img src="/static/images/毕业生/吃/2.png" style="position:absolute;top: 10rem;left: 1rem;right: 0;bottom: 0;">
+      <img src="../../static/images/毕业生/吃/2.png" style="position:absolute;top: 10rem;left: 1rem;right: 0;bottom: 0;">
      <!-- <p style="margin-top: 0rem; margin-left: 0rem; padding: 2rem":class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-0.5s">
         最早到图书馆的时间:{{this.studentinfo.earliesttime}}
       </p>
       <p style="margin-top: -3rem; margin-left: 0rem; padding: 1.5rem">最晚到图书馆的时间: {{this.studentinfo.latesttime}}</p>-->
 
     </div>
-    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="/static/images/毕业生/早晚时间logo.png" width="400" height="600"></div>
+    <div style="position:absolute;top:0 ;left: 0; right: 0;bottom: 0;"><img src="../../static/images/毕业生/14left.png" width="400" height="600"></div>
     <div style="position:absolute;top:0 ;left: 0;right: 0;bottom: 0;">
-      <img src="/static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/图书馆篇logo.png" width="400" height="600"></div>
   </div>
 
 </template>

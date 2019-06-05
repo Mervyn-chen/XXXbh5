@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 2.5rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/考试篇图案.png" width="400" height="600"></div>
+      <img src="../../static/images/毕业生/11117.png" width="400" height="600"></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 2rem" v-show="sevenvisible1">
         系统未采集到您的信息……

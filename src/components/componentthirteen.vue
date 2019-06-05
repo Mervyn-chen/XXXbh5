@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: -1rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/借阅时长图片.png" width="380" height="650"></div>
+      <img src="../../static/images/毕业生/131313.png" width="380" height="650"></div>
     <div class="text" style="line-height:0.8rem;" >
       <div class="common-div-css" style="margin-top: 1.5rem;"v-show="thirteenvisible2">
         您借阅过一本书:<br/>

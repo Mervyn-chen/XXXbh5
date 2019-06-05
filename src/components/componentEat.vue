@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div style="position:absolute;top: 1rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/吃/组 10596.png" >
+      <img src="../../static/images/毕业生/吃/596.png" >
     </div>
     <div style="position:absolute;top: 9.8rem;left: 0rem;right: 0;bottom: 0;">
-      <img src="../../static/images/毕业生/吃/组 10775.png" >
+      <img src="../../static/images/毕业生/吃/107.png" >
     </div>
     <div class="text" style="padding: 2rem" >
       <div class="common-div-css" style="margin-top: 0.5rem">
