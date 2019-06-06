@@ -1,4 +1,16 @@
 <template>
+  <div>
+  <!--<audio src="../static/audio/background2.mp3" autoplay loop preload></audio>-->
+  <router-view></router-view>
+  <div class="swiper-button-next" @click="close"><i class="icon "></i></div>
+      <div class="audio">
+        <!--隐藏audio标签-->
+        <audio autoplay="autoplay" id="music1" loop="loop">
+          <source src="https://test.app.bhfae.com:8443/files/file/2177691016.mp3">
+  <!--<source src="../static/audio/background2.mp3">   -->
+  <!--<source src="/static/audio/background3.mp3">   -->
+    </audio>
+      </div>
     <div class="containers">
         <v-touch class="container"
                  @panstart.prevent="panStart"
@@ -16,6 +28,7 @@
 
         </v-touch>
     </div>
+  </div>
 </template>
 <script>
 var componentList = {
@@ -131,6 +144,41 @@ export default {
         }
     },
     methods:{
+      close() {
+        var audio = document.getElementById('music1');
+        if (audio.paused) {
+          audio.play();  // 播放
+        } else {
+          audio.pause();// 暂停
+        }
+        play = function(){
+          audio.play();
+          document.removeEventListener("touchstart",play, false);
+        };
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+          play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {
+          play();
+        }, false);
+        document.addEventListener("touchstart",play, false);
+      },
+      audioAutoPlay(id) {
+        let audio = document.getElementById(id),
+          play = function(){
+            audio.play();
+            document.removeEventListener("touchstart",play, false);
+          };
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+          play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {
+          play();
+        }, false);
+        document.addEventListener("touchstart",play, false);
+      },
         panStart(e){
             e.preventDefault();
             if (!this.canmove) {
@@ -322,4 +370,21 @@ export default {
     components:componentList
 }
 </script>
+<style lang="scss" scoped>
+  #app{
+    height:100%;
+  }
+  .icon{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background: url(../../static/images/music.png) no-repeat;
+    background-size: 100%;
+    margin:10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 100;
 
+  }
+</style>

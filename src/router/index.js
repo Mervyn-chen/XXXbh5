@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import total from '@/components/total'
 
 import load from '@/components/load'
+import suggest from '@/components/suggest'
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ export default new Router({
       path:'/page',
       name:'total',
       component:total
+    },
+    {
+      path:'/suggest',
+      name:'suggest',
+      component:suggest
     }
   ]
 })

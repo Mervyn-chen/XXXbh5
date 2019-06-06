@@ -138,17 +138,19 @@
 
         }
       },
+      created(){
+
+
+      },
+
       mounted() {
           this.selectstudentinfo();
         // this.bathnum=localStorage.getItem('bathnum');
         // this.bathpm=localStorage.getItem('bathpm');
         // this.qjzs=localStorage.getItem('qjzs');
         // this.sm=localStorage.getItem('sm');
-         this.ssname=localStorage.getItem('ssname')
-        if(this.ssname==null)
-        {
-          this.homevisible=false;
-        }
+         //this.ssname=localStorage.getItem('ssname')
+
 
 
 
@@ -175,6 +177,22 @@
 
 
 
+
+            }).catch(function (err) {
+            console.log(err);
+          })
+
+
+          this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
+            .then(response=>{
+              this.result = response.data;
+              console.log(response.data);
+
+              this.ssname=response.data.ssname;
+              if(this.ssname==null)
+              {
+                this.homevisible=false;
+              }
 
             }).catch(function (err) {
             console.log(err);

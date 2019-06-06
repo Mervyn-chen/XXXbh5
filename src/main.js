@@ -9,6 +9,10 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+
 
 import echarts from 'echarts'
 //和这一行：
@@ -37,6 +41,7 @@ Vue.use(Vant);
 Vue.use(MintUI);
 Vue.use(router);
 Vue.use(echarts);
+Vue.use(ElementUI);
 
 
 
