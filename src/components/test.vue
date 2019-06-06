@@ -1,15 +1,6 @@
 <template>
   <div>
-    <!--<swipe class="my-swipe">-->
-      <!--<swipe-item class="slide1"></swipe-item>-->
-      <!--<swipe-item class="slide2"></swipe-item>-->
-      <!--<swipe-item class="slide3"></swipe-item>-->
-    <!--</swipe>-->
-  <!--<van-swipe   class="img"  >-->
-    <!--<van-swipe-item v-for="(image, index) in images" :key="index">-->
-      <!--<img class="img" v-lazy="image" />-->
-    <!--</van-swipe-item>-->
-  <!--</van-swipe>-->
+
     <div class="wrapper">
       <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
         <swiper-slide v-for="item of swiperList" :key="item.id">
@@ -151,9 +142,9 @@
 </script>
 
 <style scoped>
-  .wrapper >>> .swiper-pagination-bullet-active { // 对样式进行穿透
-  background: #fff;
-  }
+  /*.wrapper >>> .swiper-pagination-bullet-active { // 对样式进行穿透*/
+  /*background: #fff;*/
+  /*}*/
 
   .wrapper {
     width: 100%;

@@ -11,8 +11,7 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-require('vue-swipe/dist/vue-swipe.css');
-import { Swipe, SwipeItem } from 'vue-swipe';
+
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
@@ -28,9 +27,6 @@ import '../static/css/animate.css'
 
 import scroll from 'vue-seamless-scroll'
 
-import { Swipe, SwipeItem } from 'vant';
-Vue.use(Swipe).use(SwipeItem);
-
 
 Vue.use(scroll)
 
@@ -45,8 +41,6 @@ Vue.use(MintUI);
 Vue.use(router);
 Vue.use(echarts);
 Vue.use(ElementUI);
-Vue.component('swipe', Swipe);
-Vue.component('swipe-item', SwipeItem);
 Vue.use(VueAwesomeSwiper);
 
 
