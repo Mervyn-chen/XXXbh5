@@ -21,6 +21,10 @@ import '../static/css/animate.css'
 
 import scroll from 'vue-seamless-scroll'
 
+import { Swipe, SwipeItem } from 'vant';
+Vue.use(Swipe).use(SwipeItem);
+
+
 Vue.use(scroll)
 
 Vue.config.productionTip = false
