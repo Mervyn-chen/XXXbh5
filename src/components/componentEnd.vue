@@ -2,7 +2,7 @@
   <div class="container">
     <div class="">
 
-      <van-button style="margin-top: 12rem;" icon="star-o" type="primary"  @click="tosuggest">意见反馈</van-button>
+      <van-button style="margin-top: 12.5rem;" icon="star-o" type="primary"  @click="tosuggest">意见反馈</van-button>
       <!--<img src="/static/images/毕业生/firstpage/1.png" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->
       <!--<img src="/static/images/毕业生/firstpage/23.png" style="top: -1.5rem;"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->
       <!--<img   src="/static/images/毕业生/firstpage/10780.png"  :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">-->

@@ -5,6 +5,7 @@ import total from '@/components/total'
 
 import load from '@/components/load'
 import suggest from '@/components/suggest'
+import test from '@/components/test'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path:'/suggest',
       name:'suggest',
       component:suggest
+    },
+    {
+      path:'/test',
+      name:'test',
+      component:test,
     }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
+    <div style="position:absolute;top: -1.5rem;left: 0rem;right: 0;bottom: 0;">
       <img src="../../static/images/毕业生/11118.png" width="400" height="600"></div>
     <div v-show="eightvisible1" id="greatscore" style="width:100%;height: 300px;margin-top: 2.5rem" ></div>
 

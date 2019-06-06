@@ -1,7 +1,7 @@
 <!--import '../static/css/commdiv.css'-->
 <template>
     <div class="container">
-      <div style="position:absolute;top: -2rem;left: 0rem;right: 0;bottom: 0;">
+      <div style="position:absolute;top: 0rem;left: 3rem;right: 0;bottom: 0;">
         <img src="../../static/images/毕业生/吃/4.png" ></div>
         <div class="text " style="padding: 1.5rem;line-height:1rem">
           <div v-show="visible6">

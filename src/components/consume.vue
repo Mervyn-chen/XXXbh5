@@ -10,13 +10,14 @@
           一卡通累计消费<br/><span>{{this.totalconsume}}</span>元
           <br/>
         </div>
+        超过<span>{{this.pm}}%</span>的学生
 
 
       </div>
 
     </div>
-    <div id="main1" style="margin-top: 5.5rem;margin-left:1.5rem;width: 300px;height: 250px" ></div>
-
+    <div id="main1" style="margin-top: 6rem;margin-left:1.7rem;width: 300px;height: 250px" ></div>
+    <div style="margin-top:-0.5rem"> 数据采集开始时间为2016年4月</div>
     <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
       <img src="../../static/images/sidepage/9.png" >
 
@@ -40,6 +41,7 @@
         return {
           index:0,
           servicedata:[],
+          pm:'',
 
 
           favoritecanteen1:'', //第一食堂
@@ -225,7 +227,7 @@
                     fontSize:20,
                     position:'center'
                   },
-                  subtext: '数据采集开始时间为2016年4月',
+                  subtext: '',
                   subtextStyle:{
                           color:'#000000',
                           fontSize:10,
@@ -237,6 +239,7 @@
                   data:["大一","大二","大三","大四"]
                 },
                 yAxis: {
+                  //show:false,
                   type: 'value',
                   // min: 0,
                   // max: 4000,
@@ -304,65 +307,6 @@
             );
 
 
-            //饼图的绘制
-            // var myChart = echarts.init(document.getElementById('main1'));
-            // // 绘制图表
-            // myChart.setOption({
-            //   title : {
-            //     text: '各学年累计消费',
-            //     subtext: '一卡通消费记录采集开始时间为2016年4月',
-            //     textStyle:{
-            //       color: '#663300',
-            //       fontSize:20,
-            //
-            //
-            //     },
-            //     subtextStyle:{
-            //       color:'#000000',
-            //       fontSize:10,
-            //
-            //     },
-            //     x:'center'
-            //   },
-            //   // tooltip : {
-            //   //   trigger: 'item',
-            //   //   formatter: "{a} <br/>{b} : {c} ({d}%)"
-            //   // },
-            //
-            //   series : [
-            //     {
-            //       //name: '访问来源',
-            //       type: 'pie',
-            //       label: {
-            //         normal: {
-            //           show: true,
-            //           ////数据在中间显示
-            //           formatter: '{b}: {c}',
-            //           textStyle : {
-            //             //fontWeight : 300 ,
-            //             fontSize : 8    //文字的字体大小
-            //           },
-            //         }
-            //       },
-            //       radius : '55%',
-            //       center: ['50%', '60%'],
-            //       data:[
-            //         {value:this.consume2016, name:'2016年消费'},
-            //         {value:this.consume2017, name:'2017年消费'},
-            //         {value:this.consume2018, name:'2018年消费'},
-            //         {value:this.consume2019, name:'2019年消费'},
-            //
-            //       ],
-            //       itemStyle: {
-            //         emphasis: {
-            //           shadowBlur: 10,
-            //           shadowOffsetX: 0,
-            //           shadowColor: 'rgba(0, 0, 0, 0.5)'
-            //         }
-            //       }
-            //     }
-            //   ]
-            // });
 
 
 
@@ -392,30 +336,12 @@
               this.consume2017=this.result.t_ykt_consume.consume2;
               this.consume2018=this.result.t_ykt_consume.consume3;
               this.consume2019=this.result.t_ykt_consume.consume4;
+              this.pm=this.result.t_ykt_consume_pm.totalconsumepm;
               console.log(this.consume2016);
               console.log(this.consume2017);
               console.log(this.consume2018);
               console.log(this.consume2019);
 
-
-
-              // this.studentinfo.hispitalrank = response.data.hispitalrank;
-              // this.studentinfo.xh=response.data.xh;
-              // this.studentinfo.breakfastnum=response.data.breakfastnum;
-              // this.studentinfo.consume2016=response.data.consume2016;
-              // this.studentinfo.consume2017=response.data.consume2017;
-              // this.studentinfo.consume2018=response.data.consume2018;
-              // this.studentinfo.consume2019=response.data.consume2019;
-              // this.studentinfo.consumerank1=response.data.consumerank1;
-              // this.studentinfo.consumerank2=response.data.consumerank2;
-              // this.studentinfo.dinnercost=response.data.dinnercost;
-              // this.studentinfo.hospitalconsume=response.data.hospitalconsume;
-              // this.studentinfo.longesttime=response.data.longesttime;
-              // this.studentinfo.lunchnum=response.data.lunchnum;
-              // this.studentinfo.reissuerank=response.data.reissuerank;
-              // this.studentinfo.shortesttime=response.data.shortesttime;
-              // this.studentinfo.showerrank=response.data.showerrank;
-              // this.studentinfo.totalconsume=response.data.totalconsume;
 
 
 

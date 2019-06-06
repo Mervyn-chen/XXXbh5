@@ -58,7 +58,7 @@ export default {
             if (val=== 8) {
                 var finished = true;
                 //this.xh=this.$route.query.xh;
-                var xh='151030128';
+                var xh='130920302';
                 //localStorage.setItem('xh',this.studentid);
                 this.$router.push({path:'page?xh='+xh,query:{finished:true}})
             }

@@ -4,10 +4,10 @@
       <img src="../../static/images/毕业生/吃/1.png" ></div>
     <div class="text" >
       <div class="common-div-css" style="margin-top: 2rem;">
-        <span>最早</span>到图书馆的时间:<br/>
-        <span>{{this.studentinfo.earliesttime}}</span>
+        <div v-show="daynightvisible1"><span>最早</span>到图书馆的时间:<br/>
+          <span>{{this.studentinfo.earliesttime}}</span></div>
         <br/>
-        <div>
+        <div v-show="daynightvisible2">
           <span>最晚</span>到图书馆的时间:<br/>
           <span>{{this.studentinfo.latesttime}}</span>
         </div>
@@ -35,6 +35,8 @@
         return {
           index:0,
           xh:'',
+          daynightvisible1:true,
+          daynightvisible2:true,
           studentinfo:{
             latesttime: '',
             accessnumber:'',
@@ -64,6 +66,14 @@
               this.studentinfo.firstaccess=response.data.firstaccess;
               this.studentinfo.xbzs=response.data.xbzs;
               this.studentinfo.earliesttime=response.data.earliesttime;
+              if(response.data.earliesttime==null)
+              {
+                this.daynightvisible1=false;
+              }
+              if(response.data.latesttime==null)
+              {
+                this.daynightvisible2=false;
+              }
 
             }).catch(function (err) {
             console.log(err);

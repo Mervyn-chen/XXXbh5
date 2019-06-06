@@ -5,10 +5,10 @@
   <div class="swiper-button-next" @click="close"><i class="icon "></i></div>
       <div class="audio">
         <!--隐藏audio标签-->
-        <audio autoplay="autoplay" id="music1" loop="loop">
-          <source src="https://test.app.bhfae.com:8443/files/file/2177691016.mp3">
+        <audio autoplay="autoplay" id="music1" loop="loop" preload>
+  <!--        <source src="https://test.app.bhfae.com:8443/files/file/2177691016.mp3">-->
   <!--<source src="../static/audio/background2.mp3">   -->
-  <!--<source src="/static/audio/background3.mp3">   -->
+  <source src="/static/audio/background3.mp3">   
     </audio>
       </div>
     <div class="containers">
@@ -30,7 +30,7 @@
     </div>
   </div>
 </template>
-<script>
+<script >
 var componentList = {
      componentOne:require('@/components/componentOne.vue').default,
      componentTwo: require("@/components/componentTwo.vue").default,
@@ -68,6 +68,7 @@ export default {
   mounted(){
       this.xh=this.$route.query.xh;
       console.log(xh);
+    this.audioAutoPlay('music1');
 
   },
     data(){
@@ -146,6 +147,7 @@ export default {
     methods:{
       close() {
         var audio = document.getElementById('music1');
+
         if (audio.paused) {
           audio.play();  // 播放
         } else {
@@ -370,6 +372,7 @@ export default {
     components:componentList
 }
 </script>
+
 <style lang="scss" scoped>
   #app{
     height:100%;
