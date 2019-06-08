@@ -10,7 +10,10 @@
 
     </div>
     <div class="text" style="padding: 2rem" >
-      <div class="common-div-css">
+      <div v-show="cardvisible5" class="common-div-css" style="margin-top: 2rem">
+        系统未采集到你的一卡通信息
+      </div>
+      <div class="common-div-css" v-show="cardvisible4">
         <span>一卡通</span>补办<span>{{this.bknum}}</span>次
         <br/>
         <br/>
@@ -129,6 +132,8 @@
 
           cardvisible2:true,
           cardvisible3:true,
+          cardvisible4:true,
+          cardvisible5:false,
 
           bknum:'', //补卡次数
           bkpm:'',//补卡排名
@@ -184,6 +189,12 @@
               if(this.bknum==0||this.shortestday==null)
               {
                 this.cardvisible1=false;
+              }
+              if(this.longestday==0)
+              {
+                this.cardvisible4=false;
+                this.cardvisible5=true;
+
               }
               if(this.carelessms=="一般！")
               {

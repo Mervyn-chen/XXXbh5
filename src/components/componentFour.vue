@@ -4,7 +4,8 @@
       <img src="../../static/images/sidepage/1112.png" ></div>
     <div class="text" >
         <div class="common-div-css" style="margin-top: 2.4rem;left:23%">
-          <div></div>
+          <div v-show="foruvisible2" style="margin-top: 3rem"> 系统未采集到你的信息</div>
+          <div v-show="fourvisibel1">
           <div>
             有<span>{{this.studentinfo.sumteacher}}</span>
             位老师为你上课
@@ -17,7 +18,7 @@
           他（她）的<span>《{{this.studentinfo.course}}》</span>课程
           得分<span>{{this.studentinfo.score}}</span>
           <div v-show="visible1"><span>你是潜力股！继续加油！</span></div>
-
+          </div>
         </div>
       <!--<div v-show="visible1"><span>你是潜力股！继续加油！</span></div>-->
     </div>
@@ -34,6 +35,8 @@ export default {
     name:'componentFour',
     data(){
         return {
+          fourvisibel1:true,
+          foruvisible2:false,
           visible1:false,
             index:0,
           studentinfo:{
@@ -66,6 +69,11 @@ export default {
           this.studentinfo.sumteacher=response.data.sumteacher;
           this.studentinfo.teacherlikeyou=response.data.teacherlikeyou;
           this.studentinfo.score=response.data.score;
+          if(response.data.sumteacher==null)
+          {
+            this.fourvisibel1=false;
+            this.foruvisible2=true;
+          }
           if(this.studentinfo.score<70){
            this.visible1=true;
 

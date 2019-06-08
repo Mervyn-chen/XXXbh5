@@ -51,11 +51,6 @@
                 "../../static/images/img/image/7.png"
             },
             {
-              id: "0006",
-              imgUrl:
-                "../../static/images/img/image/8.png"
-            },
-            {
               id: "0007",
               imgUrl:
                 "../../static/images/img/image/9.png"
@@ -120,11 +115,7 @@
               imgUrl:
                 "../../static/images/img/image/31.png"
             },
-            {
-              id: "0020",
-              imgUrl:
-                "../../static/images/img/image/32.png"
-            },
+
             {
               id: "0021",
               imgUrl:

@@ -66,11 +66,11 @@
               this.studentinfo.firstaccess=response.data.firstaccess;
               this.studentinfo.xbzs=response.data.xbzs;
               this.studentinfo.earliesttime=response.data.earliesttime;
-              if(response.data.earliesttime==null)
+              if(response.data.earliesttime==null||response.data.earliesttime==response.data.latesttime)
               {
                 this.daynightvisible1=false;
               }
-              if(response.data.latesttime==null)
+              if(response.data.latesttime==null||response.data.earliesttime==response.data.latesttime)
               {
                 this.daynightvisible2=false;
               }

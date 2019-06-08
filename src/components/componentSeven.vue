@@ -3,7 +3,7 @@
     <div style="position:absolute;top: 2.5rem;left: 0rem;right: 0;bottom: 0;">
       <img src="../../static/images/毕业生/11117.png" width="400" height="600"></div>
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 2rem" v-show="sevenvisible1">
+      <div class="common-div-css" style="margin-top: 3rem" v-show="sevenvisible1">
         系统未采集到您的信息……
       </div>
 
@@ -11,7 +11,7 @@
         那些痛并快乐的日子 ...
         <br/>
         参加考试<span>{{this.studentinfo.coursenumber}}</span>门
-        <div>最好成绩<span>{{this.studentinfo.score}}</span>分 <span>{{this.studentinfo.course}}</span></div>
+        <div v-show="sevenvisible3">最好成绩<span>{{this.studentinfo.score}}</span>分 <span>{{this.studentinfo.course}}</span></div>
         <br/>
         <div v-show="dialogVisible0">
           英语四级考试<span>{{this.studentinfo.cet4}}</span>分
@@ -40,6 +40,7 @@
           sevenvisible2:true,
           dialogVisible0:true,
           dialogVisible1:true,
+          sevenvisible3:true,
           studentinfo:{
             computerlevel: '',
 
@@ -90,6 +91,9 @@
               }else{
                 this.sevenvisible1=false;
                 this.sevenvisible2=true;
+              }
+              if(response.data.score==0){
+                this.sevenvisible3=false;
               }
 
             }).catch(function (err) {
