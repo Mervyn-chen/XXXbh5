@@ -8,8 +8,11 @@
     </div>
     <div class="text" style="padding: 2rem" >
       <div class="common-div-css" style="margin-top: 0.5rem">
-        <span>光顾</span>最多的餐厅:
-        <div v-show="eatvisible1">
+        <div v-show="eatvisible5" style="margin-top: 2rem"> 系统未采集到您的校园就餐信息<br/>
+          东华美食，不够吸引你？
+        </div>
+        <div v-show="eatvisible1"><span>光顾</span>最多的餐厅:
+        <br/>
           {{this.favoritecanteen1}}
         </div>
 
@@ -18,6 +21,7 @@
           <!--3.{{this.favoritecanteen3}}消费<span>{{this.favoritecanteen3je}}</span> 元-->
         <!--</div>-->
         <br/>
+        <div  v-show="eatvisible2">
         最喜欢<span>吃</span>的摊位：
         <div v-show="eatvisible2">
           1.{{this.favorite1}}
@@ -27,6 +31,7 @@
         <div v-show="eatvisible4">
         3.{{this.favorite3}}
         <br/>
+        </div>
           </div>
         <div><br/>别了东华食堂，记得一日<span>三餐！</span></div>
       </div>
@@ -57,6 +62,7 @@
           eatvisible2:true,
           eatvisible3:true,
           eatvisible4:true,
+          eatvisible5:false,
 
           result:{
             t_ykt_bath_pm:{
@@ -185,19 +191,14 @@
 
 
 
+
               }
               if(this.favorite1==null)
               {
                 this.eatvisible2=false;
+                this.eatvisible5=true;
               }
-              if(this.favorite2==null)
-              {
-                this.eatvisible3=false;
-              }
-              if(this.favorite3==null)
-              {
-                this.eatvisible4=false;
-              }
+
 
 
 

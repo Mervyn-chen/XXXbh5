@@ -4,9 +4,11 @@
       <!--<img src="/static/images/毕业生/消费图片.png" width="400" height="600">-->
     <!--</div>-->
     <div class="text" >
-      <div class="common-div-css" style="margin-top: 2rem;">
+      <div class="common-div-css" style="margin-top: -4rem;">
         <span>{{this.xm}}</span>
-        <div>
+        <div v-show="consumevisible3">系统未采集到你的信息</div>
+
+       <div v-show="consumevisible1" > <div >
           一卡通累计消费<br/><span>{{this.totalconsume}}</span>元
           <br/>
         </div>
@@ -16,9 +18,10 @@
       </div>
 
     </div>
-    <div id="main1" style="margin-top: 6rem;margin-left:1.7rem;width: 300px;height: 250px" ></div>
-    <div style="margin-top:-0.5rem"> 数据采集开始时间为2016年4月</div>
-    <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
+    <div v-show="consumevisible1" id="main1" style="margin-top: 6rem;margin-left:1.7rem;width: 300px;height: 250px" ></div>
+    <div v-show="consumevisible1"  class="common-div-css" style="margin-top:-1rem;font-size: 10px "> 数据采集开始时间为2016年4月</div>
+    </div>
+      <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
       <img src="../../static/images/sidepage/9.png" >
 
     </div>
@@ -42,6 +45,9 @@
           index:0,
           servicedata:[],
           pm:'',
+          consumevisible1:true,
+          consumevisible2:true,
+          consumevisible3:false,
 
 
           favoritecanteen1:'', //第一食堂
@@ -337,10 +343,12 @@
               this.consume2018=this.result.t_ykt_consume.consume3;
               this.consume2019=this.result.t_ykt_consume.consume4;
               this.pm=this.result.t_ykt_consume_pm.totalconsumepm;
-              console.log(this.consume2016);
-              console.log(this.consume2017);
-              console.log(this.consume2018);
-              console.log(this.consume2019);
+              if(this.result.t_ykt_consume.totalconsume==null)
+              {
+                this.consumevisible1=false;
+                this.consumevisible3=true;
+              }
+
 
 
 

@@ -4,8 +4,9 @@
       <div style="position:absolute;top: 0rem;left: 3rem;right: 0;bottom: 0;">
         <img src="../../static/images/毕业生/吃/4.png" ></div>
         <div class="text " style="padding: 1.5rem;line-height:1rem">
+          <div class="common-div-css" style="margin-top: 3rem" v-show="visible1">系统未采集到你的信息</div>
           <div v-show="visible6">
-              <div class="common-div-css" style="left: 25%;">还记得第一节课和最后一节课吗?
+              <div class="common-div-css" style="left: 25%; margin-top: .3rem">还记得第一节课和最后一节课吗?
                 <div>
                   第一节课：<br/><span>{{this.studentinfo.firstcourse}}</span>
                 </div>
@@ -37,6 +38,7 @@ export default {
     return {
       visible6:true,
       visible4:true,
+      visible1:false,
       studentinfo:{
         firstcourse: '',
         sumcourse: '',
@@ -58,17 +60,19 @@ export default {
       this.$ajax.get('http://10.199.180.242:8080/t_student_jw_studies/findByXh?Xh='+id)
         .then(response=>{
           // this.result = response.data;
-          //console.log(response.data);
+          console.log(response.data);
           this.studentinfo.firstcourse = response.data.firstcourse;
           this.studentinfo.lastcourse=response.data.lastcourse;
           this.studentinfo.sumscore=response.data.sumscore;
           this.studentinfo.sumcourse=response.data.sumcourse;
-          if(response.data==null){
+          if(response.data.firstcourse==null){
             this.visible6=false;
+            this.visible1=true;
           };
           if(this.studentinfo.sumscore==null){
             this.visible4=false;
           }
+
         }).catch(function (err) {
         console.log(err);
       })

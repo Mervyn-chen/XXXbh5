@@ -9,9 +9,12 @@
       <!--<img src="/static/images/毕业生/荷包蛋.png" >-->
       <!--<img src="/static/images/毕业生/锅底.png" >-->
     </div>
-    <div id="main2" style="margin-top: 2rem;margin-left:1rem;width: 300px;height: 250px" ></div>
-    <!--<div class="text" style="padding: 1.5rem" >-->
-      <!--<div class="common-div-css" style="margin-top: -2rem;">-->
+    <div  v-show="dailyfoodvisible1"  id="main2" style="margin-top: 2rem;margin-left:1rem;width: 300px;height: 250px" ></div>
+    <div class="text" >
+      <div  v-show="dailyfoodisible2" class="common-div-css"  style="margin-top: 3rem">
+        系统未采集到你的信息
+      </div>
+    </div>
 
         <!--<div v-show="dailyfoodvisible1">-->
           <!--<span>享受健康</span>早餐{{this.breakfastnum}}次<br/>-->
@@ -28,7 +31,7 @@
         <!--</div>-->
       <!--</div>-->
     <!--</div>-->
-    <div id="main3" style="margin-top: 0rem;margin-left:1rem;width: 300px;height: 250px" ></div>
+    <div  v-show="dailyfoodvisible1" id="main3" style="margin-top: 0rem;margin-left:1rem;width: 300px;height: 250px" ></div>
 
     <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
       <img src="../../static/images/sidepage/8.png" >
@@ -51,7 +54,7 @@
       data(){
         return {
           dailyfoodvisible1:true,
-          dailyfoodisible2:true,
+          dailyfoodisible2:false,
           dailyfoodvisible3:true,
           dailyfoodvisible4:true,
           dailyfoodvisible5:true,
@@ -189,20 +192,13 @@
               this.Dinnernum=this.result.t_ykt_meal_consume.dinnernum;
               this.Dinnertotal=this.result.t_ykt_meal_consume.dinnertotal;
               this.Dinneravg=this.result.t_ykt_meal_consume.dinneravg;
-              if(this.Breakfastavg==null||this.breakfastnum==null){
+              if(this.breakfastnum==null&&this.Lunchnum==null&&this.Dinnernum==null){
                  this.dailyfoodvisible1=false;
+                 this.dailyfoodisible2=true;
 
 
               }
-              if(this.Lunchavg==null||this.Lunchnum==null)
-              {
-                this.dailyfoodisible2=false;
-              }
-              if(
-                this.Dinneravg==null||this.Dinnernum==null
-              ){
-                this.dailyfoodvisible3=false
-              }
+
 
             }).catch(function (err) {
             console.log(err);
