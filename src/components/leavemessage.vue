@@ -2,34 +2,34 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 
 <template>
   <div class="container">
-    <div style="position:absolute;top: 0;left: 0rem;right: 0;bottom: 0;">
-      <van-swipe :autoplay="3000">
-        <van-swipe-item v-for="(image, index) in imagesArr" :key="index">
-          <img :src="image" width="100%">
-        </van-swipe-item>
-      </van-swipe>
-      <img style="margin-top: -1.5rem" src="../../static/images/毕业生/plane.png" >
+    <van-swipe :autoplay="3000" style="width: 100%">
+      <van-swipe-item v-for="(image, index) in imagesArr" :key="index">
+        <img :src="image">
+      </van-swipe-item>
+    </van-swipe>
+    <div class="common-div-css text" style="left: 1%;font-size:12pt;bottom: 1rem;top: 3rem;">
+      <vue-seamless-scroll :data="listData"  class="seamless-warp" style="height: 100%;" :class-option="classOption">
+        <div v-for="item in listData" class="card" style="border:1px solid #000;padding-top: 1px" >
+          <div class="header" style=" overflow:auto;max-height: 5.3rem">
+            <span>姓名：</span>
+            <span class="exp" style="font-size:12pt;width:300px;">{{item[0]}}</span><br>
+            <span>留言：</span>
+            <span class="exp" style="font-size:12pt;">
+                            {{item[1]}}
+                          </span>
+          </div>
+          <div class="containerDiv" >
+            <p>{{item[2]}}</p>
+          </div>
+        </div>
+      </vue-seamless-scroll>
     </div>
-
-    <div class="text" >
-      <div class="common-div-css" style="margin-top: 5rem;left: 10%;font-size:12pt;">
-        <vue-seamless-scroll :data="listData"  class="seamless-warp" :class-option="classOption">
-          <ul class="item">
-            <li v-for="item in listData">
-              <div style="font-weight: 600">{{item[1]}}:</div>
-              {{item[0]}}
-            </li>
-          </ul>
-        </vue-seamless-scroll>
-      </div>
-    </div>
-    <van-submit-bar style="bottom: 0.1rem;width: 99%"
+    <van-submit-bar style="bottom: 0rem;width: 100%"
                     button-text="留言"
                     @submit="save"
     >
       <van-field v-model="desc" placeholder="请输入20字以内" />
     </van-submit-bar>
-
   </div>
 
 
@@ -37,6 +37,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 </template>
 
 <script>
+
   import { Toast } from 'mint-ui'
   export default {
     name: "leavemessage",
@@ -45,9 +46,24 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         animate:true,
         txtVal: 0,
         desc:"",
-        listData: [],
+        listData: [
+          /* {name:"张甜甜",
+             message: "1今天我毕我很开心，真的非常舍不得离开母校，感谢东华四年给我的培育！"
+           },
+           {name:"张甜甜2",
+             message: "1今天我毕业啦，我很开心，真的非常舍不得离开母校，感谢东华四年给我的培育！\n" +
+               "              xixiixi哈哈哈哈哈 留言：今天我毕业啦，我很开心，真的非常舍不得离开母校，感谢东华四年\n" +
+               "              今天我毕业啦，我很开心，真的非常舍不得离开母校，感谢东华四年给我的培育！\n" +
+               "              今天我毕业啦，我很开心，真的非常舍不得离开母校，感谢东华四年给我的培育！"
+           }, {name:"张甜甜3",
+             message: "哈哈哈哈无法half加风林火山爱神的箭放寒假了撒法和加拉是否士大夫结婚三大件粉红色" +
+               "的吉安弗兰很拉风书法家还是两极分化斯拉夫黄金时代复活节啊健身房的拉萨河弗利沙法律手段方式拉横幅拉" +
+               "萨解放和加拉发货时返回拉萨返回拉萨恢复了撒发了撒法阿富汗斯拉夫很拉风护额海南房价能否夫很拉风护额海南房价能否夫很" +
+               "拉风护额海南房价能否夫很拉风护额海南房价能否夫很拉风护额海南房价能否夫很拉风护额海南房价能否夫很拉风护" +
+               "额海南房价能否结束"
+           },*/
+        ],
         imagesArr: [
-        //  '../../static/images/毕业生/dynamic/dynamic1.png',
           '../../static/images/毕业生/dynamic/dynamic2.png',
           '../../static/images/毕业生/dynamic/dynamic3.png',
           '../../static/images/毕业生/dynamic/dynamic4.png',
@@ -57,20 +73,23 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
       }
     },
     created(){
-      this.selectLeaveMessageInfo()
+      this.selectLeaveMessageInfo();
     }, computed: {
       classOption () {
         return {
           step: 0.5,
-          limitMoveNum: 1,//这个是修改moveSwitch()之前的使用方法，这里的数值指的是数据条数
-          openTouch: false,
-          hoverStop: false,
+          limitMoveNum: 2,//这个是修改moveSwitch()之前的使用方法，这里的数值指的是数据条数
+          openTouch: true,
+          hoverStop: true,
+          direction: 1,
+          singleHeight: 0,
+          singleWidth: 0,
         }
       }
     },
     methods:{
       selectLeaveMessageInfo(){
-        this.xh=localStorage.getItem('xh');
+        this.xh=this.$route.query.xh;
         this.$ajax.get('http://10.199.180.242:8080/message/findAll')
           .then(response=>{
             // this.result = response.data;
@@ -86,7 +105,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
       },save(){
         //let Toast = this.$Toast;
         //$("#leaveMessageText").val("");
-        this.xh=localStorage.getItem('xh');
+        this.xh=this.$route.query.xh;
         let Xh=this.xh;
         let message=this.desc;
 
@@ -119,7 +138,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 <style lang="scss" scoped>
   @import '../../static/css/commdiv.css';
   .container {
-    background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
+    // background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
     background-size: cover;
     text-align: center;
     .img {
@@ -127,17 +146,101 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
       margin: .6rem 0;
     }
     .text{
-      line-height:0.8rem;
+      line-height:0.6rem;
       font-size: .35rem;
       font-family: Georgia, serif;
 
     }
   }
-
   .seamless-warp {
     height: 300px;
     overflow: hidden;
+    max-height: 500px;
   }
+
+
+
+
+
+
+
+  /**{
+    margin:0;
+    padding:0;
+  }
+  body{
+    font-family:arial,sans-serif;
+    font-size:100%;
+    margin:3em;
+    background:#666;
+    color:#fff;
+  }
+  h2,p{
+    font-size:100%;
+    font-weight:normal;
+  }
+  ul,li{
+    list-style:none;
+  }
+  ul{
+    overflow:hidden;
+    padding:3em;
+  }
+  ul li a{
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:10em;
+    width:10em;
+    padding:1em;
+  }
+  ul li{
+    margin:1em;
+    float:left;
+  }
+  ul li:nth-child(even) a{
+    -o-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
+    -moz-transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+  }
+  ul li:nth-child(3n) a{
+    -o-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background:#ccf;
+  }*/
+
+
+
+
+  div.card {
+    width: 100%;
+    //height: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: #e0e9bd;
+  }
+  div.header {
+    background-color: #afad32;
+    //height: 5rem;
+
+    color: white;
+    padding: 10px;
+    /*font-size: 40px;*/
+    text-align: left;
+  }
+  div.containerDiv {
+    padding: 10px;
+  }
+  .exp{ border-bottom:1px dashed #F00}
+
+  .cnnr-detail{    display: block;    text-align: justify;    text-align-last: justify;    line-height: 2.3vw;    padding-bottom: 0.4vw;    border-bottom: rgb(18, 99, 160) dotted 0.1vw;}
 
 
 </style>
