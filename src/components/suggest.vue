@@ -62,7 +62,7 @@
 
     <van-cell-group>
       <van-field
-        v-model="message"
+        v-model="dataquality"
         label="数据准确性"
         type="textarea"
         placeholder="哪一部分数据你认为不够准确？"
@@ -72,11 +72,11 @@
     </van-cell-group>
     <van-cell-group>
       <van-field
-        v-model="message"
+        v-model="pagerank"
         label="页面排版"
         type="textarea"
         placeholder="你认为页面排版是否需要调整？怎么排序更合理？
-或者哪些内容可以去掉？原因
+或者哪些内容可以去掉？原因?
 "
         rows="1"
         autosize
@@ -84,7 +84,7 @@
     </van-cell-group>
     <van-cell-group>
       <van-field
-        v-model="message"
+        v-model="showcontent"
         label="展现"
         type="textarea"
         placeholder="你还希望展现哪些其他的内容？"
@@ -110,10 +110,11 @@
         name: "suggest",
       data(){
           return{
-           value1:'',
+            value1:'',
             value2:'',
             value3:'',
             value4:'',
+            mtime:'',
             dataquality:'',
             pagerank:'',
             showcontent:'',
@@ -126,8 +127,65 @@
             this.$router.go(-1)
           },
         submit(){
+          this.xh=localStorage.getItem('xh',this.xh);
+          console.log(this.xh);
+          let info={
 
-            Toast("感谢反馈");
+            xh:this.xh,
+            message:this.dataquality,
+            mtime:'',
+            study:this.value1,
+            library:this.value2,
+            life:this.value3,
+            totalscore:this.value4,
+            pagerank :this.pagerank,
+            showdetail:this.showcontent
+
+
+          };
+          console.log(info)
+
+          //let message=this.desc;
+
+         /* $.ajax({
+            type: "POST",   //提交的方法
+            url:"http://10.199.180.242:8080/feedback/save", //提交的地址
+            data:JSON.stringify(info),// 序列化表单值
+            contentType: "application/json",
+            async: false,
+            error: function(request) {  //失败的话
+              alert("Connection error");
+            },
+            success: function(data) {  //成功
+              alert(1);  //就将返回的数据显示出来
+             // window.location.href="跳转页面"
+            }
+          });*/
+
+
+          this.$ajax.post("http://10.199.180.242:8080/feedback/save",
+            JSON.stringify(info),{
+
+            headers: {
+              'Content-Type': 'application/json;charset=UTF-8'
+            }
+          }).then(response => {
+            console.log(response.data);
+            if (response.data == "success") {
+              Toast("感谢反馈");
+              //this.$router.push({path: '/menu'});
+              this.$router.go(-1)
+            }
+            else {
+              Toast("反馈失败！");
+              //this.$router.push({path: '/orders/SurgeryOrder'});
+            }
+          }).catch(function (err) {
+            console.log(err)
+          });
+
+
+
 
 
         }

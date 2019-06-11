@@ -64,7 +64,7 @@
         result:function () {
           console.log(this.result);
           localStorage.setItem('xm', this.result.studentname);
-          localStorage.setItem('ssname',this.result.ssname);
+          localStorage.setItem('xh',this.result.studentid);
 
 
 

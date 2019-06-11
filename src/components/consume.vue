@@ -4,14 +4,14 @@
       <!--<img src="/static/images/毕业生/消费图片.png" width="400" height="600">-->
     <!--</div>-->
     <div class="text" >
+      <div  class="common-div-css" style="margin-top: 4rem;" v-show="consumevisible3">系统未采集到你的信息</div>
       <div class="common-div-css" style="margin-top: -4rem;">
         <span>{{this.xm}}</span>
-        <div v-show="consumevisible3">系统未采集到你的信息</div>
 
-       <div v-show="consumevisible1" > <div >
+
+       <div v-show="consumevisible1" >
           一卡通累计消费<br/><span>{{this.totalconsume}}</span>元
           <br/>
-        </div>
         超过<span>{{this.pm}}%</span>的学生
 
 
@@ -19,7 +19,7 @@
 
     </div>
     <div v-show="consumevisible1" id="main1" style="margin-top: 6rem;margin-left:1.7rem;width: 300px;height: 250px" ></div>
-    <div v-show="consumevisible1"  class="common-div-css" style="margin-top:-1rem;font-size: 10px "> 数据采集开始时间为2016年4月</div>
+    <div v-show="consumevisible1"  class="common-div-css" style="margin-top:-1rem;font-size: 10px "> 数据采集起止时间：2016.4~2019.6</div>
     </div>
       <div style="position:absolute;top:2.5rem ;left: -6rem;right: 0;bottom: 0;">
       <img src="../../static/images/sidepage/9.png" >
