@@ -221,7 +221,7 @@
       },
       watch:{
           result:function () {
-            console.log(this.result);
+            //console.log(this.result);
             //直方图的绘制
             var myChart = echarts.init(document.getElementById('main1'));
             myChart.setOption(
@@ -333,10 +333,10 @@
           console.log(id);
           this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
             .then(response=>{
-              console.log(response.data);
+              //console.log(response.data);
               this.result = response.data;
               this.totalconsume=this.result.t_ykt_consume.totalconsume;
-              console.log(this.totalconsume);
+              //console.log(this.totalconsume);
               this.consume2016=this.result.t_ykt_consume.consume1;
 
               this.consume2017=this.result.t_ykt_consume.consume2;

@@ -59,7 +59,7 @@
           this.$ajax.get('http://10.199.180.242:8080//t_student_lib_access/findByXh?Xh='+id)
             .then(response=>{
               // this.result = response.data;
-              console.log(response.data);
+              //console.log(response.data);
               this.studentinfo.latesttime = response.data.latesttime;
               this.studentinfo.xh=response.data.xh;
               this.studentinfo.accessnumber=response.data.accessnumber;

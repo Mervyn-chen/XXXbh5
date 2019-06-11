@@ -63,7 +63,7 @@
       },
       watch:{
         result:function () {
-          console.log(this.result)
+          //console.log(this.result)
           var myChart = echarts.init(document.getElementById('greatscore'));
           myChart.setOption({
 
@@ -134,7 +134,7 @@
 
 
               this.result = response.data;
-              console.log(response.data);
+              //console.log(response.data);
               this.studentinfo.xbsm = response.data.xbsm;
               this.studentinfo.xh=response.data.xh;
               this.studentinfo.gradepoint=response.data.gradepoint;

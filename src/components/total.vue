@@ -56,6 +56,7 @@ var componentList = {
      componentFriend:require('@/components/componentFriend.vue').default,
      componentEnd:require('@/components/componentEnd.vue').default,
      leavemessage:require('@/components/leavemessage.vue').default,
+     componentads:require('@/components/componentads.vue').default,
 
 
 
@@ -73,7 +74,7 @@ export default {
   },
     data(){
         return {
-            componentList:['componentOne','componentTwo','componentThree','componentFour','componentFive','componentSeven','componentEight','componentNight','componentTen','componentEliven','componentTwive','componentthirteen','componentdaynight','componentlifeone','consume','dailyfood','componentEat','componentCard','componentHospital','componentHome','leavemessage','componentEnd'],
+            componentList:['componentOne','componentTwo','componentThree','componentFour','componentFive','componentSeven','componentEight','componentNight','componentTen','componentEliven','componentTwive','componentthirteen','componentdaynight','componentlifeone','consume','dailyfood','componentEat','componentCard','componentHospital','componentHome','leavemessage','componentads','componentEnd'],
             index:0,
             xh:'',
             distance:0,//手指在页面滑动的距离

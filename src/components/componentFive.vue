@@ -63,7 +63,7 @@
           this.$ajax.get('http://10.199.180.242:8080/t_student_jw_classroom/findByXh?Xh='+id)
             .then(response=>{
               // this.result = response.data;
-              console.log(response.data);
+              //console.log(response.data);
               this.studentinfo.classroom = response.data.classroom;
               this.studentinfo.coursenumber=response.data.coursenumber;
               if(this.studentinfo.classroom==null){

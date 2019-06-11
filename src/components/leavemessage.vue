@@ -2,28 +2,29 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 
 <template>
   <div class="container">
-    <van-swipe :autoplay="3000" style="width: 100%">
-      <van-swipe-item v-for="(image, index) in imagesArr" :key="index">
-        <img :src="image">
-      </van-swipe-item>
-    </van-swipe>
-    <div class="common-div-css text" style="left: 1%;font-size:12pt;bottom: 1rem;top: 3rem;">
+    <!--<van-swipe :autoplay="3000" style="width: 100%">-->
+      <!--<van-swipe-item v-for="(image, index) in imagesArr" :key="index">-->
+        <!--<img :src="image">-->
+      <!--</van-swipe-item>-->
+    <!--</van-swipe>-->
+    <div class="common-div-css text" style="left: .3%;font-size:12pt;margin-top: -1rem">
       <vue-seamless-scroll :data="listData"  class="seamless-warp" style="height: 100%;" :class-option="classOption">
         <div v-for="item in listData" class="card" style="border:1px solid #000;padding-top: 1px" >
           <div class="header" style=" overflow:auto;max-height: 5.3rem">
-            <span>姓名：</span>
-            <span class="exp" style="font-size:12pt;width:300px;">{{item[0]}}</span><br>
-            <span>留言：</span>
-            <span class="exp" style="font-size:12pt;">
+
+            <span  style="font-size:12pt;width:300px;">{{item[0]}} </span><span style="font-size: 8pt">({{item[2]}})</span><br>
+
+            <span class="exp" style="font-size:10pt;">
                             {{item[1]}}
                           </span>
           </div>
           <div class="containerDiv" >
-            <p>{{item[2]}}</p>
+            <p></p>
           </div>
         </div>
       </vue-seamless-scroll>
     </div>
+
     <van-submit-bar style="bottom: 0rem;width: 100%"
                     button-text="留言"
                     @submit="save"
@@ -50,11 +51,11 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 
         ],
         imagesArr: [
-          '../../static/images/毕业生/dynamic/dynamic2.png',
-          '../../static/images/毕业生/dynamic/dynamic3.png',
-          '../../static/images/毕业生/dynamic/dynamic4.png',
-          '../../static/images/毕业生/dynamic/dynamic6.jpg',
-          '../../static/images/毕业生/dynamic/dynamic7.jpg',
+          '../../static/images/img/2.png',
+          '../../static/images/img/3.png',
+          '../../static/images/img/4.png',
+          '../../static/images/img/5.jpg',
+          '../../static/images/img/6.jpg',
         ],
       }
     },
@@ -79,7 +80,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         this.$ajax.get('http://10.199.180.242:8080/message/findAll')
           .then(response=>{
             // this.result = response.data;
-            console.log(response.data);
+            //console.log(response.data);
             this.listData = response.data;
           }).catch(function (err) {
           console.log(err);
@@ -139,9 +140,9 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     }
   }
   .seamless-warp {
-    height: 300px;
+    height: 100%;
     overflow: hidden;
-    max-height: 500px;
+    //max-height: 500px;
   }
 
 
@@ -210,10 +211,10 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     //height: 60%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    background-color: #e0e9bd;
+    background-color: #D8CDE2;
   }
   div.header {
-    background-color: #afad32;
+    background-color: #B4D6F7;
     //height: 5rem;
 
     color: white;

@@ -75,7 +75,7 @@
         this.$ajax.get('http://10.199.180.242:8080/studentHonor/findByXh?Xh='+id)
           .then(response=>{
             // this.result = response.data;
-            console.log(response.data);
+            //console.log(response.data);
             if(response.data.student_jw_honor_others.length==0&&response.data.student_jw_honor_scholarships.length==0)
             {
               this.nightvisible1=true;
@@ -106,7 +106,7 @@
                 mc:"",};
 
             }
-            console.log(this.title1);
+            //console.log(this.title1);
 
 
 
@@ -122,7 +122,7 @@
               };
 
             }
-            console.log(this.title2)
+            //console.log(this.title2)
 
 
 

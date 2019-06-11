@@ -62,7 +62,7 @@ export default {
       this.$ajax.get('http://10.199.180.242:8080/t_student_jw_teacher/findByXh?Xh='+id)
         .then(response=>{
           // this.result = response.data;
-          console.log(response.data);
+          //console.log(response.data);
           this.studentinfo.course=response.data.course;
           this.studentinfo.coursenumber=response.data.coursenumber;
           this.studentinfo.favoriteteacher=response.data.favoriteteacher;

@@ -175,10 +175,10 @@
 
           this.xh=this.$route.query.xh;
           let id=this.xh;
-          console.log(id);
+          //console.log(id);
           this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
             .then(response=>{
-              console.log(response.data);
+              //console.log(response.data);
               this.result = response.data;
               this.bknum= this.result.t_ykt_bk_pm.bknum;
               this.bkpm= this.result.t_ykt_bk_pm.bkpm;

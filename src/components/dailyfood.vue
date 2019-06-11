@@ -181,7 +181,7 @@
           let id=this.xh;
           this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
             .then(response=>{
-              console.log(response.data);
+              //console.log(response.data);
               this.result = response.data;
               this.breakfastnum = this.result.t_ykt_meal_consume.breakfastnum;
               this.breakfasttotal= this.result.t_ykt_meal_consume.breakfasttotal;
@@ -207,7 +207,7 @@
       },
       watch:{
         result:function () {
-          console.log(this.result);
+          //console.log(this.result);
 
           //饼图的绘制
           var myChart = echarts.init(document.getElementById('main2'));

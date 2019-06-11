@@ -76,7 +76,7 @@
           this.$ajax.get('http://10.199.180.242:8080//t_student_lib_borrowing/findByXh?Xh='+id)
             .then(response=>{
               // this.result = response.data;
-              console.log(response.data);
+              //console.log(response.data);
               this.studentinfo.firstbooktime = response.data.firstbooktime;
               this.studentinfo.xh=response.data.xh;
               this.studentinfo.booknumber=response.data.booknumber;

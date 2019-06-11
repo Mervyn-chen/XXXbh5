@@ -62,7 +62,7 @@
       },
       watch:{
         result:function () {
-          console.log(this.result);
+          //console.log(this.result);
           localStorage.setItem('xm', this.result.studentname);
           localStorage.setItem('xh',this.result.studentid);
 
@@ -76,11 +76,11 @@
 
           this.xh=this.$route.query.xh;
           let id=this.xh;
-          console.log(id);
+          //console.log(id);
           this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{
             this.result = response.data;
-             console.log(response.data);
+             //console.log(response.data);
              this.studentinfo.rxrq = response.data.enteryear;
              this.studentinfo.xm=response.data.studentname;
              this.studentinfo.xb=response.data.xb;
