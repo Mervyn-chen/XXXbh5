@@ -28,9 +28,24 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
           </div>
         </div>
       </vue-seamless-scroll>
+
     </div>
-    <van-field  style="margin-top: 10.7rem" v-model="desc" placeholder="请输入200字以内" />
-    <van-button style="width: 100%" type="info" @click="save">确认提交</van-button>
+
+    <van-field  style="width: 100%;bottom: 0.8rem;position: fixed;left: 0;" v-model="desc" placeholder="请输入200字以内" />
+    <van-button style="width: 100%;bottom: 0;position: fixed;right: 0" type="info" @click="save">留言</van-button>
+    <!-- <div style="position:relative;bottom: 0">-->
+
+    <!--<van-button style="width: 100%;" type="info" @click="save">确认提交</van-button>-->
+    <!--<van-submit-bar
+      button-text="留言"
+      @submit="save"
+      style="width: auto"
+    >
+
+
+    </van-submit-bar>-->
+
+
     <!--<van-submit-bar style="bottom: 0rem;width: 100%"-->
     <!--button-text="留言"-->
     <!--@submit="save"-->

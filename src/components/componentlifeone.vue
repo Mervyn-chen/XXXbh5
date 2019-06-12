@@ -25,7 +25,7 @@
 
 <style lang="scss" scoped>
   .container{
-    background:url("../../static/images/毕业生/333.png")  no-repeat;
+    background:url("../../static/images/毕业生/333.png")  no-repeat center center;
 
     background-size:cover;
     text-align: center;
