@@ -31,7 +31,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 
     </div>
 
-    <van-field  style="width: 100%;bottom: 0.8rem;position: fixed;left: 0;" v-model="desc" placeholder="请输入200字以内" />
+    <van-field   v-model="desc" placeholder="请输入200字以内" />
     <van-button style="width: 100%;bottom: 0;position: fixed;right: 0" type="info" @click="save">留言</van-button>
     <!-- <div style="position:relative;bottom: 0">-->
 
