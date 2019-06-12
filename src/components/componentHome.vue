@@ -13,6 +13,7 @@
         <!--个人清洁排名<span>{{this.bathpm}}</span><br/>-->
         <!--个人清洁指数<span>{{this.qjzs}}||{{this.sm}}</span><br/>-->
         同吃同住的室友们<br/>
+        <div  v-show="homevisible3" ><span>{{this.roomate[0]}},{{this.roomate[1]}},{{this.roomate[2]}}</span></div>
         <div>见证了彼此的青春与成长</div>
         <br/>
 
@@ -51,7 +52,9 @@
         return {
           homevisible1:true,
           homevisible2:false,
+          homevisible3:true,
           index:0,
+          roomate:[],
           result:{
             t_ykt_bath_pm:{
               bathnum:'', //洗浴次数
@@ -185,19 +188,36 @@
 
           this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{
-              this.result = response.data;
+              //this.result = response.data;
               //console.log(response.data);
 
               this.ssname=response.data.ssname;
               if(this.ssname==null)
               {
-                this.homevisible=false;
+                this.homevisible3=false;
               }
 
             }).catch(function (err) {
             console.log(err);
           })
-        }
+
+
+        this.$ajax.get('http://10.199.180.242:8080/roommate/findroommate?studentid='+id)
+        .then(response=>{
+          //console.log(response.data);
+          this.roomate=response.data;
+          console.log(this.roomate);
+          if(response.data.length==0)
+          {
+            this.homevisible=false;
+          }
+
+
+        }).catch(function (err) {
+          console.log(err);
+        })
+       }
+
       },
     }
 </script>

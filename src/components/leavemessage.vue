@@ -3,10 +3,15 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 <template>
   <div class="container">
     <!--<van-swipe :autoplay="3000" style="width: 100%">-->
-      <!--<van-swipe-item v-for="(image, index) in imagesArr" :key="index">-->
-        <!--<img :src="image">-->
-      <!--</van-swipe-item>-->
+    <!--<van-swipe-item v-for="(image, index) in imagesArr" :key="index">-->
+    <!--<img :src="image">-->
+    <!--</van-swipe-item>-->
     <!--</van-swipe>-->
+    <van-nav-bar
+      title="留言簿"
+
+
+    />
     <div class="common-div-css text" style="left: .3%;font-size:12pt;margin-top: -1rem">
       <vue-seamless-scroll :data="listData"  class="seamless-warp" style="height: 100%;" :class-option="classOption">
         <div v-for="item in listData" class="card" style="border:1px solid #000;padding-top: 1px" >
@@ -14,7 +19,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 
             <span  style="font-size:12pt;width:300px;">{{item[0]}} </span><span style="font-size: 8pt">({{item[2]}})</span><br>
 
-            <span class="exp" style="font-size:10pt;">
+            <span class="exp" style="font-size:10pt;word-break: break-all">
                             {{item[1]}}
                           </span>
           </div>
@@ -24,13 +29,14 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         </div>
       </vue-seamless-scroll>
     </div>
+    <van-field  style="margin-top: 10.7rem" v-model="desc" placeholder="请输入200字以内" />
+    <van-button style="width: 100%" type="info" @click="save">确认提交</van-button>
+    <!--<van-submit-bar style="bottom: 0rem;width: 100%"-->
+    <!--button-text="留言"-->
+    <!--@submit="save"-->
+    <!--&gt;-->
 
-    <van-submit-bar style="bottom: 0rem;width: 100%"
-                    button-text="留言"
-                    @submit="save"
-    >
-      <van-field v-model="desc" placeholder="请输入20字以内" />
-    </van-submit-bar>
+    <!--</van-submit-bar>-->
   </div>
 
 
@@ -50,13 +56,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         listData: [
 
         ],
-        imagesArr: [
-          '../../static/images/img/2.png',
-          '../../static/images/img/3.png',
-          '../../static/images/img/4.png',
-          '../../static/images/img/5.jpg',
-          '../../static/images/img/6.jpg',
-        ],
+
       }
     },
     created(){
@@ -96,8 +96,8 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
         let Xh=this.xh;
         let message=this.desc;
 
-        if (message.length>20){
-          Toast("20字以内");
+        if (message.length>200){
+          Toast("200字以内");
           return;
         }
         if(message.length==0){
@@ -112,7 +112,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
           },
           function(data,status){
             // alert("Data: " + data + "\nStatus: " + status);
-            Toast("留言成功");
+            Toast("留言成功,请等待管理员审核");
           });
       }
     },
@@ -125,7 +125,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
 <style lang="scss" scoped>
   @import '../../static/css/commdiv.css';
   .container {
-    // background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#DEC6C6), to(#95B3EB));
     background-size: cover;
     text-align: center;
     .img {

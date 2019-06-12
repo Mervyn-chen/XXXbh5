@@ -18,7 +18,7 @@
                 </span>
               </div>
 
-              <span>第</span>一次踏进东华校园，已在东华度过<span>1367</span>天
+              <span>第</span>一次踏进东华校园，已在东华度过<span>1380</span>天
             </div>
 
         </div>
