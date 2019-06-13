@@ -149,7 +149,7 @@
 
          /* $.ajax({
             type: "POST",   //提交的方法
-            url:"http://10.199.180.242:8080/feedback/save", //提交的地址
+            url:"http://localhost:8080/feedback/save", //提交的地址
             data:JSON.stringify(info),// 序列化表单值
             contentType: "application/json",
             async: false,
@@ -163,7 +163,7 @@
           });*/
 
 
-          this.$ajax.post("http://10.199.180.242:8080/feedback/save",
+          this.$ajax.post("http://localhost:8080/feedback/save",
             JSON.stringify(info),{
 
             headers: {

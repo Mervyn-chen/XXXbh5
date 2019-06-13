@@ -65,6 +65,8 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     name: "leavemessage",
     data(){
       return {
+
+        id:'',
         animate:true,
         txtVal: 0,
         desc:"",
@@ -92,7 +94,19 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     methods:{
       selectLeaveMessageInfo(){
         this.xh=this.$route.query.xh;
-        this.$ajax.get('http://10.199.180.242:8080/message/findAll')
+
+        let studentid = this.xh.split('');
+        console.log(studentid);
+        let newMsg = "";
+        for (let i=0;i<studentid.length;i++){
+          let num = studentid[i].charCodeAt()-9;
+          let str = String.fromCharCode(num);
+          console.log(str);
+          newMsg+=str;
+        }
+        console.log(newMsg);
+        this.id=newMsg;
+        this.$ajax.get('http://localhost:8080/message/findAll')
           .then(response=>{
             // this.result = response.data;
             //console.log(response.data);
@@ -107,8 +121,8 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
       },save(){
         //let Toast = this.$Toast;
         //$("#leaveMessageText").val("");
-        this.xh=this.$route.query.xh;
-        let Xh=this.xh;
+        //this.xh=this.$route.query.xh;
+        let Xh=this.id;
         let message=this.desc;
 
         if (message.length>200){
@@ -120,7 +134,7 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
           return;
         }
         this.desc="";
-        $.post("http://10.199.180.242:8080/message/save",
+        $.post("http://localhost:8080/message/save",
           {
             Xh:Xh,
             message:message

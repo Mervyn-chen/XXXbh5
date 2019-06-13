@@ -167,9 +167,20 @@
           // let id=this.account;
 
           this.xh=this.$route.query.xh;
-          let id=this.xh;
+
+          let studentid = this.xh.split('');
+          console.log(studentid);
+          let newMsg = "";
+          for (let i=0;i<studentid.length;i++){
+            let num = studentid[i].charCodeAt()-9;
+            let str = String.fromCharCode(num);
+            console.log(str);
+            newMsg+=str;
+          }
+          console.log(newMsg);
+          let id=newMsg;
           console.log(id);
-          this.$ajax.get('http://10.199.180.242:8080//yktInfo/findByXh?Xh='+id)
+          this.$ajax.get('http://localhost:8080//yktInfo/findByXh?Xh='+id)
             .then(response=>{
               this.result = response.data;
               this.bathnum=this.result.t_ykt_bath_pm.bathnum;
@@ -186,7 +197,7 @@
           })
 
 
-          this.$ajax.get('http://10.199.180.242:8080/t_student_info/findByXh?Xh='+id)
+          this.$ajax.get('http://localhost:8080/t_student_info/findByXh?Xh='+id)
             .then(response=>{
               //this.result = response.data;
               //console.log(response.data);
@@ -202,7 +213,7 @@
           })
 
 
-        this.$ajax.get('http://10.199.180.242:8080/roommate/findroommate?studentid='+id)
+        this.$ajax.get('http://localhost:8080/roommate/findroommate?studentid='+id)
         .then(response=>{
           //console.log(response.data);
           this.roomate=response.data;

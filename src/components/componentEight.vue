@@ -128,8 +128,20 @@
         selectstudentinfo(){
           // let id=this.account;
           this.xh=this.$route.query.xh;
-          let id=this.xh;
-          this.$ajax.get('http://10.199.180.242:8080//t_student_jw_gradepoint/findByXh?Xh='+id)
+
+          let studentid = this.xh.split('');
+          console.log(studentid);
+          let newMsg = "";
+          for (let i=0;i<studentid.length;i++){
+            let num = studentid[i].charCodeAt()-9;
+            let str = String.fromCharCode(num);
+            console.log(str);
+            newMsg+=str;
+          }
+          console.log(newMsg);
+          let id=newMsg;
+          console.log(id);
+          this.$ajax.get('http://localhost:8080//t_student_jw_gradepoint/findByXh?Xh='+id)
             .then(response=>{
 
 
