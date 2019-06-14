@@ -93,19 +93,10 @@ import vueSeamlessScroll from 'vue-seamless-scroll'
     },
     methods:{
       selectLeaveMessageInfo(){
-        this.xh=this.$route.query.xh;
+        this.xh=localStorage.getItem('xh');
+        console.log(this.xh)
 
-        let studentid = this.xh.split('');
-        console.log(studentid);
-        let newMsg = "";
-        for (let i=0;i<studentid.length;i++){
-          let num = studentid[i].charCodeAt()-9;
-          let str = String.fromCharCode(num);
-          console.log(str);
-          newMsg+=str;
-        }
-        console.log(newMsg);
-        this.id=newMsg;
+        this.id=this.xh;
         this.$ajax.get('http://localhost:8080/message/findAll')
           .then(response=>{
             // this.result = response.data;

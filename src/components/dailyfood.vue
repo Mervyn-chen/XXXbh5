@@ -177,19 +177,9 @@
         selectstudentinfo(){
           // let id=this.account;
 
-          this.xh=this.$route.query.xh;
-
-          let studentid = this.xh.split('');
-          console.log(studentid);
-          let newMsg = "";
-          for (let i=0;i<studentid.length;i++){
-            let num = studentid[i].charCodeAt()-9;
-            let str = String.fromCharCode(num);
-            console.log(str);
-            newMsg+=str;
-          }
-          console.log(newMsg);
-          let id=newMsg;
+          this.xh=localStorage.getItem('xh');
+          console.log(this.xh)
+          let id=this.xh;
           this.$ajax.get('http://localhost:8080//yktInfo/findByXh?Xh='+id)
             .then(response=>{
               //console.log(response.data);

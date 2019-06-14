@@ -12,15 +12,49 @@ export default {
             percent:null,
             count: '',
             result:'',
-          xh:''
+          xh:'',
+          sign:'',
+          token:'',
         }
     },
     mounted(){
         this.preload();
+        this.getUrlParam();
 
       //this.getxh()
     },
     methods:{
+      getUrlParam() {//封装方法
+        this.xh=this.$route.query.timestamp;
+        this.sign=this.$route.query.sign;
+        this.token=this.$route.query.token;
+        console.log(this.xh)
+        console.log(this.sign)
+        console.log(this.token);
+        let info={
+
+          timestamp:this.xh,
+         sign:this.sign,
+         token:this.token,
+
+        };
+        console.log(info)
+        this.$ajax.post("http://localhost:8080/decoding/findXh",
+           JSON.stringify(info),{
+            headers: {
+              'Content-Type': 'application/json;charset=UTF-8'
+            }
+          }).then(response => {
+            this.result = response.data;
+            console.log(response.data)
+          localStorage.setItem('xh',this.result);
+          this.$router.push({path:'page',query:{finished:true}})
+          }).catch(function (err) {
+          console.log(err);
+        })
+
+      },
+
 
         preload(){
             var imgList = [
@@ -46,7 +80,7 @@ export default {
                      this.percent = `${percent}%`
                 }
             }
-          localStorage.clear();
+         // localStorage.clear();
 
         },
 
@@ -57,10 +91,19 @@ export default {
             // console.log(val);
             if (val=== 8) {
                 var finished = true;
-                //this.xh=this.$route.query.xh;
-                var xh='151410209';
+              this.xh=this.$route.query.timestamp;
+              this.sign=this.$route.query.sign;
+              this.token=this.$route.query.token;
+              console.log(this.xh)
+              console.log(this.sign)
+              console.log(this.token);
+              // var id = getUrlParam("timestamp");//26
+              // var dataId = getUrlParam("token");//3
+              // var sign = getUrlParam("sign");//3
+              // console.log(id);
+                //var xh='151410209';
                 //localStorage.setItem('xh',this.studentid);
-                this.$router.push({path:'page?xh='+xh,query:{finished:true}})
+               // this.$router.push({path:'page',query:{finished:true}})
             }
         },
     }
